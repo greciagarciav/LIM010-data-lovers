@@ -3,15 +3,74 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">  
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
+    <header class="h-size">
+      <div class="row">
+          <div class="col-10 logo">
+            <img class="logo-banco-mundial" src="img/logo-banco-mundial.jpg" alt="logo del banco mundial">
+          </div>
+        </div>
+    </header>
+    <main>
+
+      <section id="login" class=" hide" >
+        <div class="contain-login ">
+        <img class="logo-login" src="img/logo-banco-mundial.png">
+        <form class="contain-field-login">
+          <div class="">
+            <label class="label-style">Correo electrónico<input type="text" name="correo electronico" class="input-email" id="email"></label>
+            <label class="label-style">Contraseña<input type="password" name="contraseña" class="input-password" id="password"></label>
+            <label class="negrita">¿Olvidaste tu contraseña?</label>
+          </div>
+        </form>
+          <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
+          <label class="info">¿No tienes una cuenta?. <strong> Registrate</strong></label>
+          </div>
+      </section>
+      <section id="cuerpo" class="hide">
+        <div class="row images">
+          <div class="col-10">imagen</div>
+        </div>
+        <div class="row text">
+          <!--<div class="col-10">m</div>-->
+          <div class="col-10">text</div>
+          <!--<div class="col-10">m</div>-->
+        </div>
+        <div class="row foot">
+          <div class="col-10">siguenos</div>
+          <!--<div class="col-10">redes sociales</div>-->
+          <div class="col-10">derechos reservados</div>
+        </div>
+      </section>
+
+    <!--  <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-10">imagen</div>
+          </div>
+          <div class="row">
+            <div class="col-1">margen</div>
+            <div class="col-8">texto</div>
+            <div class="col-1">margen</div>
+          </div>
+          <div>
+            <div class="col-2">síguenos</div>
+            <div class="col-8">derechos reservados</div>
+          </div>
+        </div>
+      </section>-->
+    </main>
+    <footer>
+      <div>
+        <p class="social-media">SÍGANOS</p>
+        <p class="cpy-right">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
+      </div>
+    </footer>
+    <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
   </body>

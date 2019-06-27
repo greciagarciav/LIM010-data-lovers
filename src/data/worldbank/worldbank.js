@@ -460,7 +460,7 @@ const WORLDBANK = {
         },
         "countryName": "Perú",
         "countryCode": "PER",
-        "indicatorName": "Proporcin de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
+        "indicatorName": "Proporcion de tasas de participacin laboral femenina y masculina (%) (estimación modelado OIT)",
         "indicatorCode": "SL.TLF.CACT.FM.ZS"
       },
       {

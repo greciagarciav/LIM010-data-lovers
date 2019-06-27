@@ -3,8 +3,11 @@
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
+const indicators = (indicatorsArray,index) => {
+	let indicatorNameArray = [];
+	indicatorNameArray = indicatorsArray.filter(populationElement => populationElement.indicators === index);
+  return 'indicatorsArray';
+  console.log(indicatorNameArray);
 };
 
-window.example = example;
+window.indicators = indicators;
