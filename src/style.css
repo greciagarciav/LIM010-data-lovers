@@ -37,52 +37,47 @@
 .hide{
 	display: none;
 }
-.logo{
+
+.container-logo{
 	height:5em;
 	background-color: #fff;
 }
+
 .logo-banco-mundial{
-	height:60px;
+	height:3.75em;
 }
-.support{
-	display: inline;
-	font-weight: 400;
-	color: #4D97F0;
-	font-size: 40px;
+.footer-style{
+	background-color: #262626;
 }
-.images{
+
+.images-media{
 	height: 30em;
 	background-color: red;
 }
-.text{
+.text-media{
 	height: 15em;
 	background-color:orange; 
 }
-.foot{
-	height: 5em;
-	background-color: yellow;
-}
 .contain-field-login{
-width: 335px;
-height: 210px;
-display: block;
-margin: auto;
+	width: 335px;
+	height: 210px;
+	display: block;
+	margin: auto;
 }
 .input-field-text{
-width: 335px;
-height: 82px;
-background-color: #fff;
+	width: 335px;
+	height: 82px;
+	background-color: #fff;
 }
 .input-email, .input-password{
-width: 335px;
-height: 45px;
-margin: 2px;
-background-color: #fff;
-border-radius: 2px;
-outline: none;
-border: none;
-display: block;
-
+	width: 335px;
+	height: 45px;
+	margin: 2px;
+	background-color: #fff;
+	border-radius: 2px;
+	outline: none;
+	border: none;
+	display: block;
 }
 .btn-ingresar{
 	width: 335px;
@@ -96,10 +91,7 @@ display: block;
 	border-radius: 5px;
 	cursor: pointer;
 }
-.h-size{
-	height: 5em;
-}
-.info{
+.missing-account{
 	width: 335px;
 	height: 22px;
 	font-family: Open Sans;
@@ -117,7 +109,7 @@ display: block;
 	margin: auto;
 	display: block;
 }
-.label-style{
+.label-style-login{
 	background-color:#E5E5E5;
 	height: 82px;
 	width: 335px;
@@ -129,16 +121,18 @@ display: block;
 	width:200px;
 	display: block;
 }
-.negrita{
+.bold-text{
 	font-weight: bold;
 }
 .social-media{
 	text-align: left;
 	padding: .5em 5em;
 	font-size: 1em;
+	background-color: transparent;
 }
-.cpy-right{
+.copyright{
 	text-align: right;
 	padding: .5em 5em;
-	font-size: .7em
+	font-size: .7em;
+	background-color: transparent;
 }
