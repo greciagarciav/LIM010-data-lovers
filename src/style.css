@@ -1,0 +1,138 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+/*-------------------------------Grillas--------------------------------------------*/
+.col-1{width: 10%;}
+.col-2{width: 20%;}
+.col-3{width: 30%;}
+.col-4{width: 40%;}
+.col-5{width: 50%;}
+.col-6{width: 60%;}
+.col-7{width: 70%;}
+.col-8{width: 80%;}
+.col-9{width: 90%;}
+.col-10{width: 100%;}
+.container{
+	width: 100%;
+	max-width: 1000px;
+}
+/*.row:before, .row:after{
+	content: "";
+	display: table;
+	clear: both;
+}
+*/
+/*Se puede poner en otra hoja de estilo*/
+[class^=col]{
+	float: left;
+	height: auto;
+	min-height: 7px;
+	/*Gutters*/
+	padding: .75em;
+}
+/*----------------------------------------------------------------------------------*/
+.hide{
+	display: none;
+}
+
+.container-logo{
+	height:5em;
+	background-color: #fff;
+}
+
+.logo-banco-mundial{
+	height:3.75em;
+}
+.footer-style{
+	background-color: #262626;
+}
+
+.images-media{
+	height: 30em;
+	background-color: red;
+}
+.text-media{
+	height: 15em;
+	background-color:orange; 
+}
+.contain-field-login{
+	width: 335px;
+	height: 210px;
+	display: block;
+	margin: auto;
+}
+.input-field-text{
+	width: 335px;
+	height: 82px;
+	background-color: #fff;
+}
+.input-email, .input-password{
+	width: 335px;
+	height: 45px;
+	margin: 2px;
+	background-color: #fff;
+	border-radius: 2px;
+	outline: none;
+	border: none;
+	display: block;
+}
+.btn-ingresar{
+	width: 335px;
+	height: 50px;
+	background-color: #3897F0;
+	color: #fff;
+	display: block;
+	margin: auto;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.missing-account{
+	width: 335px;
+	height: 22px;
+	font-family: Open Sans;
+	font-size: 16px;
+	line-height:30px;
+	/* or 6% */
+	display: block;
+	align-items: center;
+	text-align: center;
+	margin: auto;
+}
+.contain-login{
+	background-color:#E5E5E5;
+	height: 667px;
+	margin: auto;
+	display: block;
+}
+.label-style-login{
+	background-color:#E5E5E5;
+	height: 82px;
+	width: 335px;
+}
+.logo-login{
+	padding-top: 100px;
+	padding-bottom: 50px; 
+	margin: auto; 
+	width:200px;
+	display: block;
+}
+.bold-text{
+	font-weight: bold;
+}
+.social-media{
+	text-align: left;
+	padding: .5em 5em;
+	font-size: 1em;
+	background-color: transparent;
+}
+.copyright{
+	text-align: right;
+	padding: .5em 5em;
+	font-size: .7em;
+	background-color: transparent;
+}

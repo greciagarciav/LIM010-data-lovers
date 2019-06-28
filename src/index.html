@@ -3,12 +3,67 @@
   <head>
     <meta charset="utf-8">
     <title>Data Lovers</title>
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">  
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="">
+      <div class="row container-logo">
+          <div class="col-10 ">
+            <img class="logo-banco-mundial" src="img/logo-banco-mundial.jpg" alt="logo del banco mundial|Indicadores de Desarrollo">
+          </div>
+        </div>
+    </header>
+    <main>
+      <section id="login" class="hide" >
+        <div class="contain-login">
+          <img class="logo-login" src="img/logo-banco-mundial.png">
+          <form class="contain-field-login">
+            <div class="">
+              <label class="label-style-login">Correo electrónico<input type="text" name="correo electronico" class="input-email" id="email"></label>
+              <label class="label-style-login">Contraseña<input type="password" name="contraseña" class="input-password" id="password"></label>
+              <label class="bold-text">¿Olvidaste tu contraseña?</label>
+            </div>
+          </form>
+          <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
+          <label class="missing-account">¿No tienes una cuenta?. <strong> Registrate</strong></label>
+        </div>
+      </section>
+      <section id="cuerpo" class="hide">
+        <div class="row images-media">
+          <div class="col-10">imagen</div>
+        </div>
+        <div class="row text-media">
+          <!--<div class="col-10">m</div>-->
+          <div class="col-10">text</div>
+          <!--<div class="col-10">m</div>-->
+        </div>
+      </section>
+
+    <!--  <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-10">imagen</div>
+          </div>
+          <div class="row">
+            <div class="col-1">margen</div>
+            <div class="col-8">texto</div>
+            <div class="col-1">margen</div>
+          </div>
+          <div>
+            <div class="col-2">síguenos</div>
+            <div class="col-8">derechos reservados</div>
+          </div>
+        </div>
+      </section>-->
+    </main>
+    <footer class="footer-style">
+      <div class="row">
+        <p class="col-10 social-media">SÍGANOS</p>
+        <p class="col-10 copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
+      </div>
+    </footer>
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>
