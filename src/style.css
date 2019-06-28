@@ -136,3 +136,8 @@
 	font-size: .7em;
 	background-color: transparent;
 }
+.incorrect{
+	text-align: center;
+	font-size: 16px;
+	color: red; 
+}
