@@ -34,44 +34,44 @@
 	padding: .75em;
 }
 /*----------------------------------------------------------------------------------*/
+/*Esconde las pantallas */
 .hide{
 	display: none;
 }
-
+/*Contenedor del logo en el header*/
 .container-logo{
 	height:5em;
 	background-color: #fff;
 }
-
+/*Estilo para el logo del header*/
 .logo-banco-mundial{
 	height:3.75em;
 }
+/*Estilo para el footer*/
 .footer-style{
 	background-color: #262626;
 	height: 7em;
 }
-
+/*Contenedor de el slideshow*/
 .images-media{
 	max-width:100%;
  	position:relative;
  	margin:auto;
 	background-color: red;
 }
+/*Contenedor del texto*/
 .text-media{
 	height: 15em;
 	background-color:#fff; 
 }
+/*Estilo del formulario de login*/
 .contain-field-login{
 	width: 335px;
 	height: 210px;
 	display: block;
 	margin: auto;
 }
-.input-field-text{
-	width: 335px;
-	height: 82px;
-	background-color: #fff;
-}
+/**/
 .input-email, .input-password{
 	width: 335px;
 	height: 45px;
