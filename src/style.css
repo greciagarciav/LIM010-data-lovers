@@ -45,16 +45,22 @@
 
 /*--------------------------------------------HEADER---------------------------------------------------*/
 .container-logo{
-	height:5em;
+	height:64px;
 	background-color: #fff;
 }
 .logo-banco-mundial{
 	height: 3em;
 }
+.menu{
+	width: 40px;
+	height: 50px;
+	background-color: #4D97F0;
+	border: solid #4D97F0;
+}
 /*--------------------------------------------FOOTER---------------------------------------------------*/
 .footer-style{
 	background-color: #262626;
-	height: 10em;
+	height: 111px;
 }
 .social-media{
 	text-align: left;
@@ -132,6 +138,7 @@
 .incorrect{
 	text-align: center;
 	font-size: 16px;
+	padding: 1em;
 	color: red; 
 }
 .btn-ingresar{
@@ -210,11 +217,74 @@
 }
 .img-slide{
   width: 100%;
+  height: 547px;
 }
 .slideshow-container{
- max-width:75%;
+ max-width:100%;
  position:relative;
- margin:auto;
+ margin:20px auto;
+}
+
+.text{
+ color:black;
+ font-size:8px;
+ padding:8px 12px;
+ position:absolute;
+ bottom:8px;
+ width:100%;
+ text-align:center;
+}
+
+.numbertext{
+ color:#f2f2f2;
+ font-size:12px;
+ padding:8px 12px;
+ position:absolute;
+ top:0;
+}
+/*
+.fade{
+ -webkit-animation-name:fade;
+ -webkit-animation-duration:1.5s;
+ animation-name:fade;
+ animation-duration:1.5s;
+}
+
+@-webkit-keyframes fade{
+ from{opacity:.4}
+ to{opacity:1}
+}
+
+@keyframes fade{
+ from{opacity:.4}
+ to{opacity:1}
+}
+*/
+.data-explorer{
+	width: 120px;
+	height: 33px;
+	border-radius: 5px;
+	background-color: #3897f0;
+	font-size: 15px;
+	font-weight: 800;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 0.07;
+	letter-spacing: normal;
+	color: #ffffff;
+	display: block;
+	margin: 48px auto 25px auto;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	align-content: center;
+	justify-content: center;
+}
+.data-explorer:hover{
+	width: 125px;
+	height: 38px;
+	transition: .1s;
+	background-color:#3284d1; 
 }
 .prev, .next{
  cursor:pointer;
@@ -236,69 +306,58 @@
 .prev:hover, .next:hover{
  background-color:rgba(0,0,0,0.8);
 }
-.text{
- color:black;
- font-size:8px;
- padding:8px 12px;
- position:absolute;
- bottom:8px;
- width:100%;
- text-align:center;
-}
 
-.numbertext{
- color:#f2f2f2;
- font-size:12px;
- padding:8px 12px;
- position:absolute;
- top:0;
-}
-.fade{
- -webkit-animation-name:fade;
- -webkit-animation-duration:1.5s;
- animation-name:fade;
- animation-duration:1.5s;
-}
 
-@-webkit-keyframes fade{
- from{opacity:.4}
- to{opacity:1}
+/*----------------------------------------pantalla 2------------------------------------------------*/
+.indicator-per-country{
+	background-color: #002F54;
+	height: 473px;
+	margin: 20px auto;
 }
-
-@keyframes fade{
- from{opacity:.4}
- to{opacity:1}
-}
-
-.data-explorer{
-	width: 110px;
-	height: 40px;
-	border-radius: 5px;
-	background-color: #3897f0;
-	font-size: 15px;
-	font-weight: 800;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: 0.07;
-	letter-spacing: normal;
-	color: #ffffff;
-	display: block;
-	margin: 48px auto 25px auto;
+.indicator-title-1{
+	font-size: 13px;
+	color: white;
+	font-weight:400;
 	text-align: center;
-	border: none;
+}
+.indicator-title{
+	font-size: 13px;
+	color: white;
+	font-weight:400;
+}
+.icon-indicator{
+	width: 58px;
+	height: 58px;
 	cursor: pointer;
+}
+.text-indicator{
+	width: 315px;
+	height: 116px;
+	text-align: center;
+	color: white;
+	font-size: 12px;
+	margin: auto;
+
+}
+.contain-icon{
+	width: 61px;
+	height: 61px;
+	align-self: center;
+}
+.contain-icons{
+	display: flex;
+	width: 100%;
+	height: 167px;
 	align-content: center;
 	justify-content: center;
 }
-.data-explorer:hover{
-	width: 115px;
-	height: 45px;
-	transition: .1s;
-	background-color:#3284d1; 
+.icon-style-{
+	margin-right:40px;
 }
-
-
-
+.contain-text-d{
+	margin: 50px;
+	padding: 50px;
+}
 /*----------------------------------------------------------------------------------------------------*/
 
 /*Contenedor del texto*/
@@ -334,7 +393,7 @@
 		font-size: 16px;
 	}
 	.footer-style-d{
-		height: 10em;
+		height: 169px;
 	}
 	.copyright-d{
 		padding: .5em .5em;
@@ -344,7 +403,32 @@
 	text-align: left;
 	padding: .5em 5em;
 	}
-	.wrapper-social-media-d{
+	.data-explorer-d{
+	width: 231px;
+	height: 48px;
+	}
+	.data-explorer-d:hover{
+	width: 236px;
+	height: 53px;
+	transition: .1s;
+	background-color:#3284d1;
+	}
+	.indicator-title-1-d{
+	font-size: 35px;
+	}
+	.icon-indicator-d{
+		width: 147px;
+		height: 147px;
+	}
+	.indicator-title-d{
+	}
+	.text-indicator-d{
+		font-size: 18px;
+		height: 123px;
+		width: 1219px;
+	}
+	.icon-style-d{
+	margin-right: 60px;
 	}
 
 }
