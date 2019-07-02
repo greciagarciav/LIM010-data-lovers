@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="utf-8">
   <title>Banco Mundial | Indicadores</title>
@@ -12,6 +12,9 @@
     <div class="row container-logo">
       <div class="col-10">
         <a href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial|Indicadores de Desarrollo"></a>
+        <button class="menu">
+          <hr><hr><hr>
+        </button>
       </div>
     </div>
   </header>
@@ -24,8 +27,8 @@
             <div class="">
               <label class="label-style-login">Correo electrónico<input type="text" name="correo electronico" class="input-email input-email-d" id="email"></label>
               <label class="label-style-login">Contraseña<input type="password" name="contraseña" class="input-password input-password-d " id="password"></label>
-              <p class="hide incorrect" id="wrong-password" >Usuario y/o contraseña incorrectos</p>
               <label class="reset-password">¿Olvidaste tu contraseña?</label>
+              <p class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</p>
             </div>
           </form>
           <button type="button" class="btn-ingresar btn-ingresar-d" id="login-button">INGRESA</button>
@@ -41,9 +44,8 @@
           <div class="text text-d">
             <h1 class="">EL BANCO MUNDIAL EN PERÚ</h1> 
             <p class="info-peru info-peru-d">Las acertadas políticas macroeconómicas y estructurales del Perú, combinadas con condiciones externas propicias, han generado un crecimiento importante.</p>
-            <button type="button" class="data-explorer">Explorar Data</button>
+            <button type="button" class="data-explorer data-explorer-d" id="explore-data-peru">Explorar Data</button>
           </div>
-
         </div>
         <div class="slide fade hide-slide">
           <div class="numbertext">2 / 4</div>
@@ -51,7 +53,7 @@
           <div class="text text-d">
             <h1>El Banco Mundial en México</h1>
             <p>La labor del Banco Mundial en México se organiza en torno a un modelo que ofrece soluciones integrales y personalizadas para el desarrollo mediante un paquete de herramientas financieras, de conocimiento y coordinación en todas las ramas de la institución.</p>
-            <button type="button" class="data-explorer">Explorar Data</button>
+            <button type="button" class="data-explorer data-explorer-d" id="explore-data-mexico">Explorar Data</button>
           </div>
         </div>
         <div class="slide fade hide-slide">
@@ -60,7 +62,7 @@
           <div class="text text-d">
             <h1>El Banco Mundial en Chile</h1>
             <p>En las últimas décadas, Chile ha sido una de las economías de más rápido crecimiento en Latinoamérica. Esto le ha permitido una importante reducción de la pobreza. Por ejemplo, entre 2000 y 2015, la proporción de la población considerada pobre (US$4 por día) se redujo del 26 a 7.9%.</p>
-            <button type="button" class="data-explorer">Explorar Data</button>
+            <button type="button" class="data-explorer data-explorer-d" id="explore-data-chile">Explorar Data</button>
           </div>
         </div>
         <div class="slide fade hide-slide">
@@ -68,14 +70,13 @@
           <div class="text text-d">
             <h1>El Banco Mundial en Brasil</h1>
             <p>Brasil es la sexta mayor economía del mundo por PIB nominal, ocupando el octavo o noveno lugar por paridad de compra. A partir de los años 1990, el país adquirió estabilidad económica, atrayendo inversiones foráneas.</p>
-            <button type="button" class="data-explorer">Explorar Data</button>
+            <button type="button" class="data-explorer data-explorer-d" id="explore-data-brasil">Explorar Data</button>
           </div>
         </div>
-        <!--<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+       <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
     </section>
-
 <!--    <section class="hide" id="slide-show">
       <div class="row carousel-wrapper">
         <div class="col-10">
@@ -104,7 +105,122 @@
         </div>
     </section>
 
-    <section class="hide">
+    <section class="hide" id="indicator-peru">
+      <div class="indicator-per-country">
+        <p class="indicator-title-1 indicator-title-1-d">PERÚ: INDICADORES DE DESARROLLO</p>
+        <div class="contain-icons">
+          <figure class="icon-style icon-style-d">
+            <img src="img/education.png" name="si" class="icon-indicator icon-indicator-d" id="education-peru">
+            <figcaption class="indicator-title indicator-title-d">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/economy.png" class="icon-indicator icon-indicator-d" id="economy-peru">
+            <figcaption class="indicator-title indicator-title-d">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/works.png" class="icon-indicator icon-indicator-d" id="work-peru">
+            <figcaption class="indicator-title indicator-title-d">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/genders.png" class="icon-indicator icon-indicator-d" id="gender-peru">
+            <figcaption class="indicator-title indicator-title-d">GÉNERO</figcaption>
+          </figure>
+        </div>
+        <div class="contain-text contain-text-d">
+          <p class="text-indicator text-indicator-d">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hide" id="indicator-mexico">
+      <div class="indicator-per-country">
+        <p class="indicator-title-1 indicator-title-1-d">MÉXICO : INDICADORES DE DESARROLLO</p>
+        <div class="contain-icons">
+          <figure class="icon-style icon-style-d">
+            <img src="img/education.png" name="si" class="icon-indicator icon-indicator-d" id="education-mexico">
+            <figcaption class="indicator-title indicator-title-d">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/economy.png" class="icon-indicator icon-indicator-d" id="economy-mexico">
+            <figcaption class="indicator-title indicator-title-d">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/works.png" class="icon-indicator icon-indicator-d" id="work-mexico">
+            <figcaption class="indicator-title indicator-title-d">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/genders.png" class="icon-indicator icon-indicator-d" id="gender-mexico">
+            <figcaption class="indicator-title indicator-title-d">GÉNERO</figcaption>
+          </figure>
+        </div>
+        <div class="contain-text contain-text-d">
+          <p class="text-indicator text-indicator-d">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hide" id="indicator-chile">
+      <div class="indicator-per-country">
+        <p class="indicator-title-1 indicator-title-1-d">CHILE : INDICADORES DE DESARROLLO</p>
+        <div class="contain-icons">
+          <figure class="icon-style icon-style-d">
+            <img src="img/education.png" name="si" class="icon-indicator icon-indicator-d" id="education-chile">
+            <figcaption class="indicator-title indicator-title-d">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/economy.png" class="icon-indicator icon-indicator-d" id="economy-chile">
+            <figcaption class="indicator-title indicator-title-d">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/works.png" class="icon-indicator icon-indicator-d" id="work-chile">
+            <figcaption class="indicator-title indicator-title-d">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style icon-style-d">
+            <img src="img/genders.png" class="icon-indicator icon-indicator-d" id="gender-chile">
+            <figcaption class="indicator-title indicator-title-d">GÉNERO</figcaption>
+          </figure>
+        </div>
+        <div class="contain-text contain-text-d">
+          <p class="text-indicator text-indicator-d">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="hide" id="indicator-brasil">
+      <div class="indicator-per-country">
+        <p class="indicator-title-1 indicator-title-1-d">BRASIL : INDICADORES DE DESARROLLO</p>
+        <div class="contain-icon">
+          <figure>
+            <img src="img/education.png" name="si" class="icon-indicator icon-indicator-d" id="education-brasil">
+            <figcaption class="indicator-title indicator-title-d">EDUCACIÓN</figcaption>
+          </figure>
+        </div>
+        <div class="contain-icon">
+          <figure>
+            <img src="img/economy.png" class="icon-indicator icon-indicator-d" id="economy-brasil">
+            <figcaption class="indicator-title indicator-title-d">POBLACIÓN</figcaption>
+          </figure>
+        </div>
+        <div class="contain-icon">
+          <figure>
+            <img src="img/works.png" class="icon-indicator icon-indicator-d" id="work-brasil">
+            <figcaption class="indicator-title indicator-title-d">TRABAJO</figcaption>
+          </figure>
+        </div>
+        <div class="contain-icon">
+          <figure>
+            <img src="img/genders.png" class="icon-indicator icon-indicator-d" id="gender-brasil">
+            <figcaption class="indicator-title indicator-title-d">GÉNERO</figcaption>
+          </figure>
+        </div>
+        <div class="contain-text contain-text-d">
+          <p class="text-indicator text-indicator-d">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="hide" id="indicator-table">
         <div id="contenedor1">
           <h1 class="">PERU</h1>
         </div>
