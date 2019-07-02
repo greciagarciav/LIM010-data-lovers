@@ -42,7 +42,6 @@
 .bold-text{
 	font-weight: bold;
 }
-
 /*--------------------------------------------HEADER---------------------------------------------------*/
 .container-logo{
 	height:64px;
@@ -60,7 +59,9 @@
 /*--------------------------------------------FOOTER---------------------------------------------------*/
 .footer-style{
 	background-color: #262626;
-	height: 111px;
+	height: 110px;
+	display: flex;
+	flex-direction: column;
 }
 .social-media{
 	text-align: left;
@@ -69,9 +70,9 @@
 	color: white;
 }
 .wrapper-social-media{
-	height: 100px;
-	width: 114px;
 	margin: auto;
+	display: flex;
+	flex-direction: row;
 }
 .img-social-media{
 	height: 2em;
@@ -79,30 +80,38 @@
 }
 .copyright{
 	text-align: center;
-	font-size: .7em;
+	font-size: 10px;
 	background-color: transparent;
 	color: white;
 }
 /*---------------------------------------------- LOGIN -----------------------------------------------*/
-.contain-all-login{
+.container-all-login{
 	width: 375px;
 	height: 667px;
-	background-color: #f7f7f7;
-	display: block;
+	background-color:#f7f7f7;
+	display: flex;
+	flex-direction: column;
+}
+.container-logo{
+	display: flex;
 	margin: auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	background-color: transparent;
 }
 
 .logo-login{
-	padding-top: 100px;
-	padding-bottom: 50px; 
 	margin: auto; 
 	width:199px;
-	display: block;
+	align-self: center;
+}
+.login-form{
+	display: flex;
+	flex-direction: column;
 }
 .contain-field-login{
 	width: 335px;
 	height: 210px;
-	display: block;
 	margin: auto;
 }
 .label-style-login{
@@ -124,6 +133,13 @@
   border: none;
   margin: auto;
 }
+.container-reset{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px;
+	
+}
 .reset-password{
 	width: 190px;
 	height: 22px;
@@ -140,6 +156,10 @@
 	font-size: 16px;
 	padding: 1em;
 	color: red; 
+}
+.container-btn-ingresar{
+	display: flex;
+	flex-direction: column;
 }
 .btn-ingresar{
 	width: 335px;
@@ -158,18 +178,22 @@
 	text-align: center;
 	border: none;
 	cursor: pointer;
-	align-content: center;
-	justify-content: center;
+}
+.container-new-account{
+	display: flex;
+	flex-direction: column;
+	height: 22px;
+	width: 335px;
+	padding-bottom: 120px;
 }
 .new-account{
 	width: 335px;
 	height: 22px;
 	font-size: 16px;
 	line-height:1px;
-	display:block;
 	margin: auto;
+	text-align: center;
 }
-
 /*----------------------------------------SLIDESHOW-------------------------------------------------------*/
 /*
 .carousel-wrapper{
@@ -311,14 +335,15 @@
 /*----------------------------------------pantalla 2------------------------------------------------*/
 .indicator-per-country{
 	background-color: #002F54;
-	height: 473px;
-	margin: 20px auto;
+	height: 690px;
+	margin: 20 px auto;
 }
 .indicator-title-1{
 	font-size: 13px;
 	color: white;
 	font-weight:400;
 	text-align: center;
+	padding-top: 47px;
 }
 .indicator-title{
 	font-size: 13px;
@@ -347,16 +372,16 @@
 .contain-icons{
 	display: flex;
 	width: 100%;
-	height: 167px;
+	height: 170px;
 	align-content: center;
 	justify-content: center;
+	margin-top: 70px;
 }
 .icon-style-{
-	margin-right:40px;
+	margin-right:100px;
 }
 .contain-text-d{
-	margin: 50px;
-	padding: 50px;
+	padding: 70px;
 }
 /*----------------------------------------------------------------------------------------------------*/
 
@@ -366,69 +391,73 @@
 	background-color:#fff; 
 }
 
-
 .text-format{
 	text-align: center;
 	padding: 1em;
 }
 
 /*--------------------------------------------Media query---------------------------------------*/
-@media(min-width: 380px){
-	.contain-all-login-d{
+@media screen and (min-width:400px){
+	.container-all-login{
 		width: 684px;
   		height: 693px;
   		margin: auto;
 	}
-	.input-email-d, .input-password-d{
+	.input-email, .input-password{
 		width: 448px;
 		height: 70px;
 		margin: auto;
 	}
-	.btn-ingresar-d{
+	.btn-ingresar{
 		width: 184px;
 		height: 51px;
 		margin: 48px auto 25px auto;
 	}
-	.text-d{
+	.text{
 		font-size: 16px;
+		color: white;
 	}
-	.footer-style-d{
-		height: 169px;
+	.footer-style{
+		height: 110px;
 	}
-	.copyright-d{
+	.copyright{
 		padding: .5em .5em;
 		text-align: right;
 	}
-	.social-media-d{
+	.social-media{
 	text-align: left;
 	padding: .5em 5em;
 	}
-	.data-explorer-d{
+	.data-explorer{
 	width: 231px;
 	height: 48px;
 	}
-	.data-explorer-d:hover{
+	.data-explorer:hover{
 	width: 236px;
 	height: 53px;
 	transition: .1s;
 	background-color:#3284d1;
 	}
-	.indicator-title-1-d{
+	.indicator-title-1{
 	font-size: 35px;
 	}
-	.icon-indicator-d{
+	.icon-indicator{
 		width: 147px;
 		height: 147px;
 	}
-	.indicator-title-d{
+	.indicator-title{
 	}
-	.text-indicator-d{
+	.text-indicator{
 		font-size: 18px;
 		height: 123px;
 		width: 1219px;
 	}
-	.icon-style-d{
+	.icon-style{
 	margin-right: 60px;
 	}
+	.wrapper-social-media{
+	margin: auto;
+	float: left;
+}
 
 }
