@@ -94,7 +94,7 @@ const showSlides = ()=> {
     slideIndex = 1;
   }
   slides[slideIndex - 1].classList.remove('hide-slide');
-  //setTimeout(showSlides, 5000);
+  setTimeout(showSlides, 5000);
 };
 showSlides();
 const plusSlides = (n)=> {
