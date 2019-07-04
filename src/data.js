@@ -30,53 +30,56 @@ window.indicators = indicators;
 
 // };
 
-const indicatorsPeru = WORLDBANK.PER.indicators;
+const paises = Object.entries(WORLDBANK);
+for (let i=0; i<paises.length; i++){
+//    console.log(WORLDBANK[paises[i]].indicators)
+// }
+  const indicatorNames = WORLDBANK[paises[i]].indicators;
+  for (let i=0; i<indicatorNames.length;i++){
+    console.log(indicatorNames[i].indicatorName)
+  }}
+
+
+// const indicatorsPeru = WORLDBANK.PER.indicators;
 // const indicatorsMexico= WORLDBANK.MEX.indicators;
 // const indicatorsBrasil= WORLDBANK.BRA.indicators;
 // const indicatorsChile= WORLDBANK.CHL.indicators;
 
-let educationPer= [];
-let populationPer= [];
-let workPer= [];
-let genderPer= [];
+// let educationPer= [];
+// let populationPer= [];
+// let workPer= [];
+// let genderPer= [];
+
+// for(let i=0; i<indicatorsPeru.length; i++){
+//   if(indicatorsPeru[i].indicatorCode.split(".")[0]=="SE"){
+//     educationPer.push([indicatorsPeru[i]]);
+//     for (let i=0; i<educationPer.length; i++){
+//       educationPer[i].data
+//     }
+//   }
+//   else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SP" || indicatorsPeru[i].indicatorCode.split(".")[0]=="IC" || indicatorsPeru[i].indicatorCode.split(".")[0]=="SH"){
+//     populationPer.push([indicatorsPeru[i]]);    
+//   }
+//   else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SL" || indicatorsPeru[i].indicatorCode.split("_")[0]=="per" || indicatorsPeru[i].indicatorCode.split(".")[0]=="HD" || indicatorsPeru[i].indicatorCode.split(".")[0]=="MS" || indicatorsPeru[i].indicatorCode.split(".")[0]=="DT"){
+//     workPer.push([indicatorsPeru[i]]);
+//   }
+//   else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SG"){
+//     genderPer.push([indicatorsPeru[i]]);
+//   }
+// }
+// console.log(educationPer)
+// console.log(populationPer)
+// console.log(workPer)
+// console.log(genderPer)
+
+
+
+
 
 // let educationMex= [];
 // let populationMex= [];
 // let workMex= [];
 // let genderMex= [];
-
-// let educationBra= [];
-// let populationBra= [];
-// let workBra= [];
-// let genderBra= [];
-
-// let educationChl= [];
-// let populationChl= [];
-// let workChl= [];
-// let genderChl= [];
-
-for(let i=0; i<indicatorsPeru.length; i++){
-  if(indicatorsPeru[i].indicatorCode.split(".")[0]=="SE"){
-    educationPer.push([indicatorsPeru[i]]);
-    for (let i=0; i<educationPer.length; i++){
-      educationPer[i].data
-    }
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SP" || indicatorsPeru[i].indicatorCode.split(".")[0]=="IC" || indicatorsPeru[i].indicatorCode.split(".")[0]=="SH"){
-    populationPer.push([indicatorsPeru[i]]);    
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SL" || indicatorsPeru[i].indicatorCode.split("_")[0]=="per" || indicatorsPeru[i].indicatorCode.split(".")[0]=="HD" || indicatorsPeru[i].indicatorCode.split(".")[0]=="MS" || indicatorsPeru[i].indicatorCode.split(".")[0]=="DT"){
-    workPer.push([indicatorsPeru[i]]);
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SG"){
-    genderPer.push([indicatorsPeru[i]]);
-  }
-}
-console.log(educationPer)
-console.log(populationPer)
-console.log(workPer)
-console.log(genderPer)
-
 
 // for(let i=0; i<indicatorsMexico.length; i++){
 //   if(indicatorsMexico[i].indicatorCode.split(".")[0]=="SE"){
@@ -97,6 +100,12 @@ console.log(genderPer)
 // console.log(workMex)
 // console.log(genderMex)
 
+
+// let educationBra= [];
+// let populationBra= [];
+// let workBra= [];
+// let genderBra= [];
+
 // for(let i=0; i<indicatorsBrasil.length; i++){
 //   if(indicatorsBrasil[i].indicatorCode.split(".")[0]=="SE"){
 //     educationBra.push(indicatorsBrasil[i].indicatorName);
@@ -115,6 +124,12 @@ console.log(genderPer)
 // console.log(populationBra)
 // console.log(workBra)
 // console.log(genderBra)
+
+
+// let educationChl= [];
+// let populationChl= [];
+// let workChl= [];
+// let genderChl= [];
 
 // for(let i=0; i<indicatorsChile.length; i++){
 //   if(indicatorsChile[i].indicatorCode.split(".")[0]=="SE"){
