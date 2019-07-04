@@ -1,4 +1,8 @@
 /*Reseteando todo el documento*/
+a{
+	cursor: pointer;
+	padding:10px;
+}
 *{
 	box-sizing: border-box;
 	margin: 0;

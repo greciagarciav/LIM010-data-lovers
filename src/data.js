@@ -1,17 +1,7 @@
 /* Manejo de data */
-
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
-/*
-const indicators = (indicatorsArray,index) => {
-  let indicatorNameArray = [];
-  indicatorNameArray = indicatorsArray.filter(populationElement => populationElement.indicators === index);
-  return 'indicatorsArray';
-  console.log(indicatorNameArray);
-};
 
-window.indicators = indicators;
-*/
 // const dataBancoMundial = (data) => {
 //   let arrayBancoMundial = [];
 //   for (let i =0; i< data.length; i++){
@@ -21,69 +11,38 @@ window.indicators = indicators;
 
 //     }
 //     return arrayBancoMundial;
-   
 // };
 
-
-// window.worldbank = {
-//   dataBancoMundial: dataBancoMundial, 
-
-// };
-
-const indicatorsPeru = WORLDBANK.PER.indicators;
-// const indicatorsMexico= WORLDBANK.MEX.indicators;
-// const indicatorsBrasil= WORLDBANK.BRA.indicators;
-// const indicatorsChile= WORLDBANK.CHL.indicators;
-
-let educationPer= [];
-let populationPer= [];
-let workPer= [];
-let genderPer= [];
-
-// let educationMex= [];
-// let populationMex= [];
-// let workMex= [];
-// let genderMex= [];
-
-// let educationBra= [];
-// let populationBra= [];
-// let workBra= [];
-// let genderBra= [];
-
-// let educationChl= [];
-// let populationChl= [];
-// let workChl= [];
-// let genderChl= [];
-
-for(let i=0; i<indicatorsPeru.length; i++){
-  if(indicatorsPeru[i].indicatorCode.split(".")[0]=="SE"){
-    educationPer.push([indicatorsPeru[i]]);
-    for (let i=0; i<educationPer.length; i++){
-      educationPer[i].data
+const indicators = (indicators) => {
+  let educationPer = [];
+  let populationPer = [];
+  let workPer = [];
+  let genderPer = [];
+  for (let i = 0; i < indicators.length ; i++) {
+    // eslint-disable-next-line quotes
+    if (indicators[i].indicatorCode.split(".")[0] === "SE") {
+      educationPer.push(indicators[i].indicatorName);
+    }// eslint-disable-next-line quotes
+    else if (indicators[i].indicatorCode.split(".")[0] === "SP" || indicators[i].indicatorCode.split(".")[0] === "IC" || indicators[i].indicatorCode.split(".")[0] === "SH") {
+      populationPer.push(indicators[i].indicatorName);
+    }
+    // eslint-disable-next-line quotes
+    else if (indicators[i].indicatorCode.split(".")[0] === "SL" || indicators[i].indicatorCode.split("_")[0] === "per" || indicators[i].indicatorCode.split(".")[0] === "HD" || indicators[i].indicatorCode.split(".")[0] === "MS" || indicators[i].indicatorCode.split(".")[0] === "DT") {
+      workPer.push(indicators[i].indicatorName);
+    }
+    // eslint-disable-next-line quotes
+    else if (indicators[i].indicatorCode.split(".")[0] === "SG") {
+      genderPer.push(indicators[i].indicatorName);
     }
   }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SP" || indicatorsPeru[i].indicatorCode.split(".")[0]=="IC" || indicatorsPeru[i].indicatorCode.split(".")[0]=="SH"){
-    populationPer.push([indicatorsPeru[i]]);    
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SL" || indicatorsPeru[i].indicatorCode.split("_")[0]=="per" || indicatorsPeru[i].indicatorCode.split(".")[0]=="HD" || indicatorsPeru[i].indicatorCode.split(".")[0]=="MS" || indicatorsPeru[i].indicatorCode.split(".")[0]=="DT"){
-    workPer.push([indicatorsPeru[i]]);
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SG"){
-    genderPer.push([indicatorsPeru[i]]);
-  }
-}
-console.log(educationPer)
-console.log(populationPer)
-console.log(workPer)
-console.log(genderPer)
+  return {educationPer: educationPer, populationPer: populationPer, workPer: workPer, genderPer: genderPer}
+};
 
+//console.log(indicators(indicators).educationPer);
 
-// for(let i=0; i<indicatorsMexico.length; i++){
-//   if(indicatorsMexico[i].indicatorCode.split(".")[0]=="SE"){
-//     educationMex.push(indicatorsMexico[i].indicatorName);
-//   }
-//   else if (indicatorsMexico[i].indicatorCode.split(".")[0]=="SP" || indicatorsMexico[i].indicatorCode.split(".")[0]=="IC" || indicatorsMexico[i].indicatorCode.split(".")[0]=="SH"){
-//     populationMex.push(indicatorsMexico[i].indicatorName); 
+window.worldbank = {
+  indicators: indicators, 
+};
 //   }
 //   else if (indicatorsMexico[i].indicatorCode.split(".")[0]=="SL" || indicatorsMexico[i].indicatorCode.split("_")[0]=="per" || indicatorsMexico[i].indicatorCode.split(".")[0]=="HD" || indicatorsMexico[i].indicatorCode.split(".")[0]=="MS" || indicatorsMexico[i].indicatorCode.split(".")[0]=="DT"){
 //     workMex.push(indicatorsMexico[i].indicatorName); 
