@@ -12,7 +12,7 @@
 //     }
 //     return arrayBancoMundial;
 // };
-
+//
 const indicators = (indicators) => {
   let educationPer = [];
   let populationPer = [];
