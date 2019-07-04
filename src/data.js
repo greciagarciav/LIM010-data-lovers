@@ -2,17 +2,61 @@
 
 // esta es una función de ejemplo
 // puedes ver como agregamos la función a nuestro objeto global window
-/*
-const indicators = (indicatorsArray,index) => {
-	let indicatorNameArray = [];
-	indicatorNameArray = indicatorsArray.filter(populationElement => populationElement.indicators === index);
-  return 'indicatorsArray';
-  console.log(indicatorNameArray);
-};
 
-window.indicators = indicators;
+/* const example = () => {
+  return example;
+};
+window.example = example;
 */
-const dataBancoMundial = (data) => {
+/*
+const indicatorsPeru = WORLDBANK.PER.indicators;
+
+const indicators = () => {
+  let educationPer = [];
+  let populationPer = [];
+  let workPer = [];
+  let genderPer = [];
+  for (let i = 0; i < indicatorsPeru.length ; i++) {
+    // eslint-disable-next-line quotes
+    if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SE") {
+      educationPer.push(indicatorsPeru[i].indicatorName);
+    }// eslint-disable-next-line quotes
+    else if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SP" || indicatorsPeru[i].indicatorCode.split(".")[0] === "IC" || indicatorsPeru[i].indicatorCode.split(".")[0] === "SH") {
+      populationPer.push(indicatorsPeru[i].indicatorName);
+    }
+    // eslint-disable-next-line quotes
+    else if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SL" || indicatorsPeru[i].indicatorCode.split("_")[0] === "per" || indicatorsPeru[i].indicatorCode.split(".")[0] === "HD" || indicatorsPeru[i].indicatorCode.split(".")[0] === "MS" || indicatorsPeru[i].indicatorCode.split(".")[0] === "DT") {
+      workPer.push(indicatorsPeru[i].indicatorName);
+    }
+    // eslint-disable-next-line quotes
+    else if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SG") {
+      genderPer.push(indicatorsPeru[i].indicatorName);
+    }
+    return {workPer: workPer, 
+      educationPer: educationPer};
+  }
+  console.log(populationPer);
+  console.log(workPer);
+  console.log(genderPer);
+  console.log(educationPer);
+};
+window.indicators = {indicators, 
+  workPer};
+*/
+/*
+const data = WORLDBANK.PER.indicators;
+const dataArray = Object.entries(data);
+for (let i = 0 ; i < dataArray.length ; i++){
+    //console.log(dataArray [i]);
+    for (let j = 0 ; j< dataArray[i].length ; j++){
+     console.log(dataArray[i][j].data);
+     //const a = dataArray[i][j].data;
+     //console.log(a.);
+    }
+}
+*/
+/*
+const dataBancoMundial = () => {
   let arrayBancoMundial = [];
   for (let i =0; i< data.length; i++){
      arrayBancoMundial.push({
@@ -30,51 +74,99 @@ window.worldbank = {
 
 };
 
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+/*----
 const indicatorsPeru = WORLDBANK.PER.indicators;
+const catEduPer = ()=>{
+  let educationPer = [];
+  for (let i = 0; i < indicatorsPeru.length ; i++) {
+    // eslint-disable-next-line quotes
+    if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SE") {
+      educationPer.push(indicatorsPeru[i].indicatorName);
+    }
+    for (let j = 0; j < educationPer.length; j++) {
+      console.log(`Educacion : ${educationPer[j]}`);
+    }
+    return educationPer;
+  }
+};
+window.catEduPer = catEduPer;
+*/
+/*
+const indicatorsPeru = WORLDBANK.PER.indicators;
+let educationPer = [];
+for (let i = 0; i < indicatorsPeru.length ; i++) {
+  // eslint-disable-next-line quotes
+  if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SE") {
+    educationPer.push(indicatorsPeru[i].indicatorName);
+  }
+  for (let j = 0; j < educationPer.length; j++) {
+    console.log(`Educacion : ${educationPer[j]}`);
+  }
+}
+
+let populationPer = [];
+for (let i = 0; i < indicatorsPeru.length ; i++) {
+  // eslint-disable-next-line quotes
+  if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SP" || indicatorsPeru[i].indicatorCode.split(".")[0] === "IC" || indicatorsPeru[i].indicatorCode.split(".")[0] === "SH") {
+    populationPer.push(indicatorsPeru[i].indicatorName);
+  }
+  for (let j = 0 ; j < populationPer.length ; j++) {
+    console.log(`Poblacion : ${populationPer[j]}`);
+  }
+}
+
+let workPer = [];
+for (let i = 0; i < indicatorsPeru.length ; i++) {
+  // eslint-disable-next-line quotes
+  if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SL" || indicatorsPeru[i].indicatorCode.split("_")[0] === "per" || indicatorsPeru[i].indicatorCode.split(".")[0] === "HD" || indicatorsPeru[i].indicatorCode.split(".")[0] === "MS" || indicatorsPeru[i].indicatorCode.split(".")[0] === "DT") {
+    workPer.push(indicatorsPeru[i].indicatorName);
+  }
+  for (let j = 0 ; j < workPer.length ; j++) {
+    console.log(`Trabajo : ${workPer[j]}`);
+  }
+}
+
+let genderPer = [];
+for (let i = 0; i < indicatorsPeru.length ; i++) {
+  // eslint-disable-next-line quotes
+  if (indicatorsPeru[i].indicatorCode.split(".")[0] === "SG") {
+    genderPer.push(indicatorsPeru[i].indicatorName);
+  }
+  for (let j = 0 ; j < genderPer.length ; j++) {
+    console.log(`Género : ${genderPer[j]}`);
+  }
+}
+*/
+/*
+const todosIndicadoresPeru = WORLDBANK.PER.indicators;
+console.log(todosIndicadoresPeru);
+
+const todosIndicadoresPeruArr = Object.entries(todosIndicadoresPeru);
+console.log(todosIndicadoresPeruArr);
+
+const todosAñosPeru = WORLDBANK.PER.indicators[0].data;
+const todosAñosPeruArr = Object.entries(todosAñosPeru);
+console.log(todosAñosPeruArr);
+
+
 const indicatorsMexico= WORLDBANK.MEX.indicators;
-const indicatorsBrasil= WORLDBANK.BRA.indicators;
-const indicatorsChile= WORLDBANK.CHL.indicators;
-
-let educationPer= [];
-let populationPer= [];
-let workPer= [];
-let genderPer= [];
-
 let educationMex= [];
 let populationMex= [];
 let workMex= [];
 let genderMex= [];
-
-let educationBra= [];
-let populationBra= [];
-let workBra= [];
-let genderBra= [];
-
-let educationChl= [];
-let populationChl= [];
-let workChl= [];
-let genderChl= [];
-
-for(let i=0; i<indicatorsPeru.length; i++){
-  if(indicatorsPeru[i].indicatorCode.split(".")[0]=="SE"){
-    educationPer.push(indicatorsPeru[i].indicatorName);
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SP" || indicatorsPeru[i].indicatorCode.split(".")[0]=="IC" || indicatorsPeru[i].indicatorCode.split(".")[0]=="SH"){
-    populationPer.push(indicatorsPeru[i].indicatorName);    
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SL" || indicatorsPeru[i].indicatorCode.split("_")[0]=="per" || indicatorsPeru[i].indicatorCode.split(".")[0]=="HD" || indicatorsPeru[i].indicatorCode.split(".")[0]=="MS" || indicatorsPeru[i].indicatorCode.split(".")[0]=="DT"){
-    workPer.push(indicatorsPeru[i].indicatorName);
-  }
-  else if (indicatorsPeru[i].indicatorCode.split(".")[0]=="SG"){
-    genderPer.push(indicatorsPeru[i].indicatorName);
-  }
-}
-console.log(educationPer)
-console.log(populationPer)
-console.log(workPer)
-console.log(genderPer)
-
-
 for(let i=0; i<indicatorsMexico.length; i++){
   if(indicatorsMexico[i].indicatorCode.split(".")[0]=="SE"){
     educationMex.push(indicatorsMexico[i].indicatorName);
@@ -89,10 +181,16 @@ for(let i=0; i<indicatorsMexico.length; i++){
     genderMex.push(indicatorsMexico[i].indicatorName);  
   }
 }
-console.log(educationMex)
-console.log(populationMex)
-console.log(workMex)
-console.log(genderMex)
+console.log(educationMex);
+console.log(populationMex);
+console.log(workMex);
+console.log(genderMex);
+
+const indicatorsBrasil= WORLDBANK.BRA.indicators;
+let educationBra= [];
+let populationBra= [];
+let workBra= [];
+let genderBra= [];
 
 for(let i=0; i<indicatorsBrasil.length; i++){
   if(indicatorsBrasil[i].indicatorCode.split(".")[0]=="SE"){
@@ -108,11 +206,16 @@ for(let i=0; i<indicatorsBrasil.length; i++){
     genderBra.push(indicatorsBrasil[i].indicatorName); 
   }
 }
-console.log(educationBra)
-console.log(populationBra)
-console.log(workBra)
-console.log(genderBra)
+console.log(educationBra);
+console.log(populationBra);
+console.log(workBra);
+console.log(genderBra);
 
+const indicatorsChile= WORLDBANK.CHL.indicators;
+let educationChl= [];
+let populationChl= [];
+let workChl= [];
+let genderChl= [];
 for(let i=0; i<indicatorsChile.length; i++){
   if(indicatorsChile[i].indicatorCode.split(".")[0]=="SE"){
     educationChl.push(indicatorsChile[i].indicatorName);
@@ -127,7 +230,7 @@ for(let i=0; i<indicatorsChile.length; i++){
     genderChl.push(indicatorsChile[i].indicatorName);
   }
 }
-console.log(educationChl)
-console.log(populationChl)
-console.log(workChl)
-console.log(genderChl)
+console.log(educationChl);
+console.log(populationChl);
+console.log(workChl);
+console.log(genderChl);*/

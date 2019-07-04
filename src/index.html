@@ -9,8 +9,8 @@
 </head>
 <body>
   <header class="hide" id="header">
-    <div class="row container-logo">
-      <div class="col-10">
+    <div class="container-logo">
+      <div>
         <a href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial|Indicadores de Desarrollo"></a>
         <button class="menu">
           <hr><hr><hr>
@@ -19,28 +19,20 @@
     </div>
   </header>
 
-  <main>
+  <main >
     <section class="hide" id="login">
       <div class="container-all-login">
-        <div class="container-logo">
-          <img class="logo-login" src="img/logo-banco-mundial.png">
-        </div>
-        <div class="login-form">
-          <form class="contain-field-login">
-            <label class="label-style-login">Usuario<input type="text" name="usuario" class="input-email" id="email"></label>
-            <label class="label-style-login">Contraseña<input type="password" name="contraseña" class="input-password" id="password"></label>
-            <div class="container-reset">
-              <p class="reset-password">¿Olvidaste tu contraseña?</p>
-            </div>
-            <p class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</p>
+          <form class="contain-form-field-login">
+            <img class="logo-login" src="img/logo-banco-mundial.png">
+            <label class="label-caption" >Usuario</label>
+            <input type="text" name="usuario" class="fill-login" id="email">
+            <label class="label-caption">Contraseña</label>
+            <input type="password" name="contraseña" class="fill-login" id="password">
+            <label class="label-caption-reset">¿Olvidaste tu contraseña?</label>
+            <label class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</label>
+            <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
+            <label class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></label>
           </form>
-        </div>
-        <div class="container-btn-ingresar">
-          <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
-          <div class="container-new-account">
-            <p class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></p>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -105,9 +97,9 @@
     </section>-->
 
     <section class="hide">
-      <div class="row text-media">
+      <div class="text-media">
         <!--<div class="col-10">m</div>-->
-        <div class="col-10">
+        <div>
           <p class="bold-text text-format">Indicadores del Desarrollo Mundial</p>
           <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.</p>
         </div>
@@ -228,27 +220,32 @@
     </section>
 
 
-    <section class="hide" id="indicator-table">
-        <div id="contenedor1">
-          <h1 class="">PERU</h1>
-        </div>
-        <div id="contenedor2">MÉXICO</div>
-        <div id="contenedor3">CHILE</div>
-        <div id="contenedor4">BRASIL</div>
-        <!--<div class="col-10">m</div>-->
-      </div>
+    <section class="hide" id="indicator-table-peru-education">
+        <div id="container-indicators-category">
+          <table>
+            <caption>Aqui van los titulos de las categorias</caption>
+            <tr>
+              <th>N°</th>
+              <th>Indicadores</th>
+            </tr>
+            <tr>
+              <th id="nro"></th>
+              <th></th>
+            </tr>
+          </table>
+        </div>        
     </section>
   </main>
 
-  <footer class="row hide" id="footer">
+  <footer class="hide" id="footer">
     <div class="footer-style">
-    <p class="col-10 social-media">SÍGANOS</p>
+    <p class="social-media">SÍGANOS</p>
     <div class="wrapper-social-media">
       <a href="https://www.facebook.com/bancomundial"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
       <a href="https://twitter.com/bancomundial"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
       <a href="https://www.instagram.com/bancomundial/"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
     </div>
-    <p class="col-10 copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
+    <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
     </div>
   </footer>
 
