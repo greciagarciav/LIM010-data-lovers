@@ -1,3 +1,4 @@
+const dataWorldbank = WORLDBANK;
 /* ----------------------------------------------LOGIN------------------------------------------------ */
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -129,6 +130,19 @@ const genderBrasil = document.getElementById('gender-brasil');
 genderBrasil.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
 });
+
+const access = document.getElementById('education-peru');
+access.addEventListener('click',()=>{
+  const indicatorsPer = window.worldbank.indicators(dataWorldbank.PER.indicators);
+  //console.log(indicatorsPer.educationPer);
+  const a = indicatorsPer.educationPer;
+  //console.log(a);
+  for ( let i = 0 ; i < a.length ; i++){
+    document.getElementById('aqui').innerHTML +=`<a href="#"> ${a[i]}</a>`;
+  }
+});
+
+
 
 /* Aqui en el main se va a hacer un for para recorrer las categorias*/
 /*for (let i = 0 ; i < workPer.length ; i++) {
