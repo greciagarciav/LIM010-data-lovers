@@ -4,8 +4,8 @@
 // puedes ver como agregamos la función a nuestro objeto global window
 /*
 const indicators = (indicatorsArray,index) => {
-	let indicatorNameArray = [];
-	indicatorNameArray = indicatorsArray.filter(populationElement => populationElement.indicators === index);
+  let indicatorNameArray = [];
+  indicatorNameArray = indicatorsArray.filter(populationElement => populationElement.indicators === index);
   return 'indicatorsArray';
   console.log(indicatorNameArray);
 };
