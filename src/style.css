@@ -1,16 +1,22 @@
 /*Reseteando todo el documento*/
 a{
+	display: flex;
+	flex-direction: column;
+	padding: 5px 10px 15px 10px;
 	cursor: pointer;
-	padding:10px;
+	text-decoration: none;
+	color: #4D97F0;
 }
+.a{ display: flex;
+	flex-direction: row;
+	padding: 15px 15px 15px 30px;
+ }
 *{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
-
-/*------------------------------------------------------------------------------------------------------*/
 /*Esconde las pantallas */
 .hide{
 	display: none;
@@ -18,6 +24,11 @@ a{
 .bold-text{
 	font-weight: bold;
 }
+.flex {
+	display: flex;
+	align-content: center;
+}
+
 /*--------------------------------------------HEADER---------------------------------------------------*/
 .container-logo{
 	height:64px;
@@ -63,7 +74,7 @@ a{
 /*---------------------------------------------- LOGIN -----------------------------------------------*/
 .container-all-login{
 	min-height: 100vh;
-	background-color:grey;
+	background-color:#F7F7F7;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -149,47 +160,99 @@ a{
 	cursor: pointer;
 }
 /*----------------------------------------SLIDESHOW--------------------------------------------------------*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
 /*
-.carousel-wrapper{
-	width: 100%;
-	margin: auto;
-	display: block;
-	overflow: hidden;
-}
-.img-slide{
-	height:500px;
-	width: 1000px;
-	margin: auto;
-}
-.button-next{
-
-}
-.next-b{
-	height: 50px;
-	margin: auto;
-	color: white;
-	background-color: green;
-}
-.next-c{
-	height: 50px;
-	margin: auto;
-	color: white;
-	background-color: blue;
-}
-.next-m{
-	height: 50px;
-	margin: auto;
-	color: white;
-	background-color: black;
-}
-.next-p{
-	height: 50px;
-	margin: auto;
-	color: white;
-	background-color: red;
-}
-*/
-
 .hide-slide{
   display: none;
 }
@@ -264,27 +327,6 @@ a{
 	transition: .1s;
 	background-color:#3284d1; 
 }
-.prev, .next{
- cursor:pointer;
- position:absolute;
- top:50%;
- width:auto;
- margin-top:-22px;
- padding:16px;
- color:white;
- font-weight:bold;
- font-size:18px;
- transition:0.6s ease;
- border-radius:0 3px 3px 0;
-}
-.next{
- right:0;
- border-radius:3px 0 0 3px;
-}
-.prev:hover, .next:hover{
- background-color:rgba(0,0,0,0.8);
-}
-
 
 /*----------------------------------------pantalla 2------------------------------------------------*/
 .indicator-per-country{
@@ -309,8 +351,7 @@ a{
 	cursor: pointer;
 }
 .text-indicator{
-	width: 315px;
-	height: 116px;
+	width: 80%;
 	text-align: center;
 	color: white;
 	font-size: 12px;
@@ -400,8 +441,8 @@ a{
 	}
 	.text-indicator{
 		font-size: 18px;
-		height: 123px;
-		width: 1219px;
+		width: 80%;
+		padding-top: 50px;
 	}
 	.icon-style{
 	margin-right: 60px;
@@ -409,17 +450,49 @@ a{
 	.wrapper-social-media{
 	margin: auto;
 	float: left;
-}
-
+	}
+	.flex{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.flex-table{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+	}
+	.flex-row{
+		display: flex;
+		flex-direction: row;
+	}
+	.c{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	.nro{
+		width: 10%;
+		color: #002F54;
+		font-size: 18px;
+	}
+	.indicador{
+		width: 90%;
+		color: #002F54;
+		font-size: 18px;
+		text-align: center;
+	}
+	.to-schrink{
+		height: 400px;
+	}
 }
 
 
 table {
    width: 100%;
 }
-th, td {
-   width: 25%;
-   text-align: left;
+th{
+   text-align: justify;
    vertical-align: top;
    border: 1px solid #000;
 }
