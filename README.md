@@ -63,8 +63,8 @@ El menú hambuerguesa, según el testeo, no lograba ser diferenciado a simple vi
 
 ![Captura 2](https://user-images.githubusercontent.com/51206642/60403074-2dd9f280-9b5e-11e9-9314-7dd6d6095d11.JPG)
 
-![Captura 3](https://user-images.githubusercontent.com/51206642/60737459-79a2e800-9f20-11e9-816f-7e8e3056e253.png)
+![Captura 3](https://user-images.githubusercontent.com/51206642/60737771-8411b180-9f21-11e9-8f82-08312a4f70aa.jpeg)
 
-![Captura 4](https://user-images.githubusercontent.com/51206642/60736811-ec5e9400-9f1d-11e9-8c8e-5ca03f431518.png)
+![Captura 4](https://user-images.githubusercontent.com/51206642/60737850-c76c2000-9f21-11e9-84b1-785f02ade8bf.jpg)
 
-![Captura 5](https://user-images.githubusercontent.com/51206642/60736999-b66ddf80-9f1e-11e9-972e-f64f5c095478.png)
+![Captura 5](https://user-images.githubusercontent.com/51206642/60737917-04d0ad80-9f22-11e9-9713-b9203f845200.jpg)
