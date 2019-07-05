@@ -42,6 +42,10 @@ El sitio web muestra grandes cantidades de datos con una interfaz amigable y que
 
 ![P2](https://user-images.githubusercontent.com/51206642/60403177-a8574200-9b5f-11e9-9fb8-a0af5f846709.jpeg)
 
+![P3](https://user-images.githubusercontent.com/51206642/60734233-e3b59000-9f14-11e9-8f08-4a1cb3f3e6bf.jpeg)
+
+![P4](https://user-images.githubusercontent.com/51206642/60734234-e3b59000-9f14-11e9-9857-e08258a0557a.jpeg)
+
 
 ## Feedback
 En el Login como equipo pensamos que sería bueno mostrar el header y footer desde el inicio, pero según el feedback el logo se repetía. Por lo que decidimos retirarlo para que quede más limpio y no este sobrecargado. Lo mismo pasó con el footer, lo sacamos para que no se vea sobrecargado. 
@@ -59,4 +63,8 @@ El menú hambuerguesa, según el testeo, no lograba ser diferenciado a simple vi
 
 ![Captura 2](https://user-images.githubusercontent.com/51206642/60403074-2dd9f280-9b5e-11e9-9314-7dd6d6095d11.JPG)
 
+![Captura 3](https://user-images.githubusercontent.com/51206642/60737459-79a2e800-9f20-11e9-816f-7e8e3056e253.png)
 
+![Captura 4](https://user-images.githubusercontent.com/51206642/60736811-ec5e9400-9f1d-11e9-8c8e-5ca03f431518.png)
+
+![Captura 5](https://user-images.githubusercontent.com/51206642/60736999-b66ddf80-9f1e-11e9-972e-f64f5c095478.png)
