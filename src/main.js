@@ -1,4 +1,5 @@
 const dataWorldbank = WORLDBANK;
+let indicatorsPer = [];
 /* ----------------------------------------------LOGIN------------------------------------------------- */
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -120,14 +121,66 @@ educationPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-education').classList.remove('hide');
   document.getElementById('text-apoyo').classList.add('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
-  const indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
+  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
   console.log(indicatorsPer.educationPer);
   const educArrPer = indicatorsPer.educationPer;
-  for ( let i = 0 ; i < educArrPer.length ; i++){
-    document.getElementById('ind-educ-per').innerHTML +=`<a href="#">- ${educArrPer[i].indicatorName}</a>`;
+  
+  let tableEduPer = document.getElementById("ind-edu-per");
+  tableEduPer.innerHTML = "";
+  let rowHeaderEduPer = tableEduPer.insertRow(0);
 
+  let cellHeaderEduPer1 = rowHeaderEduPer.insertCell(0);
+  let cellHeaderEduPer2 = rowHeaderEduPer.insertCell(1);
+  cellHeaderEduPer1.innerHTML = "N°";
+  cellHeaderEduPer1.setAttribute('class', "nro"); 
+  cellHeaderEduPer2.innerHTML = "Indicadores";
+  cellHeaderEduPer2.setAttribute('class', "indicador");
+
+  for ( let i = 0 ; i < educArrPer.length ; i++){
+    var rowEduPer = tableEduPer.insertRow(i+1);
+    var cellEduPer1 = rowEduPer.insertCell(0);
+    var cellEduPer2 = rowEduPer.insertCell(1);
+    cellEduPer1.innerHTML = i+1;
+    cellEduPer2.innerHTML = `<a href="javascript:showDataEduPer(${i})"> ${educArrPer[i].indicatorName}</a>`;
   }
 });
+
+const showDataEduPer = (indexEduPer)=>{
+  
+  document.getElementById('indicator-peru').classList.add('hide');
+  document.getElementById('indicator-table-peru-education').classList.add('hide');
+  document.getElementById('showDataIndicator').classList.remove('hide');
+  console.log(indicatorsPer.educationPer[indexEduPer].data);
+
+  let tableDataEduPer = document.getElementById("data-per");
+    tableDataEduPer.innerHTML = "";
+    let rowHeaderDataEduPer = tableDataEduPer.insertRow(0);
+
+    let cellHeaderDataEduPer1 = rowHeaderDataEduPer.insertCell(0);
+    let cellHeaderDataEduPer2 = rowHeaderDataEduPer.insertCell(1);
+    cellHeaderDataEduPer1.innerHTML = "Años";
+    cellHeaderDataEduPer1.setAttribute('class', "nro"); 
+    cellHeaderDataEduPer2.innerHTML = "Valores";
+    cellHeaderDataEduPer2.setAttribute('class', "indicador");
+
+  let dataEduPer = indicatorsPer.educationPer[indexEduPer].data;
+  let i = 0;
+  Object.entries(dataEduPer).forEach(([key, value]) => {
+    if(value != ""){
+      console.log(key + ' ' + value + '%'); 
+    
+      let rowDataEduPer = tableDataEduPer.insertRow(i+1);
+      let cellDataEduPer = rowDataEduPer.insertCell(0);
+      let cellDataEduPer2 = rowDataEduPer.insertCell(1);
+      cellDataEduPer.innerHTML= key;
+      cellDataEduPer.setAttribute('class', "nro"); 
+      cellDataEduPer2.innerHTML= value;
+      cellDataEduPer2.setAttribute('class', "indicador");
+      i++;
+    }   
+});     
+}
+// -------------------------------------------------------
 const populationPeru = document.getElementById('population-peru');
 populationPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-gender').classList.add('hide');
@@ -135,28 +188,136 @@ populationPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-education').classList.add('hide');
   document.getElementById('indicator-table-peru-population').classList.remove('hide');
   document.getElementById('text-apoyo').classList.add('hide');
-  const indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
+  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
   console.log(indicatorsPer.populationPer);
   const popArrPer = indicatorsPer.populationPer;
+  
+  let tablePopPer = document.getElementById("ind-pop-per");
+  tablePopPer.innerHTML = "";
+  let rowHeaderPopPer = tablePopPer.insertRow(0);
+
+  let cellHeaderPopPer1 = rowHeaderPopPer.insertCell(0);
+  let cellHeaderPopPer2 = rowHeaderPopPer.insertCell(1);
+  cellHeaderPopPer1.innerHTML = "N°";
+  cellHeaderPopPer1.setAttribute('class', "nro"); 
+  cellHeaderPopPer2.innerHTML = "Indicadores";
+  cellHeaderPopPer2.setAttribute('class', "indicador");
+
   for ( let i = 0 ; i < popArrPer.length ; i++){
-    document.getElementById('ind-pop-per').innerHTML +=`<a href="#"> ${popArrPer[i].indicatorName}</a>`;
+    var rowPopPer = tablePopPer.insertRow(i+1);
+    var cellPopPer1 = rowPopPer.insertCell(0);
+    var cellPopPer2 = rowPopPer.insertCell(1);
+    cellPopPer1.innerHTML = i+1;
+    cellPopPer2.innerHTML = `<a href="javascript:showDataPopPer(${i})"> ${popArrPer[i].indicatorName}</a>`;
   }
 });
+const showDataPopPer = (indexPopPer)=>{
+  
+  document.getElementById('indicator-peru').classList.add('hide');
+  document.getElementById('indicator-table-peru-population').classList.add('hide');
+  document.getElementById('showDataIndicator').classList.remove('hide');
+  console.log(indicatorsPer.populationPer[indexPopPer].data);
+
+  let tableDataPopPer = document.getElementById("data-per");
+    tableDataPopPer.innerHTML = "";
+    let rowHeaderDataPopPer = tableDataPopPer.insertRow(0);
+
+    let cellHeaderDataPopPer1 = rowHeaderDataPopPer.insertCell(0);
+    let cellHeaderDataPopPer2 = rowHeaderDataPopPer.insertCell(1);
+    cellHeaderDataPopPer1.innerHTML = "Años";
+    cellHeaderDataPopPer1.setAttribute('class', "nro"); 
+    cellHeaderDataPopPer2.innerHTML = "Valores";
+    cellHeaderDataPopPer2.setAttribute('class', "indicador");
+
+  let dataPopPer = indicatorsPer.populationPer[indexPopPer].data;
+  let i = 0;
+  Object.entries(dataPopPer).forEach(([key, value]) => {
+    if(value != ""){
+      console.log(key + ' ' + value + '%'); 
+    
+      let rowDataPopPer = tableDataPopPer.insertRow(i+1);
+      let cellDataPopPer = rowDataPopPer.insertCell(0);
+      let cellDataPopPer2 = rowDataPopPer.insertCell(1);
+      cellDataPopPer.innerHTML= key;
+      cellDataPopPer.setAttribute('class', "nro"); 
+      cellDataPopPer2.innerHTML= value;
+      cellDataPopPer2.setAttribute('class', "indicador");
+      i++;
+    }   
+});     
+
+}
+// -------------------------------------------------------
 const workPeru = document.getElementById('work-peru');
+// let indicatorsPer = [];
 workPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-gender').classList.add('hide');
   document.getElementById('indicator-table-peru-education').classList.add('hide');
   document.getElementById('indicator-table-peru-population').classList.add('hide');
   document.getElementById('indicator-table-peru-work').classList.remove('hide');
-  const indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
+  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
   console.log(indicatorsPer.workPer)
   const workArrPer = indicatorsPer.workPer;
+
+ let tableWorkPer = document.getElementById("ind-wrk-per");
+  tableWorkPer.innerHTML = "";
+  let rowHeaderWorkPer = tableWorkPer.insertRow(0);
+  
+  let cellHeaderWorkPer1 = rowHeaderWorkPer.insertCell(0);
+  let cellHeaderWorkPer2 = rowHeaderWorkPer.insertCell(1);
+  cellHeaderWorkPer1.innerHTML = "N°";
+  cellHeaderWorkPer1.setAttribute('class', "nro"); 
+  cellHeaderWorkPer2.innerHTML = "Indicadores";
+  cellHeaderWorkPer2.setAttribute('class', "indicador");
+
   for ( let i = 0 ; i < workArrPer.length ; i++){
-    document.getElementById('ind-work-per').innerHTML +=`<a href="#"> ${workArrPer[i].indicatorName}</a>`;
+
+    var rowWorkPer = tableWorkPer.insertRow(i+1);
+    var cellWorkPer1 = rowWorkPer.insertCell(0);
+    var cellWorkPer2 = rowWorkPer.insertCell(1);
+    cellWorkPer1.innerHTML = i+1;
+    cellWorkPer2.innerHTML = `<a href="javascript:showDataWorkPer(${i})"> ${workArrPer[i].indicatorName}</a>`;
   }
 });
+const showDataWorkPer = (indexWork)=>{
+  
+  document.getElementById('indicator-peru').classList.add('hide');
+  document.getElementById('indicator-table-peru-work').classList.add('hide');
+  document.getElementById('showDataIndicator').classList.remove('hide');
+  console.log(indicatorsPer.workPer[indexWork].data);
+ 
+  
+  let tableDataWork = document.getElementById("data-per");
+  tableDataWork.innerHTML = "";
+  let rowHeaderDataWork = tableDataWork.insertRow(0);
+
+  let cellHeaderDataWork1 = rowHeaderDataWork.insertCell(0);
+  let cellHeaderDataWork2 = rowHeaderDataWork.insertCell(1);
+  cellHeaderDataWork1.innerHTML = "Años";
+  cellHeaderDataWork1.setAttribute('class', "nro"); 
+  cellHeaderDataWork2.innerHTML = "Valores";
+  cellHeaderDataWork2.setAttribute('class', "indicador");
+
+  let data = indicatorsPer.workPer[indexWork].data;
+  let i = 0;
+  Object.entries(data).forEach(([key, value]) => {
+    if(value != ""){
+      console.log(key + ' ' + value + '%'); 
+    
+      let rowDataWork = tableDataWork.insertRow(i+1);
+      let cellDataWork = rowDataWork.insertCell(0);
+      let cellDataWork2 = rowDataWork.insertCell(1);
+      cellDataWork.innerHTML= key;
+      cellDataWork.setAttribute('class', "nro"); 
+      cellDataWork2.innerHTML= value;
+      cellDataWork2.setAttribute('class', "indicador");
+      i++;
+    }   
+});
+}
+// -------------------------------------------------------------------------------------
 const genderPeru = document.getElementById('gender-peru');
-let indicatorsPer = [];
+// let indicatorsPer = [];
 genderPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-education').classList.add('hide');
   document.getElementById('indicator-table-peru-population').classList.add('hide');
@@ -166,8 +327,6 @@ genderPeru.addEventListener('click', ()=>{
   console.log(indicatorsPer.genderPer);
   const genArrPer = indicatorsPer.genderPer;
 
-  
-  
   let table = document.getElementById("ind-gen-per");
   table.innerHTML = "";
   let rowHeader = table.insertRow(0);
@@ -185,13 +344,13 @@ genderPeru.addEventListener('click', ()=>{
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
     cell1.innerHTML = i+1;
-    cell2.innerHTML = `<a href="javascript:Prueba(${i})"> ${genArrPer[i].indicatorName}</a>`;
+    cell2.innerHTML = `<a href="javascript:showDataGenPer(${i})"> ${genArrPer[i].indicatorName}</a>`;
 
     // document.getElementById('ind-gen-per').appendChild(`<tr><td> 1 </td><td><a index="${i}" href="#"> ${genArrPer[i].indicatorName}</a></td></tr>`);
   }
 });
 
-function Prueba(index){
+const showDataGenPer = (index)=>{
   // console.log(index);
   document.getElementById('indicator-peru').classList.add('hide');
   document.getElementById('indicator-table-peru-gender').classList.add('hide');
@@ -199,7 +358,7 @@ function Prueba(index){
   console.log(indicatorsPer.genderPer[index].data);
   // console.log(indicatorsPer.genderPer[index].indicatorName);
   
-  let tableData = document.getElementById("data-gen-per");
+  let tableData = document.getElementById("data-per");
   tableData.innerHTML = "";
   let rowHeaderData = tableData.insertRow(0);
 
@@ -224,11 +383,8 @@ function Prueba(index){
       cellData2.innerHTML= value;
       cellData2.setAttribute('class', "indicador");
       i++;
-
     }   
-
 });
-
 }
 
 /* ----------------------Al hacer click en el ícono de la categoria : MEXICO----------------------------------*/ 
