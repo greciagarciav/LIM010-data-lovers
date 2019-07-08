@@ -1,3 +1,98 @@
+/*---------------------------------Hamburger Menu-----------------------------------------*/
+.hamburger{
+  background-color:transparent;
+	height:30px;
+	width:30px;
+	margin-right: 20px;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:-webkit-transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	z-index:1002;
+	cursor:pointer;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none
+}
+.hamburger.is-active{
+  background-color:none;
+}
+._layer{
+	background:#3897f0;
+	margin-bottom:4px;
+	border-radius:2px;
+	width:28px;
+	height:4px;
+	opacity:1;
+	-webkit-transform:translate3d(0, 0, 0);
+	transform:translate3d(0, 0, 0);
+	-webkit-transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+	transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+.hamburger:hover .-top{
+	-webkit-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+.hamburger:hover .-bottom{
+	-webkit-transform:translateY(100%);
+	-ms-transform:translateY(100%);
+	transform:translateY(100%);
+	}
+.hamburger.is-active .-top{
+	-webkit-transform:translateY(200%) rotate(45deg) !important;
+	-ms-transform:translateY(200%) rotate(45deg) !important;
+	transform:translateY(200%) rotate(45deg) !important;
+}
+.hamburger.is-active .-mid{
+	opacity:0;
+}
+.hamburger.is-active .-bottom{
+	-webkit-transform:translateY(-200%) rotate(135deg) !important;
+	-ms-transform:translateY(-200%) rotate(135deg) !important;
+	transform:translateY(-200%) rotate(135deg) !important;
+}
+
+.menuppal.is_active{
+  transform: translate3d(0px, 0px, 0px);
+}
+.menuppal{
+   background-color: rgba(255, 255, 255, 0.95);
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    transform: translate3d(0px, -100%, 0px);
+    transition: transform 0.35s cubic-bezier(0.05, 1.04, 0.72, 0.98) 0s;
+    width: 100%;
+    z-index: 1001;
+}
+.menuppal ul{
+  margin:0;padding:0;
+}
+.menuppal ul li { 
+  list-style: none;
+	text-align:center;
+	font-family: Verdadna, Arial, Helvetica;
+	color:$nav-color-text;
+	font-size:1.5rem;
+	line-height:3em;
+	height:3em;
+  color:#369;
+	text-transform:none;
+	font-weight:bold;
+}
+.menuppal ul li a{
+  text-decoration:none;
+  color:#369;
+}
+.menuppal ul li a:hover{
+  text-decoration:none;
+  color:#333;
+}
 /*Reseteando todo el documento*/
 a{
 	display: flex;
@@ -35,7 +130,7 @@ a{
 	background-color: #fff;
 }
 .logo-banco-mundial{
-	height: 3em;
+	height: 2em;
 }
 .menu{
 	width: 40px;
@@ -43,6 +138,13 @@ a{
 	background-color: #4D97F0;
 	border: solid #4D97F0;
 }
+/* -----------------------*/
+.flex-row{
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+	}
 /*--------------------------------------------FOOTER---------------------------------------------------*/
 .footer-style{
 	background-color: #262626;
@@ -162,7 +264,7 @@ a{
 /*----------------------------------------SLIDESHOW--------------------------------------------------------*/
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 95%;
   position: relative;
   margin: auto;
 }
@@ -199,10 +301,15 @@ a{
   background-color: rgba(0,0,0,0.8);
 }
 
+.slide-show-text{
+	background-color: rgba(0,0,0,0.8);
+	color: #ffffff;
+	margin:5px auto;
+	width: max-content;
+}
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
+  font-size: 11px;
   padding: 8px 12px;
   position: absolute;
   bottom: 8px;
@@ -210,7 +317,7 @@ a{
   text-align: center;
 }
 
-/* Number text (1/3 etc) */
+/* Number text (1/4 etc) */
 .numbertext {
   color: #f2f2f2;
   font-size: 12px;
@@ -252,84 +359,29 @@ a{
   from {opacity: .4} 
   to {opacity: 1}
 }
-/*
-.hide-slide{
-  display: none;
-}
-.img-slide{
-  width: 100%;
-  height: 547px;
-}
-.slideshow-container{
- max-width:100%;
- position:relative;
- margin:20px auto;
-}
-
-.text{
- color:black;
- font-size:8px;
- padding:8px 12px;
- position:absolute;
- bottom:8px;
- width:100%;
- text-align:center;
-}
-
-.numbertext{
- color:#f2f2f2;
- font-size:12px;
- padding:8px 12px;
- position:absolute;
- top:0;
-}
-/*
-.fade{
- -webkit-animation-name:fade;
- -webkit-animation-duration:1.5s;
- animation-name:fade;
- animation-duration:1.5s;
-}
-
-@-webkit-keyframes fade{
- from{opacity:.4}
- to{opacity:1}
-}
-
-@keyframes fade{
- from{opacity:.4}
- to{opacity:1}
-}
-*/
 .data-explorer{
-	width: 120px;
-	height: 33px;
+	width: 100px;
+	height: 20px;
 	border-radius: 5px;
 	background-color: #3897f0;
-	font-size: 15px;
+	font-size: 12px;
 	font-weight: 800;
-	font-style: normal;
-	font-stretch: normal;
-	line-height: 0.07;
-	letter-spacing: normal;
 	color: #ffffff;
-	display: block;
-	margin: 48px auto 25px auto;
-	text-align: center;
 	border: none;
 	cursor: pointer;
-	align-content: center;
-	justify-content: center;
 }
 .data-explorer:hover{
-	width: 125px;
-	height: 38px;
+	width: 105px;
+	height: 25px;
 	transition: .1s;
 	background-color:#3284d1; 
 }
 
 /*----------------------------------------pantalla 2------------------------------------------------*/
 .indicator-per-country{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: #002F54;
 	height: 690px;
 }
@@ -337,8 +389,9 @@ a{
 	font-size: 13px;
 	color: white;
 	font-weight:400;
-	text-align: center;
-	padding-top: 47px;
+	margin-top: 23px;
+	border: #ffffff solid 1px;
+	width: max-content;
 }
 .indicator-title{
 	font-size: 13px;
@@ -406,7 +459,10 @@ a{
 	line-height: 25px;
 	height: 37px;
 	color: #000000;
-}
+	}
+	.logo-banco-mundial{
+	height: 3em;
+	}
 	.text{
 		font-size: 16px;
 		color: white;
@@ -425,6 +481,8 @@ a{
 	.data-explorer{
 	width: 231px;
 	height: 48px;
+	margin:20px auto;
+	font-size: 16px;
 	}
 	.data-explorer:hover{
 	width: 236px;
@@ -434,6 +492,12 @@ a{
 	}
 	.indicator-title-1{
 	font-size: 35px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: max-content;
+	border: #ffffff solid 4px;
+	margin-top: 36px;
 	}
 	.icon-indicator{
 		width: 147px;
@@ -462,10 +526,7 @@ a{
 		align-items: center;
 		padding: 20px;
 	}
-	.flex-row{
-		display: flex;
-		flex-direction: row;
-	}
+
 	.c{
 		display: flex;
 		flex-direction: row;
@@ -484,6 +545,32 @@ a{
 	}
 	.to-schrink{
 		height: 400px;
+	}
+	.bgc{
+		background-color: rgba(0,0,0,0.8);
+	}
+	.slide-show-text-add-peru:before{
+		height: text-content;
+		width: text-content;
+		content: "Las acertadas políticas macroeconómicas y estructurales del Perú, combinadas con condiciones externas propicias, han generado un crecimiento importante.";
+	}
+	.slide-show-text-add-mexico:before{
+		height: text-content;
+		width: text-content;
+		content: "La labor del Banco Mundial en México se organiza en torno a un modelo que ofrece soluciones integrales y personalizadas para el desarrollo mediante un paquete de herramientas financieras, de conocimiento y coordinación en todas las ramas de la institución.";
+	}
+	.slide-show-text-add-chile:before{
+		height: text-content;
+		width: text-content;
+		content: "En las últimas décadas, Chile ha sido una de las economías de más rápido crecimiento en Latinoamérica. Esto le ha permitido una importante reducción de la pobreza. Por ejemplo, entre 2000 y 2015, la proporción de la población considerada pobre (US$4 por día) se redujo del 26 a 7.9%.";
+	}
+	.slide-show-text-add-brasil:before{
+		height: text-content;
+		width: text-content;
+		content: "Brasil es la sexta mayor economía del mundo por PIB nominal, ocupando el octavo o noveno lugar por paridad de compra. A partir de los años 1990, el país adquirió estabilidad económica, atrayendo inversiones foráneas.";
+	}
+	.hamburger{
+		margin-right: 50px;
 	}
 }
 

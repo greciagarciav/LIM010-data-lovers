@@ -98,6 +98,18 @@ const indicatorsBrasilCategory = (indicatorsBrasilCategory) => {
   return {educationBra: educationBra, populationBra: populationBra, workBra: workBra, genderBra: genderBra}
 };
 
+const ascending = (datasi)=>{
+  for (let i = 0 ; i < datasi.length ; i++) {
+    const datas = datasi[i].data;
+    const arrDatas = Object.entries(datas);
+    //console.log(arrDatas);
+  }
+  return
+};
+
+const descending = (datasi)=>{
+  return -1 * ascending();
+};
 
 
 
@@ -105,18 +117,66 @@ const indicatorsBrasilCategory = (indicatorsBrasilCategory) => {
 
 
 //console.log(indicators(indicators).educationPer);
-
 window.worldbank = {
   indicatorsPeruCategory: indicatorsPeruCategory,
   indicatorsMexicoCategory: indicatorsMexicoCategory,
   indicatorsChileCategory: indicatorsChileCategory,
   indicatorsBrasilCategory: indicatorsBrasilCategory,
+  ascending: ascending,
+  descending:descending,
 };
 
 
 
 
+/*  const arrPeru = WORLDBANK.PER.indicators;//array de objetos
+  //console.log(arrPeru);//se visualiza el array de objetos
+  for (let i = 0 ; i <arrPeru.length ; i++) {
+    //console.log(arrPeru[i]);//se ve los objetos uno por uno.
+    const datas = arrPeru[i].data;//se ve las datas una por una.tipo objeto
+    //console.log(datas);
+    const datasArrKey = Object.keys(datas);
+    const datasArrValue = Object.values(datas);
+    //console.log(datasArr);
+    datasArrKey.reverse();//ordena de a-d y d-a
+    datasArrValue.reverse();
+    //console.log(datasArrKey);
+    //console.log(datasArrValue);
+    const arrDatas = Object.entries(datas);//vuelve las 139 datas en vector y dentro de ellas hay 58 vectores.
+    //const datas = WORLDBANK.PER.indicators[i].data;//se ve las datas una por una.
+    const arrDatasKeyValue = arrDatas;
+    arrDatasKeyValue.reverse();
+    console.log (arrDatasKeyValue);
+    for (let j = 0 ; j < arrDatas.length ; j++){
+      const año = arrDatas[j];//devuelve 8062 vectores dentro de ellos hay 2 posiciones de año y valor
+      //console.log(año);
+      for ( let k = 0 ; k < año.length ; k++){
+        const añoValor = año[k];
+      }
+    }
+  }*/
 
+
+
+/*const arrPeru = WORLDBANK.PER.indicators;//array de objetos
+//console.log(arrPeru);//se visualiza el array de objetos
+for (let i = 0 ; i <arrPeru.length ; i++) {
+//console.log(arrPeru[i]);//se ve los objetos uno por uno.
+const datas = arrPeru[i].data;//se ve las datas una por una.tipo objeto
+//console.log(datas);
+const datasArrKey = Object.keys(datas);
+const datasArrValue = Object.values(datas);
+//console.log(datasArr);
+datasArrKey.reverse();//ordena de a-d y d-a
+datasArrValue.reverse();
+console.log(datasArrKey);
+console.log(datasArrValue);
+const arrDatas = Object.entries(datas);//vuelve las 139 datas en vector y dentro de ellas hay 58 vectores.
+//const datas = WORLDBANK.PER.indicators[i].data;//se ve las datas una por una.
+const arrDatasKeyValue = arrDatas;
+arrDatasKeyValue.reverse();
+//console.log (arrDatasKeyValue);
+}*/
 
 
 /*
@@ -151,46 +211,6 @@ window.worldbank = {
   indicators: indicators, 
 };
 */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //   }
 //   else if (indicatorsMexico[i].indicatorCode.split(".")[0]=="SL" || indicatorsMexico[i].indicatorCode.split("_")[0]=="per" || indicatorsMexico[i].indicatorCode.split(".")[0]=="HD" || indicatorsMexico[i].indicatorCode.split(".")[0]=="MS" || indicatorsMexico[i].indicatorCode.split(".")[0]=="DT"){
 //     workMex.push(indicatorsMexico[i].indicatorName); 

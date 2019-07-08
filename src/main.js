@@ -25,23 +25,10 @@ sentLogin.addEventListener('click', ()=>{
 
 
 /* --------------------------------SLIDESHOW---------------------------------------------------*/
-var slideIndex = 1;
-showSlides(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+const showSlides = (n)=> {
+  let i;
+  const slides = document.getElementsByClassName("mySlides");
+  const dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1} 
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
@@ -53,29 +40,18 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block"; 
   dots[slideIndex-1].className += " active";
 }
+let slideIndex = 1;
+showSlides(slideIndex);
 
-
-/*
-let slideIndex = 0;
-const showSlides = ()=> {
-  let i;
-  let slides = document.getElementsByClassName('slide');
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.add('hide-slide');
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].classList.remove('hide-slide');
-  setTimeout(showSlides, 5000);
-};
-showSlides();
-// eslint-disable-next-line id-length
-const plusSlides = (n)=> {
+// Next/previous controls
+let plusSlides = (n)=> {
   showSlides(slideIndex += n);
-};
-*/
+}
+
+// Thumbnail image controls
+let currentSlide = (n) => {
+  showSlides(slideIndex = n);
+}
 /* ----------------------------------Al hacer click en el boton explorar data-------------------------------------*/
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', ()=>{
@@ -328,6 +304,23 @@ genderBrasil.addEventListener('click', ()=>{
     document.getElementById('ind-gen-bra').innerHTML +=`<a href="#"> ${genArrBra[i]}</a>`;
   }
 });
+
+const allPeru = WORLDBANK.PER.indicators;
+const allIndicatorPeru = document.getElementById('all-indicator-peru');
+allIndicatorPeru.addEventListener('click',()=>{
+  document.getElementById('slide-show').classList.add('hide');
+  document.getElementById('text-under-slide').classList.add('hide');
+  document.getElementById('indicator-peru').classList.remove('hide');
+  document.getElementById('text-apoyo').classList.remove('hide');
+  document.getElementById('to-shrink').classList.remove('to-shrink');
+  //for (let i = 0 ; i<allPeru.length ; i++){
+    //document.getElementById('allperu').innerHTML +=`<a href="#"> ${allPeru[i].indicatorName}</a>`;
+  //}
+});
+
+const a = ascending(dataWorldbank.PER.indicators);
+
+  
 /*
 const access = document.getElementById('education-peru');
 access.addEventListener('click',()=>{
@@ -340,3 +333,17 @@ access.addEventListener('click',()=>{
   }
 });
 */
+
+/*---------------------------Hamburger Menu---------------------------------------------------*/
+// selector
+var menu = document.querySelector('.hamburger');
+
+// method
+function toggleMenu (event) {
+  this.classList.toggle('is-active');
+  document.querySelector( ".menuppal" ).classList.toggle("is_active");
+  event.preventDefault();
+}
+
+// event
+menu.addEventListener('click', toggleMenu, false);
