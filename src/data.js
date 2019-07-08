@@ -6,22 +6,24 @@ const indicatorsPeruCategory = (indicatorsPeruCategory) => {
   for (let i = 0; i < indicatorsPeruCategory.length ; i++) {
     // eslint-disable-next-line quotes
     if (indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "SE") {
-      educationPer.push(indicatorsPeruCategory[i].indicatorName);
+      educationPer.push(indicatorsPeruCategory[i]);
     }// eslint-disable-next-line quotes
     else if (indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "SP" || indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "IC" || indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "SH") {
-      populationPer.push(indicatorsPeruCategory[i].indicatorName);
+      populationPer.push(indicatorsPeruCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "SL" || indicatorsPeruCategory[i].indicatorCode.split("_")[0] === "per" || indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "HD" || indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "MS" || indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "DT") {
-      workPer.push(indicatorsPeruCategory[i].indicatorName);indicatorsPeruCategory
+      workPer.push(indicatorsPeruCategory[i]);indicatorsPeruCategory
     }
     // eslint-disable-next-line quotes
     else if (indicatorsPeruCategory[i].indicatorCode.split(".")[0] === "SG") {
-      genderPer.push(indicatorsPeruCategory[i].indicatorName);
+      genderPer.push(indicatorsPeruCategory[i]);
     }
   }
   return {educationPer: educationPer, populationPer: populationPer, workPer: workPer, genderPer: genderPer}
 };
+
+
 
 const indicatorsMexicoCategory = (indicatorsMexicoCategory) => {
   let educationMex = [];
@@ -31,18 +33,18 @@ const indicatorsMexicoCategory = (indicatorsMexicoCategory) => {
   for (let i = 0; i < indicatorsMexicoCategory.length ; i++) {
     // eslint-disable-next-line quotes
     if (indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "SE") {
-      educationMex.push(indicatorsMexicoCategory[i].indicatorName);
+      educationMex.push(indicatorsMexicoCategory[i]);
     }// eslint-disable-next-line quotes
     else if (indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "SP" || indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "IC" || indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "SH") {
-      populationMex.push(indicatorsMexicoCategory[i].indicatorName);
+      populationMex.push(indicatorsMexicoCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "SL" || indicatorsMexicoCategory[i].indicatorCode.split("_")[0] === "per" || indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "HD" || indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "MS" || indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "DT") {
-      workMex.push(indicatorsMexicoCategory[i].indicatorName);
+      workMex.push(indicatorsMexicoCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsMexicoCategory[i].indicatorCode.split(".")[0] === "SG") {
-      genderMex.push(indicatorsMexicoCategory[i].indicatorName);
+      genderMex.push(indicatorsMexicoCategory[i]);
     }
   }
   return {educationMex: educationMex, populationMex: populationMex, workMex: workMex, genderMex: genderMex}
@@ -56,18 +58,18 @@ const indicatorsChileCategory = (indicatorsChileCategory) => {
   for (let i = 0; i < indicatorsChileCategory.length ; i++) {
     // eslint-disable-next-line quotes
     if (indicatorsChileCategory[i].indicatorCode.split(".")[0] === "SE") {
-      educationChl.push(indicatorsChileCategory[i].indicatorName);
+      educationChl.push(indicatorsChileCategory[i]);
     }// eslint-disable-next-line quotes
     else if (indicatorsChileCategory[i].indicatorCode.split(".")[0] === "SP" || indicatorsChileCategory[i].indicatorCode.split(".")[0] === "IC" || indicatorsChileCategory[i].indicatorCode.split(".")[0] === "SH") {
-      populationChl.push(indicatorsChileCategory[i].indicatorName);
+      populationChl.push(indicatorsChileCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsChileCategory[i].indicatorCode.split(".")[0] === "SL" || indicatorsChileCategory[i].indicatorCode.split("_")[0] === "per" || indicatorsChileCategory[i].indicatorCode.split(".")[0] === "HD" || indicatorsChileCategory[i].indicatorCode.split(".")[0] === "MS" || indicatorsChileCategory[i].indicatorCode.split(".")[0] === "DT") {
-      workChl.push(indicatorsChileCategory[i].indicatorName);
+      workChl.push(indicatorsChileCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsChileCategory[i].indicatorCode.split(".")[0] === "SG") {
-      genderChl.push(indicatorsChileCategory[i].indicatorName);
+      genderChl.push(indicatorsChileCategory[i]);
     }
   }
   return {educationChl: educationChl, populationChl: populationChl, workChl: workChl, genderChl: genderChl}
@@ -81,18 +83,18 @@ const indicatorsBrasilCategory = (indicatorsBrasilCategory) => {
   for (let i = 0; i < indicatorsBrasilCategory.length ; i++) {
     // eslint-disable-next-line quotes
     if (indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "SE") {
-      educationBra.push(indicatorsBrasilCategory[i].indicatorName);
+      educationBra.push(indicatorsBrasilCategory[i]);
     }// eslint-disable-next-line quotes
     else if (indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "SP" || indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "IC" || indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "SH") {
-      populationBra.push(indicatorsBrasilCategory[i].indicatorName);
+      populationBra.push(indicatorsBrasilCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "SL" || indicatorsBrasilCategory[i].indicatorCode.split("_")[0] === "per" || indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "HD" || indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "MS" || indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "DT") {
-      workBra.push(indicatorsBrasilCategory[i].indicatorName);
+      workBra.push(indicatorsBrasilCategory[i]);
     }
     // eslint-disable-next-line quotes
     else if (indicatorsBrasilCategory[i].indicatorCode.split(".")[0] === "SG") {
-      genderBra.push(indicatorsBrasilCategory[i].indicatorName);
+      genderBra.push(indicatorsBrasilCategory[i]);
     }
   }
   return {educationBra: educationBra, populationBra: populationBra, workBra: workBra, genderBra: genderBra}

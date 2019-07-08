@@ -124,7 +124,8 @@ educationPeru.addEventListener('click', ()=>{
   console.log(indicatorsPer.educationPer);
   const educArrPer = indicatorsPer.educationPer;
   for ( let i = 0 ; i < educArrPer.length ; i++){
-    document.getElementById('ind-educ-per').innerHTML +=`<a href="#">- ${educArrPer[i]}</a>`;
+    document.getElementById('ind-educ-per').innerHTML +=`<a href="#">- ${educArrPer[i].indicatorName}</a>`;
+
   }
 });
 const populationPeru = document.getElementById('population-peru');
@@ -138,7 +139,7 @@ populationPeru.addEventListener('click', ()=>{
   console.log(indicatorsPer.populationPer);
   const popArrPer = indicatorsPer.populationPer;
   for ( let i = 0 ; i < popArrPer.length ; i++){
-    document.getElementById('ind-pop-per').innerHTML +=`<a href="#"> ${popArrPer[i]}</a>`;
+    document.getElementById('ind-pop-per').innerHTML +=`<a href="#"> ${popArrPer[i].indicatorName}</a>`;
   }
 });
 const workPeru = document.getElementById('work-peru');
@@ -151,22 +152,84 @@ workPeru.addEventListener('click', ()=>{
   console.log(indicatorsPer.workPer)
   const workArrPer = indicatorsPer.workPer;
   for ( let i = 0 ; i < workArrPer.length ; i++){
-    document.getElementById('ind-work-per').innerHTML +=`<a href="#"> ${workArrPer[i]}</a>`;
+    document.getElementById('ind-work-per').innerHTML +=`<a href="#"> ${workArrPer[i].indicatorName}</a>`;
   }
 });
 const genderPeru = document.getElementById('gender-peru');
+let indicatorsPer = [];
 genderPeru.addEventListener('click', ()=>{
   document.getElementById('indicator-table-peru-education').classList.add('hide');
   document.getElementById('indicator-table-peru-population').classList.add('hide');
   document.getElementById('indicator-table-peru-work').classList.add('hide');
   document.getElementById('indicator-table-peru-gender').classList.remove('hide');
-  const indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
+  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
   console.log(indicatorsPer.genderPer);
   const genArrPer = indicatorsPer.genderPer;
+
+  
+  
+  let table = document.getElementById("ind-gen-per");
+  table.innerHTML = "";
+  let rowHeader = table.insertRow(0);
+  
+  let cellHeader1 = rowHeader.insertCell(0);
+  let cellHeader2 = rowHeader.insertCell(1);
+  cellHeader1.innerHTML = "N°";
+  cellHeader1.setAttribute('class', "nro"); 
+  cellHeader2.innerHTML = "Indicadores";
+  cellHeader2.setAttribute('class', "indicador");
+
   for ( let i = 0 ; i < genArrPer.length ; i++){
-    document.getElementById('ind-gen-per').innerHTML +=`<a href="#"> ${genArrPer[i]}</a>`;
+
+    var row = table.insertRow(i+1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = i+1;
+    cell2.innerHTML = `<a href="javascript:Prueba(${i})"> ${genArrPer[i].indicatorName}</a>`;
+
+    // document.getElementById('ind-gen-per').appendChild(`<tr><td> 1 </td><td><a index="${i}" href="#"> ${genArrPer[i].indicatorName}</a></td></tr>`);
   }
 });
+
+function Prueba(index){
+  // console.log(index);
+  document.getElementById('indicator-peru').classList.add('hide');
+  document.getElementById('indicator-table-peru-gender').classList.add('hide');
+  document.getElementById('showDataIndicator').classList.remove('hide');
+  console.log(indicatorsPer.genderPer[index].data);
+  // console.log(indicatorsPer.genderPer[index].indicatorName);
+  
+  let tableData = document.getElementById("data-gen-per");
+  tableData.innerHTML = "";
+  let rowHeaderData = tableData.insertRow(0);
+
+  let cellHeaderData1 = rowHeaderData.insertCell(0);
+  let cellHeaderData2 = rowHeaderData.insertCell(1);
+  cellHeaderData1.innerHTML = "Años";
+  cellHeaderData1.setAttribute('class', "nro"); 
+  cellHeaderData2.innerHTML = "Valores";
+  cellHeaderData2.setAttribute('class', "indicador");
+
+  let data = indicatorsPer.genderPer[index].data;
+  let i = 0;
+  Object.entries(data).forEach(([key, value]) => {
+    if(value != ""){
+      console.log(key + ' ' + value + '%'); 
+    
+      let rowData = tableData.insertRow(i+1);
+      let cellData = rowData.insertCell(0);
+      let cellData2 = rowData.insertCell(1);
+      cellData.innerHTML= key;
+      cellData.setAttribute('class', "nro"); 
+      cellData2.innerHTML= value;
+      cellData2.setAttribute('class', "indicador");
+      i++;
+
+    }   
+
+});
+
+}
 
 /* ----------------------Al hacer click en el ícono de la categoria : MEXICO----------------------------------*/ 
 const educationMexico = document.getElementById('education-mexico');
@@ -180,7 +243,7 @@ educationMexico.addEventListener('click', ()=>{
   console.log(indicatorsMex.educationMex);
   const educArrMex = indicatorsMex.educationMex;
   for ( let i = 0 ; i < educArrMex.length ; i++){
-    document.getElementById('ind-educ-mex').innerHTML +=`<a href="#"> ${educArrMex[i]}</a>`;
+    document.getElementById('ind-educ-mex').innerHTML +=`<a href="#"> ${educArrMex[i].indicatorName}</a>`;
   }
 });
 const populationMexico = document.getElementById('population-mexico');
@@ -193,7 +256,7 @@ populationMexico.addEventListener('click', ()=>{
   console.log(indicatorsMex.populationMex);
   const popArrMex = indicatorsMex.populationMex;
   for ( let i = 0 ; i < popArrMex.length ; i++){
-    document.getElementById('ind-pop-mex').innerHTML +=`<a href="#"> ${popArrMex[i]}</a>`;
+    document.getElementById('ind-pop-mex').innerHTML +=`<a href="#"> ${popArrMex[i].indicatorName}</a>`;
   }
 });
 const workMexico = document.getElementById('work-mexico');
@@ -206,7 +269,7 @@ workMexico.addEventListener('click', ()=>{
   console.log(indicatorsMex.workMex);
   const workArrMex = indicatorsMex.workMex;
   for ( let i = 0 ; i < workArrMex.length ; i++){
-    document.getElementById('ind-work-mex').innerHTML +=`<a href="#"> ${workArrMex[i]}</a>`;
+    document.getElementById('ind-work-mex').innerHTML +=`<a href="#"> ${workArrMex[i].indicatorName}</a>`;
   }
 });
 const genderMexico = document.getElementById('gender-mexico');
@@ -219,7 +282,7 @@ genderMexico.addEventListener('click', ()=>{
   console.log(indicatorsMex.genderMex);
   const genArrMex = indicatorsMex.genderMex;
   for ( let i = 0 ; i < genArrMex.length ; i++){
-    document.getElementById('ind-gen-mex').innerHTML +=`<a href="#"> ${genArrMex[i]}</a>`;
+    document.getElementById('ind-gen-mex').innerHTML +=`<a href="#"> ${genArrMex[i].indicatorName}</a>`;
   }
 });
 /* ----------------------Al hacer click en el ícono de la categoria : CHILE----------------------------------*/ 
@@ -233,7 +296,7 @@ educationChile.addEventListener('click', ()=>{
   console.log(indicatorsChl.educationChl);
   const educArrChl = indicatorsChl.educationChl;
   for ( let i = 0 ; i < educArrChl.length ; i++){
-    document.getElementById('ind-educ-chl').innerHTML +=`<a href="#"> ${educArrChl[i]}</a>`;
+    document.getElementById('ind-educ-chl').innerHTML +=`<a href="#"> ${educArrChl[i].indicatorName}</a>`;
   }
 });
 const populationChile = document.getElementById('population-chile');
@@ -246,7 +309,7 @@ populationChile.addEventListener('click', ()=>{
   console.log(indicatorsChl.populationChl);
   const popArrChl = indicatorsChl.populationChl;
   for ( let i = 0 ; i < popArrChl.length ; i++){
-    document.getElementById('ind-pop-chl').innerHTML +=`<a href="#"> ${popArrChl[i]}</a>`;
+    document.getElementById('ind-pop-chl').innerHTML +=`<a href="#"> ${popArrChl[i].indicatorName}</a>`;
   }
 });
 const workChile = document.getElementById('work-chile');
@@ -259,7 +322,7 @@ workChile.addEventListener('click', ()=>{
   console.log(indicatorsChl.workChl);
   const workArrChl = indicatorsChl.workChl;
   for ( let i = 0 ; i < workArrChl.length ; i++){
-    document.getElementById('ind-work-chl').innerHTML +=`<a href="#"> ${workArrChl[i]}</a>`;
+    document.getElementById('ind-work-chl').innerHTML +=`<a href="#"> ${workArrChl[i].indicatorName}</a>`;
   }
 });
 const genderChile = document.getElementById('gender-chile');
@@ -272,7 +335,7 @@ genderChile.addEventListener('click', ()=>{
   console.log(indicatorsChl.genderChl);
   const genArrChl = indicatorsChl.genderChl;
   for ( let i = 0 ; i < genArrChl.length ; i++){
-    document.getElementById('ind-gen-chl').innerHTML +=`<a href="#"> ${genArrChl[i]}</a>`;
+    document.getElementById('ind-gen-chl').innerHTML +=`<a href="#"> ${genArrChl[i].indicatorName}</a>`;
   }
 });
 /* ----------------------Al hacer click en el ícono de la categoria :BRASIL----------------------------------*/ 
@@ -286,7 +349,7 @@ educationBrasil.addEventListener('click', ()=>{
   console.log(indicatorsBra.educationBra);
   const educArrBra = indicatorsBra.educationBra;
   for ( let i = 0 ; i < educArrBra.length ; i++){
-    document.getElementById('ind-educ-bra').innerHTML +=`<a href="#"> ${educArrBra[i]}</a>`;
+    document.getElementById('ind-educ-bra').innerHTML +=`<a href="#"> ${educArrBra[i].indicatorName}</a>`;
   }
 });
 const populationBrasil = document.getElementById('population-brasil');
@@ -299,7 +362,7 @@ populationBrasil.addEventListener('click', ()=>{
   console.log(indicatorsBra.populationBra);
   const popArrBra = indicatorsBra.populationBra;
   for ( let i = 0 ; i < popArrBra.length ; i++){
-    document.getElementById('ind-pop-bra').innerHTML +=`<a href="#"> ${popArrBra[i]}</a>`;
+    document.getElementById('ind-pop-bra').innerHTML +=`<a href="#"> ${popArrBra[i].indicatorName}</a>`;
   }
 });
 const workBrasil = document.getElementById('work-brasil');
@@ -312,7 +375,7 @@ workBrasil.addEventListener('click', ()=>{
   console.log(indicatorsBra.workBra);
   const workArrBra = indicatorsBra.workBra;
   for ( let i = 0 ; i < workArrBra.length ; i++){
-    document.getElementById('ind-work-bra').innerHTML +=`<a href="#"> ${workArrBra[i]}</a>`;
+    document.getElementById('ind-work-bra').innerHTML +=`<a href="#"> ${workArrBra[i].indicatorName}</a>`;
   }
 });
 const genderBrasil = document.getElementById('gender-brasil');
@@ -325,7 +388,7 @@ genderBrasil.addEventListener('click', ()=>{
   console.log(indicatorsBra.genderBra);
   const genArrBra = indicatorsBra.genderBra;
   for ( let i = 0 ; i < genArrBra.length ; i++){
-    document.getElementById('ind-gen-bra').innerHTML +=`<a href="#"> ${genArrBra[i]}</a>`;
+    document.getElementById('ind-gen-bra').innerHTML +=`<a href="#"> ${genArrBra[i].indicatorName}</a>`;
   }
 });
 /*
