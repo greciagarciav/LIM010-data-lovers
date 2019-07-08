@@ -224,6 +224,12 @@ window.worldbank = {
 // console.log(workMex)
 // console.log(genderMex)
 
+
+// let educationBra= [];
+// let populationBra= [];
+// let workBra= [];
+// let genderBra= [];
+
 // for(let i=0; i<indicatorsBrasil.length; i++){
 //   if(indicatorsBrasil[i].indicatorCode.split(".")[0]=="SE"){
 //     educationBra.push(indicatorsBrasil[i].indicatorName);
@@ -242,6 +248,12 @@ window.worldbank = {
 // console.log(populationBra)
 // console.log(workBra)
 // console.log(genderBra)
+
+
+// let educationChl= [];
+// let populationChl= [];
+// let workChl= [];
+// let genderChl= [];
 
 // for(let i=0; i<indicatorsChile.length; i++){
 //   if(indicatorsChile[i].indicatorCode.split(".")[0]=="SE"){
