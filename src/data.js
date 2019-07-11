@@ -1,4 +1,4 @@
-  let education = [];
+let education = [];
   let population = [];
   let work = [];
   let gender = [];
