@@ -1,5 +1,6 @@
 const dataWorldbank = WORLDBANK;
 let indicatorsPer = [];
+let dataIndicadorSelected = [];
 /* ----------------------------------------------LOGIN------------------------------------------------- */
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -56,61 +57,34 @@ function showSlides(n) {
 }
 
 
-/*
-let slideIndex = 0;
-const showSlides = ()=> {
-  let i;
-  let slides = document.getElementsByClassName('slide');
-  for (i = 0; i < slides.length; i++) {
-    slides[i].classList.add('hide-slide');
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {
-    slideIndex = 1;
-  }
-  slides[slideIndex - 1].classList.remove('hide-slide');
-  setTimeout(showSlides, 5000);
-};
-showSlides();
-// eslint-disable-next-line id-length
-const plusSlides = (n)=> {
-  showSlides(slideIndex += n);
-};
-*/
-/* ----------------------------------Al hacer click en el boton explorar data-------------------------------------*/
+/* =======================Al hacer click en el boton explorar data==========================================*/
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', ()=>{
-  document.getElementById('slide-show').classList.add('hide');
-  document.getElementById('text-under-slide').classList.add('hide');
-  document.getElementById('indicator-peru').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.remove('hide');
-  document.getElementById('to-shrink').classList.remove('to-shrink');
-});
-exploreDataMexico = document.getElementById('explore-data-mexico');
-exploreDataMexico.addEventListener('click', ()=>{
-  document.getElementById('slide-show').classList.add('hide');
-  document.getElementById('text-under-slide').classList.add('hide');
-  document.getElementById('indicator-mexico').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.remove('hide');
-  document.getElementById('to-shrink').classList.remove('to-shrink');
-});
-exploreDataChile = document.getElementById('explore-data-chile');
-exploreDataChile.addEventListener('click', ()=>{
-  document.getElementById('slide-show').classList.add('hide');
-  document.getElementById('text-under-slide').classList.add('hide');
-  document.getElementById('indicator-chile').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.remove('hide');
-  document.getElementById('to-shrink').classList.remove('to-shrink');
-});
-exploreDataBrasil = document.getElementById('explore-data-brasil');
-exploreDataBrasil.addEventListener('click', ()=>{
-  document.getElementById('slide-show').classList.add('hide');
-  document.getElementById('text-under-slide').classList.add('hide');
-  document.getElementById('indicator-brasil').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.remove('hide');
-  document.getElementById('to-shrink').classList.remove('to-shrink');
+  showCategories('peru');
 });
 
+exploreDataMexico = document.getElementById('explore-data-mexico');
+exploreDataMexico.addEventListener('click', ()=>{
+  showCategories('mexico');
+});
+
+exploreDataChile = document.getElementById('explore-data-chile');
+exploreDataChile.addEventListener('click', ()=>{
+  showCategories('chile');
+});
+
+exploreDataBrasil = document.getElementById('explore-data-brasil');
+exploreDataBrasil.addEventListener('click', ()=>{
+  showCategories('brasil');
+});
+
+const showCategories= (countryId)=>{
+  document.getElementById('slide-show').classList.add('hide');
+  document.getElementById('text-under-slide').classList.add('hide');
+  document.getElementById('indicator-'+ countryId).classList.remove('hide');
+  document.getElementById('text-apoyo').classList.remove('hide');
+  document.getElementById('to-shrink').classList.remove('to-shrink');
+}
 
 /* ======================Al hacer click en el ícono de la categoria : PERU===================================*/ 
 const educationPeru = document.getElementById('education-peru');
@@ -122,9 +96,8 @@ educationPeru.addEventListener('click', ()=>{
   document.getElementById('text-apoyo').classList.add('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
   indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
-  console.log(indicatorsPer.educationPer);
+ 
   const educArrPer = indicatorsPer.educationPer;
-  
   let tableEduPer = document.getElementById("ind-edu-per");
   tableEduPer.innerHTML = "";
   let rowHeaderEduPer = tableEduPer.insertRow(0);
@@ -164,6 +137,7 @@ const showDataEduPer = (indexEduPer)=>{
     cellHeaderDataEduPer2.setAttribute('class', "indicador");
 
   let dataEduPer = indicatorsPer.educationPer[indexEduPer].data;
+  dataIndicadorSelected = dataEduPer;
   let i = 0;
   Object.entries(dataEduPer).forEach(([key, value]) => {
     if(value != ""){
