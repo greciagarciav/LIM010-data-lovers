@@ -23,6 +23,7 @@
 
   
   <main >
+   <!-- ===================================================Login================================================= -->
     <section class="hide" id="login">
       <div class="container-all-login">
           <form class="contain-form-field-login">
@@ -38,6 +39,7 @@
           </form>
       </div>
     </section>
+<!-- ===============================================Slide======================================================= -->
     <section class="hide" id="slide-show">
       <div class="slideshow-container">
         <div class="mySlides fade">
@@ -93,17 +95,23 @@
       </div>
     </section>
 
-<!-- =============================================================================================================================== -->
     <section class="hide" id="text-under-slide">
-      <div class="text-media">
-        <div>
-          <p class="bold-text text-format">Indicadores del Desarrollo Mundial</p>
-          <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.</p>
-        </div>
-    </section>
-    <section class="hide" id="indicator-peru">
+        <div class="text-media">
+          <div>
+            <p class="bold-text text-format">Indicadores del Desarrollo Mundial</p>
+            <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.</p>
+          </div>
+      </section>
+
+<!-- ==========================================================Categorias===================================================================== -->
+
+    <section class="hide" id="indicator">
       <div class="indicator-per-country to-shrink" id="to-shrink">
-        <p class="indicator-title-1">PERÚ: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-mex">MÉXICO: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-chl">CHILE: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
+
         <div class="contain-icons">
           <figure class="icon-style">
             <img src="img/education.png" name="si" class="icon-indicator" id="education">
@@ -121,15 +129,13 @@
             <img src="img/genders.png" class="icon-indicator" id="gender">
             <figcaption class="indicator-title">GÉNERO</figcaption>
           </figure>
+        </div>      
         </div>
-        <div class="contain-text hide" id="text-apoyo">
-          <p class="text-indicator">Las acertadas políticas macroeconómicas y estructurales del Perú, combinadas con condiciones externas propicias, han generado un crecimiento importante. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
-        </div>
-      </div>
+        <div class="fill" id="filled"><p>El Grupo Banco Mundial trabaja en todas las principales esferas del desarrollo: proporciona una gran variedad de productos financieros y asistencia técnica, y ayuda a los países a enfrentar los desafíos mediante el intercambio de conocimiento de vanguardia y la aplicación de soluciones innovadoras.</p></div>
     </section>
-<!-- ================================================================================================================================= -->
+<!-- =====================================================Mostrar indicadores============================================================================ -->
 
-<section class="hide" id="indicator-table-peru-education">
+<section class="hide" id="indicator-table-education">
         <div class="flex" id="container-indicators-category">
             <h1>EDUCACIÓN</h1>
           <table class="flex-table" id="ind-education">
@@ -142,7 +148,7 @@
     <section class="hide" id="indicator-table-population">
         <div class="flex" id="container-indicators-category">
             <h1>POBLACIÓN</h1>
-          <table class="flex-table" id="ind-poppulation">
+          <table class="flex-table" id="ind-population">
             
           </table>
         </div>        
@@ -165,283 +171,21 @@
           </table>
         </div>        
     </section>
-<!-- =====================================================------MÉXICO-----====================================================-->
-    <section class="hide" id="indicator-mexico">
-      <div class="indicator-per-country to-shrink">
-        <p class="indicator-title-1">MÉXICO : INDICADORES DE DESARROLLO</p>
-        <div class="contain-icons">
-          <figure class="icon-style">
-            <img src="img/education.png" name="si" class="icon-indicator" id="education-mexico">
-            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/population.png" class="icon-indicator" id="population-mexico">
-            <figcaption class="indicator-title">POBLACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/works.png" class="icon-indicator" id="work-mexico">
-            <figcaption class="indicator-title">TRABAJO</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/genders.png" class="icon-indicator" id="gender-mexico">
-            <figcaption class="indicator-title">GÉNERO</figcaption>
-          </figure>
-        </div>
-        <div class="contain-text">
-          <p class="text-indicator">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="hide" id="indicator-table-mexico-education">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>EDUCACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-educ-mex"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-mexico-population">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>POBLACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-pop-mex"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-mexico-work">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>TRABAJO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-work-mex"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-mexico-gender">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>GÉNERO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-gen-mex"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-
-    <section class="hide" id="indicator-chile">
-      <div class="indicator-per-country to-shrink">
-        <p class="indicator-title-1">CHILE : INDICADORES DE DESARROLLO</p>
-        <div class="contain-icons">
-          <figure class="icon-style">
-            <img src="img/education.png" name="si" class="icon-indicator" id="education-chile">
-            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/population.png" class="icon-indicator" id="population-chile">
-            <figcaption class="indicator-title">POBLACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/works.png" class="icon-indicator" id="work-chile">
-            <figcaption class="indicator-title">TRABAJO</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/genders.png" class="icon-indicator" id="gender-chile">
-            <figcaption class="indicator-title">GÉNERO</figcaption>
-          </figure>
-        </div>
-        <div class="contain-text">
-          <p class="text-indicator">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
-        </div>
-      </div>
-    </section>
-    <section class="hide" id="indicator-table-chile-education">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>EDUCACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-educ-chl"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-chile-population">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>POBLACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-pop-chl"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-chile-work">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>TRABAJO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-work-chl"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-chile-gender">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>GÉNERO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-gen-chl"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-
-    <section class="hide" id="indicator-brasil">
-      <div class="indicator-per-country to-shrink">
-        <p class="indicator-title-1">BRASIL : INDICADORES DE DESARROLLO</p>
-        <div class="contain-icons">
-          <figure class="icon-style">
-            <img src="img/education.png" name="si" class="icon-indicator" id="education-brasil">
-            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/population.png" class="icon-indicator" id="population-brasil">
-            <figcaption class="indicator-title">POBLACIÓN</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/works.png" class="icon-indicator" id="work-brasil">
-            <figcaption class="indicator-title">TRABAJO</figcaption>
-          </figure>
-          <figure class="icon-style">
-            <img src="img/genders.png" class="icon-indicator" id="gender-brasil">
-            <figcaption class="indicator-title">GÉNERO</figcaption>
-          </figure>
-        </div>
-        <div class="contain-text">
-          <p class="text-indicator">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza. El país creció a un ritmo cercano al 6% durante la última década y, entre 2004 y 2015, 9 millones de peruanos salieron de la pobreza.</p>
-        </div>
-      </div>
-    </section>
-    <section class="hide" id="indicator-table-brasil-education">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>EDUCACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-educ-bra"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-brasil-population">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>POBLACIÓN</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-pop-bra"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-    <section class="hide" id="indicator-table-brasil-work">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>TRABAJO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-work-bra"></th>
-            </tr>
-          </table>
-        </div>        
-    </section>
-
-    <section class="hide" id="indicator-table-brasil-gender">
-        <div class="flex" id="container-indicators-category">
-          <table class="flex-table">
-            <caption>GÉNERO</caption>
-            <tr>
-              <th class="nro">N°</th>
-              <th class="indicador">Indicadores</th>
-            </tr>
-            <tr>
-              <th id="nro"></th>
-              <th id="ind-gen-bra"></th>
-            </tr>
-          </table>
-        </div>        
-    </section> -->
     
-    
-<!-- Mostrar Valores -->
+<!-- ================================ Mostrar Valores=========================================================== -->
     <section class="hide" id="showDataIndicator">
+      <button></button>
         <div class="flex" id="container-data-indicator">
             <h1 class=""></h1>
-            <table id="data-per" class="flex-table">
+            <table id="data" class="flex-table">
               
             </table>
           </div>  
       </section>
 
-<!-------------------------------------------------------------------------------------------------------------->
+<!--======-->
   </main>
+
   <footer class="hide" id="footer">
     <div class="footer-style">
     <p class="social-media">SÍGANOS</p>

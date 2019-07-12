@@ -58,46 +58,52 @@ function showSlides(n) {
 /* ----------------------------------Al hacer click en el boton explorar data-------------------------------------*/
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', ()=>{
+document.getElementById('title-per').classList.remove("hide");
+document.getElementById('filled').classList.remove("hide");
  showCategories('peru'); 
 });
 
 exploreDataMexico = document.getElementById('explore-data-mexico');
 exploreDataMexico.addEventListener('click', ()=>{
+  document.getElementById('title-mex').classList.remove("hide");
  showCategories('mexico');
 });
 
 exploreDataChile = document.getElementById('explore-data-chile');
 exploreDataChile.addEventListener('click', ()=>{
+  document.getElementById('title-chl').classList.remove("hide")
  showCategories('chile');
 });
 
 exploreDataBrasil = document.getElementById('explore-data-brasil');
 exploreDataBrasil.addEventListener('click', ()=>{
+ document.getElementById('title-bra').classList.remove("hide")
+ 
  showCategories('brasil');
 });
 
 function showCategories(countryId){
  document.getElementById('slide-show').classList.add('hide');
  document.getElementById('text-under-slide').classList.add('hide');
- document.getElementById('indicator-'+ countryId).classList.remove('hide');
- document.getElementById('text-apoyo').classList.remove('hide');
- document.getElementById('to-shrink').classList.remove('to-shrink');
+ document.getElementById('indicator').classList.remove('hide');
+ document.getElementById('to-shrink').classList.add('to-shrink');
 }
 
 /* ======================Al hacer click en el ícono de la categoria : PERU===================================*/ 
-const educationPeru = document.getElementById('education-peru');
+const educationPeru = document.getElementById('education');
 educationPeru.addEventListener('click', ()=>{
-  document.getElementById('indicator-table-peru-gender').classList.add('hide');
-  document.getElementById('indicator-table-peru-work').classList.add('hide');
-  document.getElementById('indicator-table-peru-population').classList.add('hide');
-  document.getElementById('indicator-table-peru-education').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.add('hide');
+  document.getElementById('indicator-table-gender').classList.add('hide');
+  document.getElementById('indicator-table-work').classList.add('hide');
+  document.getElementById('indicator-table-population').classList.add('hide');
+  document.getElementById('indicator-table-education').classList.remove('hide');
+  document.getElementById('filled').classList.add('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
+  
   indicatorsPer = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
-  console.log(indicatorsPer.educationPer);
+  console.log(indicatorsPer.education);
   const educArrPer = indicatorsPer.education;
   
-  let tableEduPer = document.getElementById("ind-edu-per");
+  let tableEduPer = document.getElementById("ind-education");
   tableEduPer.innerHTML = "";
   let rowHeaderEduPer = tableEduPer.insertRow(0);
 
@@ -119,12 +125,12 @@ educationPeru.addEventListener('click', ()=>{
 
 const showDataEduPer = (indexEduPer)=>{
   
-  document.getElementById('indicator-peru').classList.add('hide');
-  document.getElementById('indicator-table-peru-education').classList.add('hide');
+  document.getElementById('indicator').classList.add('hide');
+  document.getElementById('indicator-table-education').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
   console.log(indicatorsPer.education[indexEduPer].data);
 
-  let tableDataEduPer = document.getElementById("data-per");
+  let tableDataEduPer = document.getElementById("data");
     tableDataEduPer.innerHTML = "";
     let rowHeaderDataEduPer = tableDataEduPer.insertRow(0);
 
@@ -152,19 +158,19 @@ const showDataEduPer = (indexEduPer)=>{
     }   
 });     
 }
+
 // -------------------------------------------------------
-const populationPeru = document.getElementById('population-peru');
+const populationPeru = document.getElementById('population');
 populationPeru.addEventListener('click', ()=>{
-  document.getElementById('indicator-table-peru-gender').classList.add('hide');
-  document.getElementById('indicator-table-peru-work').classList.add('hide');
-  document.getElementById('indicator-table-peru-education').classList.add('hide');
-  document.getElementById('indicator-table-peru-population').classList.remove('hide');
-  document.getElementById('text-apoyo').classList.add('hide');
-  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
-  console.log(indicatorsPer.populationPer);
-  const popArrPer = indicatorsPer.populationPer;
+  document.getElementById('indicator-table-gender').classList.add('hide');
+  document.getElementById('indicator-table-work').classList.add('hide');
+  document.getElementById('indicator-table-education').classList.add('hide');
+  document.getElementById('indicator-table-population').classList.remove('hide');
+  indicatorsPer = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
+  console.log(indicatorsPer.population);
+  const popArrPer = indicatorsPer.population;
   
-  let tablePopPer = document.getElementById("ind-pop-per");
+  let tablePopPer = document.getElementById("ind-population");
   tablePopPer.innerHTML = "";
   let rowHeaderPopPer = tablePopPer.insertRow(0);
 
@@ -185,12 +191,12 @@ populationPeru.addEventListener('click', ()=>{
 });
 const showDataPopPer = (indexPopPer)=>{
   
-  document.getElementById('indicator-peru').classList.add('hide');
-  document.getElementById('indicator-table-peru-population').classList.add('hide');
+  document.getElementById('indicator').classList.add('hide');
+  document.getElementById('indicator-table-population').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
-  console.log(indicatorsPer.populationPer[indexPopPer].data);
+  console.log(indicatorsPer.population[indexPopPer].data);
 
-  let tableDataPopPer = document.getElementById("data-per");
+  let tableDataPopPer = document.getElementById("data");
     tableDataPopPer.innerHTML = "";
     let rowHeaderDataPopPer = tableDataPopPer.insertRow(0);
 
@@ -201,7 +207,7 @@ const showDataPopPer = (indexPopPer)=>{
     cellHeaderDataPopPer2.innerHTML = "Valores";
     cellHeaderDataPopPer2.setAttribute('class', "indicador");
 
-  let dataPopPer = indicatorsPer.populationPer[indexPopPer].data;
+  let dataPopPer = indicatorsPer.population[indexPopPer].data;
   let i = 0;
   Object.entries(dataPopPer).forEach(([key, value]) => {
     if(value != ""){
@@ -220,18 +226,18 @@ const showDataPopPer = (indexPopPer)=>{
 
 }
 // -------------------------------------------------------
-const workPeru = document.getElementById('work-peru');
+const workPeru = document.getElementById('work');
 // let indicatorsPer = [];
 workPeru.addEventListener('click', ()=>{
-  document.getElementById('indicator-table-peru-gender').classList.add('hide');
-  document.getElementById('indicator-table-peru-education').classList.add('hide');
-  document.getElementById('indicator-table-peru-population').classList.add('hide');
-  document.getElementById('indicator-table-peru-work').classList.remove('hide');
-  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
-  console.log(indicatorsPer.workPer)
-  const workArrPer = indicatorsPer.workPer;
+  document.getElementById('indicator-table-gender').classList.add('hide');
+  document.getElementById('indicator-table-education').classList.add('hide');
+  document.getElementById('indicator-table-population').classList.add('hide');
+  document.getElementById('indicator-table-work').classList.remove('hide');
+  indicatorsPer = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
+  console.log(indicatorsPer.work)
+  const workArrPer = indicatorsPer.work;
 
- let tableWorkPer = document.getElementById("ind-wrk-per");
+ let tableWorkPer = document.getElementById("ind-work");
   tableWorkPer.innerHTML = "";
   let rowHeaderWorkPer = tableWorkPer.insertRow(0);
   
@@ -253,13 +259,13 @@ workPeru.addEventListener('click', ()=>{
 });
 const showDataWorkPer = (indexWork)=>{
   
-  document.getElementById('indicator-peru').classList.add('hide');
-  document.getElementById('indicator-table-peru-work').classList.add('hide');
+  document.getElementById('indicator').classList.add('hide');
+  document.getElementById('indicator-table-work').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
-  console.log(indicatorsPer.workPer[indexWork].data);
+  console.log(indicatorsPer.work[indexWork].data);
  
   
-  let tableDataWork = document.getElementById("data-per");
+  let tableDataWork = document.getElementById("data");
   tableDataWork.innerHTML = "";
   let rowHeaderDataWork = tableDataWork.insertRow(0);
 
@@ -270,7 +276,7 @@ const showDataWorkPer = (indexWork)=>{
   cellHeaderDataWork2.innerHTML = "Valores";
   cellHeaderDataWork2.setAttribute('class', "indicador");
 
-  let data = indicatorsPer.workPer[indexWork].data;
+  let data = indicatorsPer.work[indexWork].data;
   let i = 0;
   Object.entries(data).forEach(([key, value]) => {
     if(value != ""){
@@ -288,18 +294,18 @@ const showDataWorkPer = (indexWork)=>{
 });
 }
 // -------------------------------------------------------------------------------------
-const genderPeru = document.getElementById('gender-peru');
+const genderPeru = document.getElementById('gender');
 // let indicatorsPer = [];
 genderPeru.addEventListener('click', ()=>{
-  document.getElementById('indicator-table-peru-education').classList.add('hide');
-  document.getElementById('indicator-table-peru-population').classList.add('hide');
-  document.getElementById('indicator-table-peru-work').classList.add('hide');
-  document.getElementById('indicator-table-peru-gender').classList.remove('hide');
-  indicatorsPer = window.worldbank.indicatorsPeruCategory(dataWorldbank.PER.indicators);
-  console.log(indicatorsPer.genderPer);
-  const genArrPer = indicatorsPer.genderPer;
+  document.getElementById('indicator-table-education').classList.add('hide');
+  document.getElementById('indicator-table-population').classList.add('hide');
+  document.getElementById('indicator-table-work').classList.add('hide');
+  document.getElementById('indicator-table-gender').classList.remove('hide');
+  indicatorsPer = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
+  console.log(indicatorsPer.gender);
+  const genArrPer = indicatorsPer.gender;
 
-  let table = document.getElementById("ind-gen-per");
+  let table = document.getElementById("ind-gender");
   table.innerHTML = "";
   let rowHeader = table.insertRow(0);
   
@@ -324,13 +330,13 @@ genderPeru.addEventListener('click', ()=>{
 
 const showDataGenPer = (index)=>{
   // console.log(index);
-  document.getElementById('indicator-peru').classList.add('hide');
-  document.getElementById('indicator-table-peru-gender').classList.add('hide');
+  document.getElementById('indicator').classList.add('hide');
+  document.getElementById('indicator-table-gender').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
-  console.log(indicatorsPer.genderPer[index].data);
+  console.log(indicatorsPer.gender[index].data);
   // console.log(indicatorsPer.genderPer[index].indicatorName);
   
-  let tableData = document.getElementById("data-per");
+  let tableData = document.getElementById("data");
   tableData.innerHTML = "";
   let rowHeaderData = tableData.insertRow(0);
 
@@ -341,7 +347,7 @@ const showDataGenPer = (index)=>{
   cellHeaderData2.innerHTML = "Valores";
   cellHeaderData2.setAttribute('class', "indicador");
 
-  let data = indicatorsPer.genderPer[index].data;
+  let data = indicatorsPer.gender[index].data;
   let i = 0;
   Object.entries(data).forEach(([key, value]) => {
     if(value != ""){

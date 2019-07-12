@@ -26,7 +26,7 @@ window.worldbank = {
 },
 
 sortAscending: ()=>{
-  
+
 },
 
 sortDescending: ()=>{

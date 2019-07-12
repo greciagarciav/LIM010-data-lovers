@@ -27,6 +27,7 @@ a{
 .flex {
 	display: flex;
 	align-content: center;
+	margin-top: 10px;
 }
 
 /*--------------------------------------------HEADER---------------------------------------------------*/
@@ -332,8 +333,13 @@ a{
 /*----------------------------------------pantalla 2------------------------------------------------*/
 .indicator-per-country{
 	background-color: #002F54;
-	height: 690px;
+	height: 400px;
 }
+.fill{
+	background-color: #002F54;
+	height: 100px;
+}
+
 .indicator-title-1{
 	font-size: 13px;
 	color: white;
