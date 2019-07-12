@@ -339,7 +339,11 @@ a{
 	background-color: #002F54;
 	height: 100px;
 }
-
+.fillP{
+	color: #f2f2f2;
+	font-size: 12px;
+	text-align: center;
+}
 .indicator-title-1{
 	font-size: 13px;
 	color: white;
@@ -388,13 +392,14 @@ a{
 
 /*Contenedor del texto*/
 .text-media{
-	height: 15em;
+	height: 9em;
 	background-color:#fff; 
 }
 
 .text-format{
 	text-align: center;
-	padding: 1em;
+	padding: 1em 0.625em;
+	margin:0px 0.400em;
 }
 
 /*--------------------------------------------Media query---------------------------------------*/
@@ -492,6 +497,13 @@ a{
 	.to-schrink{
 		height: 400px;
 	}
+	.fillP{
+		color: #f2f2f2;
+		font-size: 15px;
+		text-align: center;
+		margin: 0px 250px;
+	}
+	
 }
 
 

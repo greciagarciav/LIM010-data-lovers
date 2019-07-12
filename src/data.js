@@ -1,7 +1,7 @@
 let education = [];
-  let population = [];
-  let work = [];
-  let gender = [];
+let population = [];
+let work = [];
+let gender = [];
 
 window.worldbank = {
 
@@ -25,7 +25,11 @@ window.worldbank = {
   return {education: education, population: population, work: work, gender: gender}
 },
 
-sortAscending: ()=>{
+indicatorsPerCountry: ()=>{
+
+},
+
+sortAscending: ( )=>{
 
 },
 
