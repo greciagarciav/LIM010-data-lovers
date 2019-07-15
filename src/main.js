@@ -2,8 +2,10 @@ const dataWorldbank = WORLDBANK;
 let globalCountry = [];
 let globalCategories = [];
 let globalCategory = [];
+let globalData = [];
 
-/* ----------------------------------------------LOGIN------------------------------------------------- */
+/* =======================================================Login ======================================================== */
+
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const sentLogin = document.getElementById('login-button');
@@ -28,7 +30,8 @@ sentLogin.addEventListener('click', ()=>{
   }
 });
 
-/* ----------------------------------Al hacer click en el boton explorar data-------------------------------------*/
+/* ===========================================Al hacer click en el boton explorar data===================================*/
+
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', () => {
   document.getElementById('title-per').classList.remove("hide");
@@ -69,11 +72,12 @@ const showCategories = (countryId) => {
   document.getElementById('to-shrink').classList.add('to-shrink');
 }
 
-/* ======================Al hacer click en el ícono de la categoria ===================================*/ 
+/* ============================================Al hacer click en el ícono de la categoria ===================================*/ 
+
 const tableIndicatorCategory =  document.getElementById('category'); 
 const tableData = document.getElementById('data');
 
-
+// --------------------------Educación-----------------------------
 const education = document.getElementById('education');
 education.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -85,7 +89,7 @@ education.addEventListener('click', ()=>{
   createtableIndicatorCategory(educArr);
 });
 
-// -------------------------------------------------------
+// ---------------------------Población----------------------------
 const population = document.getElementById('population');
 population.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -97,7 +101,7 @@ population.addEventListener('click', ()=>{
   createtableIndicatorCategory(popArr);
 });
 
-// -------------------------------------------------------
+// ------------------------------Trabajo----------------------------
 const work = document.getElementById('work');
 work.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -109,7 +113,7 @@ work.addEventListener('click', ()=>{
   createtableIndicatorCategory(workArr);
 });
 
-// -------------------------------------------------------------------------------------
+// ------------------------------Género------------------------------
 const gender = document.getElementById('gender');
 
 gender.addEventListener('click', () => {
@@ -122,6 +126,7 @@ gender.addEventListener('click', () => {
   createtableIndicatorCategory(genArr);
 });
 
+// -------------Función que crea la tabla de categorías---------------
  const createtableIndicatorCategory = (arrCategory) => {
 
   globalCategory = arrCategory;
@@ -150,8 +155,11 @@ gender.addEventListener('click', () => {
   tableIndicatorCategory.innerHTML = table;
  }
 
-
+// -------------Función que crea la tabla de data------------------
 const createTableData = (objData) =>{
+
+  globalData = objData;
+
   tableData.innerHTML = "";
 
  let table = `
@@ -179,7 +187,9 @@ const createTableData = (objData) =>{
 
 } 
 
+// ------------------Función que muestra la data------------------
 const showData = (index) => {
+
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
@@ -189,11 +199,19 @@ const showData = (index) => {
 
 }
 
+document.getElementById('sort-btn').addEventListener('click', ()=>{
+const indicatorSelected = document.getElementById('data').value;
+const typeSelected = document.getElementById('data-type').value;
+const orderSelected = document.getElementById('order-type').value;
+
+let arrData = Object.entries(globalData);
+
+
+})
 
 
 
-
-//Pureba
+//Prueba para ordenar data con un ejemplo
 
 var datos = { "1992": 9, 
               "1995": 6, 
@@ -256,19 +274,19 @@ function OrderPorcentaDesc(a, b) {
 }
 
 // Convierte a arreglos 
-var arrData = Object.entries(datos);
+var arrD = Object.entries(datos);
 
 console.log("Muestra arreglo inicial");
-console.log(arrData);
+console.log(arrD);
 
 console.log("Ordena Año de Mayor a Menor");
-console.log(arrData.sort(OrderYearDesc));
+console.log(arrD.sort(OrderYearDesc));
 
 console.log("Ordena Año de Menor a Mayor");
-console.log(arrData.sort(OrderYearAsc));
+console.log(arrD.sort(OrderYearAsc));
 
 console.log("Ordena Porcentaje de Mayor a Menor");
-console.log(arrData.sort(OrderPorcentaDesc));
+console.log(arr.sort(OrderPorcentaDesc));
 
 console.log("Ordena Porcentaje de Menor a Mayor");
-console.log(arrData.sort(OrderPorcentajeAsc));
+console.log(arrD.sort(OrderPorcentajeAsc));

@@ -27,21 +27,36 @@ window.worldbank = {
   return {education: education, population: population, work: work, gender: gender}
 },
 
-sortAscending: ( )=>{
 
-
-},
-
-sortDescending: ()=>{
-
-},
-
-filterData: ()=>{
+sortArrData: (dataBase, dataType, orderType)=>{
   
-},
-
-averageValue: ()=>{
-
+  let sorted = [];
+  if (dataType === 'Valores') {
+    switch (orderType) {
+    case 'Mayor':
+      sorted = dataBase.sort((valorA, valorB) => valorA.value < valorB.value ? 1 : -1);
+      break;
+    case 'Menor':
+      sorted = dataBase.sort((valorA, valorB) => valorA.value > valorB.value ? 1 : -1);
+    }
+  } else
+    switch (orderType) {
+    case 'Mayor':
+      sorted = dataBase.sort((añoA, añoB) => añoA.year < añoB.year ? 1 : -1);
+      break;
+    case 'Menor':
+      sorted = dataBase.sort((añoA, añoB) => añoA.year > añoB.year ? 1 : -1);
+    }
+  return sorted;
+}
 }
 
-}
+// filterData: ()=>{
+  
+// },
+
+// averageValue: ()=>{
+
+
+
+// }
