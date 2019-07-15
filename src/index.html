@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hide" id="header">
+<header class="hide" id="header">
     <nav class="flex-row container-logo">
       <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial"></a>
       <div class="menu-paises">
@@ -19,7 +19,7 @@
       </div>
     </nav>
   </header>
-<!-- ==============================================Login=====================================-->
+  <!-- ==============================================Login=====================================-->
   <main class="main main-2">
     <section class="hide flex-login" id="login">
       <form class="contain-form-field-login">
@@ -82,43 +82,92 @@
           </p>
         </div>
     </section>
-<!-- ===========================Mostrar indicadores======================================= -->
-    <section class="hide" id="indicator-table-education">
-      <div class="flex" id="container-indicators-category">
-        <h1>EDUCACIÓN</h1>
-        <table class="flex-table" id="ind-education"></table>
-      </div>        
+
+<!-- ==========================================================Categorias===================================================================== -->
+
+    <section class="hide" id="indicator">
+      <div class="indicator-per-country to-shrink" id="to-shrink">
+        <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-mex">MÉXICO: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-chl">CHILE: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
+
+        <div class="contain-icons">
+          <figure class="icon-style">
+            <img src="img/education.png" name="si" class="icon-indicator" id="education">
+            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/population.png" class="icon-indicator" id="population">
+            <figcaption class="indicator-title">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/works.png" class="icon-indicator" id="work">
+            <figcaption class="indicator-title">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/genders.png" class="icon-indicator" id="gender">
+            <figcaption class="indicator-title">GÉNERO</figcaption>
+          </figure>
+        </div>      
+        </div>
+        <div class="fill" id="filled"><p class="fillP">El Grupo Banco Mundial trabaja en todas las principales esferas del desarrollo: proporciona una gran variedad de productos financieros y asistencia técnica, y ayuda a los países a enfrentar los desafíos mediante el intercambio de conocimiento de vanguardia y la aplicación de soluciones innovadoras.</p></div>
     </section>
+<!-- =====================================================Mostrar indicadores============================================================================ -->
+
+<section class="hide" id="indicator-table-education">
+        <div class="flex" id="container-indicators-category">
+            <h1>EDUCACIÓN</h1>
+          <table class="flex-table" id="ind-education">
+            
+            
+          </table>
+        </div>        
+    </section>
+
     <section class="hide" id="indicator-table-population">
-      <div class="flex" id="container-indicators-category">
-        <h1>POBLACIÓN</h1>
-        <table class="flex-table" id="ind-population"></table>
-      </div>        
+        <div class="flex" id="container-indicators-category">
+            <h1>POBLACIÓN</h1>
+          <table class="flex-table" id="ind-population">
+            
+          </table>
+        </div>        
     </section>
+
     <section class="hide" id="indicator-table-work">
-      <div class="flex" id="container-indicators-category">
-        <h1>TRABAJO</h1>
-        <table class="flex-table"id="ind-work"></table>
-      </div>        
+        <div class="flex" id="container-indicators-category">
+            <h1>TRABAJO</h1>
+          <table class="flex-table"id="ind-work">
+            
+          </table>
+        </div>        
     </section>
+
     <section class="hide" id="indicator-table-gender">
-      <div class="flex" id="container-indicators-category">
-        <h1>GÉNERO</h1>
-        <table  class="flex-table" id="ind-gender"></table>
-      </div>        
+        <div class="flex" id="container-indicators-category">
+          <h1>GÉNERO</h1>
+          <table  class="flex-table" id="ind-gender">
+            
+          </table>
+        </div>        
     </section>
-<!-- ========================== Mostrar Valores==================================== -->
+    
+<!-- ================================ Mostrar Valores=========================================================== -->
     <section class="hide" id="showDataIndicator">
-      <button></button>
-      <div class="flex" id="container-data-indicator">
-        <h1 class=""></h1>
-        <table id="data" class="flex-table"></table>
-      </div>  
-    </section>
+      <button type="button" class="data-explorer" id="sort">Ordenar</button>
+        <div class="flex" id="container-data-indicator">
+            <h1 class=""></h1>
+            <table id="data" class="flex-table">
+              
+            </table>
+          </div>  
+      </section>
+
   </main>
-<!--==========================================================================================-->
-  <footer class="hide footer-style" id="footer">
-    <p class="follow-us">SÍGANOS</p>
+
+  <footer class="hide" id="footer">
+    <div class="footer-style">
+    <p class="social-media">SÍGANOS</p>
     <div class="wrapper-social-media">
       <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
       <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
@@ -126,6 +175,7 @@
     </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
   </footer>
+    
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
