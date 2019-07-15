@@ -8,6 +8,8 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- ====================================================Cabecer/Navegador=========================================================== -->
 <header class="hide" id="header">
     <nav class="flex-row container-logo">
       <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial"></a>
@@ -19,7 +21,8 @@
       </div>
     </nav>
   </header>
-  <!-- ==============================================Login=====================================-->
+
+  <!-- ==========================================================Login=================================================================-->
   <main class="main main-2">
     <section class="hide flex-login" id="login">
       <form class="contain-form-field-login">
@@ -34,7 +37,9 @@
         <label class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></label>
       </form>
     </section>
-<!-- ===============================================Frame================================== -->
+
+  <!-- ============================================================Frame================================================================= -->
+
     <section class="hide space-plus" id="frame">
       <div class="frame">
         <div class="img-pais"><img src="img/peru-div.png" class="frame-img" alt="" id="explore-data-peru" style="max-width: 100%"></div>
@@ -51,7 +56,8 @@
       </div>
     </section>
 
-<!-- =======================================Categorias=============================-->
+  <!-- ========================================================Categorias=================================================================-->
+
     <section class="hide" id="indicator">
       <div class="indicator-per-country" id="to-shrink">
         <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
@@ -82,7 +88,8 @@
           </p>
         </div>
     </section>
-<!-- =====================================================Mostrar indicadores============================================================================ -->
+
+  <!-- =====================================================Mostrar indicadores========================================================-->
 
 <section class="hide" id="indicator-table">
   <div class="flex" id="container-indicators-category">
@@ -93,35 +100,9 @@
     </table>
   </div>        
 </section>
-
-    <!-- <section class="hide" id="indicator-table-population">
-        <div class="flex" id="container-indicators-category">
-            <h1>POBLACIÓN</h1>
-          <table class="flex-table" id="ind-population">
-            
-          </table>
-        </div>        
-    </section>
-
-    <section class="hide" id="indicator-table-work">
-        <div class="flex" id="container-indicators-category">
-            <h1>TRABAJO</h1>
-          <table class="flex-table"id="ind-work">
-            
-          </table>
-        </div>        
-    </section>
-
-    <section class="hide" id="indicator-table-gender">
-        <div class="flex" id="container-indicators-category">
-          <h1>GÉNERO</h1>
-          <table  class="flex-table" id="ind-gender">
-            
-          </table>
-        </div>        
-    </section> -->
     
-<!-- ================================ Mostrar Valores=========================================================== -->
+  <!-- =====================================================Mostrar Valores=========================================================== -->
+
     <section class="hide" id="showDataIndicator">
       <button type="button" class="data-explorer" id="sort">Ordenar</button>
         <div class="flex" id="container-data-indicator">
@@ -134,6 +115,8 @@
 
   </main>
 
+  <!-- =====================================================Pie de página============================================================ -->
+
   <footer class="hide" id="footer">
     <div class="footer-style">
     <p class="social-media">SÍGANOS</p>
@@ -144,9 +127,12 @@
     </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
   </footer>
+
+  <!-- =========================================================Scripts============================================================= -->
     
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
+  
 </body>
 </html>
