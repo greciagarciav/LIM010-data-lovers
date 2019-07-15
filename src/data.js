@@ -3,6 +3,7 @@ let population = [];
 let work = [];
 let gender = [];
 
+
 window.worldbank = {
 
   categorizePerCountry: (countryIndicators)=>{
@@ -25,11 +26,8 @@ window.worldbank = {
   return {education: education, population: population, work: work, gender: gender}
 },
 
-indicatorsPerCountry: ()=>{
-
-},
-
 sortAscending: ( )=>{
+
 
 },
 

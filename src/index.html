@@ -5,103 +5,83 @@
   <title>Banco Mundial | Indicadores</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hide" id="header">
-    <div class="flex-row container-logo">
-      <div class="c">
-        <a class="a" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial|Indicadores de Desarrollo"></a>
-
-        <button class="menu">
-          <hr><hr><hr>
-        </button>
+<header class="hide" id="header">
+    <nav class="flex-row container-logo">
+      <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial"></a>
+      <div class="menu-paises">
+        <button type="button" class="menu-pais">Perú</button>
+        <button type="button" class="menu-pais">México</button>
+        <button type="button" class="menu-pais">Brasil</button>
+        <button type="button" class="menu-pais">Chile</button>
       </div>
-    </div>
+    </nav>
   </header>
-
-
-  
-  <main >
-   <!-- ===================================================Login================================================= -->
-    <section class="hide" id="login">
-      <div class="container-all-login">
-          <form class="contain-form-field-login">
-            <img class="logo-login" src="img/logo-banco-mundial.png">
-            <label class="label-caption" >Usuario</label>
-            <input type="text" name="usuario" class="fill-login" id="email">
-            <label class="label-caption">Contraseña</label>
-            <input type="password" name="contraseña" class="fill-login" id="password">
-            <label class="label-caption-reset">¿Olvidaste tu contraseña?</label>
-            <label class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</label>
-            <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
-            <label class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></label>
-          </form>
+  <!-- ==============================================Login=====================================-->
+  <main class="main main-2">
+    <section class="hide flex-login" id="login">
+      <form class="contain-form-field-login">
+        <img class="logo-login" src="img/logo-banco-mundial.png">
+        <label class="label-caption" >Usuario</label>
+        <input type="text" name="usuario" class="fill-login" id="email">
+        <label class="label-caption">Contraseña</label>
+        <input type="password" name="contraseña" class="fill-login" id="password">
+        <label class="label-caption-reset">¿Olvidaste tu contraseña?</label>
+        <label class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</label>
+        <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
+        <label class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></label>
+      </form>
+    </section>
+<!-- ===============================================Frame================================== -->
+    <section class="hide space-plus" id="frame">
+      <div class="frame">
+        <div class="img-pais"><img src="img/peru-div.png" class="frame-img" alt="" id="explore-data-peru" style="max-width: 100%"></div>
+        <div class="img-pais"><img src="img/mexico-div.png" class="frame-img" alt="" id="explore-data-mexico"></div>
+        <div class="img-pais"><img src="img/brasil-div.png" class="frame-img" alt="" id="explore-data-brasil"></div>
+        <div class="img-pais"><img src="img/chile-div.png" class="frame-img" alt="" id="explore-data-chile"></div>
       </div>
     </section>
-<!-- ===============================================Slide======================================================= -->
-    <section class="hide" id="slide-show">
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 4</div>
-          <img src="img/peru-slide.png" style="width:100%">
-          <div class="text">
-            <h1 class="bold-text">EL BANCO MUNDIAL EN PERÚ</h1>
-            <p>Las acertadas políticas macroeconómicas y estructurales del Perú, combinadas con condiciones externas propicias, han generado un crecimiento importante.</p>
-            <button type="button" class="data-explorer" id="explore-data-peru">Explorar Data</button>
-          </div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 4</div>
-          <img src="img/mexico-slide.jpg" style="width:100%">
-          <div class="text">
-            <h1 class="bold-text">El Banco Mundial en México</h1>
-            <p>La labor del Banco Mundial en México se organiza en torno a un modelo que ofrece soluciones integrales y personalizadas para el desarrollo mediante un paquete de herramientas financieras, de conocimiento y coordinación en todas las ramas de la institución.</p>
-            <button type="button" class="data-explorer" id="explore-data-mexico">Explorar Data</button>
-          </div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 4</div>
-          <img src="img/chile-slide.png" style="width:100%">
-          <div class="text">
-            <h1 class="bold-text">El Banco Mundial en Chile</h1>
-            <p>En las últimas décadas, Chile ha sido una de las economías de más rápido crecimiento en Latinoamérica. Esto le ha permitido una importante reducción de la pobreza. Por ejemplo, entre 2000 y 2015, la proporción de la población considerada pobre (US$4 por día) se redujo del 26 a 7.9%.</p>
-            <button type="button" class="data-explorer" id="explore-data-chile">Explorar Data</button>
-          </div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">4 / 4</div>
-          <img src="img/brasil-slide.png" style="width:100%">
-          <div class="text">
-            <h1 class="bold-text">El Banco Mundial en Brasil</h1>
-            <p>Brasil es la sexta mayor economía del mundo por PIB nominal, ocupando el octavo o noveno lugar por paridad de compra. A partir de los años 1990, el país adquirió estabilidad económica, atrayendo inversiones foráneas.</p>
-            <button type="button" class="data-explorer" id="explore-data-brasil">Explorar Data</button>
-          </div>
-        </div>
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-      <br>
-      <!-- The dots/circles -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>  
+    <section class="hide" id="text-under-frame">
+      <div class="text-media">
+        <p class="bold-text text-format">Indicadores del Desarrollo Mundial</p>
+        <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.
+        </p>
       </div>
     </section>
 
-    <section class="hide" id="text-under-slide">
-        <div class="text-media">
-          <div>
-            <p class="bold-text text-format">Indicadores del Desarrollo Mundial</p>
-            <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.</p>
-          </div>
-      </section>
+<!-- =======================================Categorias=============================-->
+    <section class="hide" id="indicator">
+      <div class="indicator-per-country" id="to-shrink">
+        <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-mex">MÉXICO: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-chl">CHILE: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
+        <div class="contain-icons">
+          <figure class="icon-style">
+            <img src="img/education.png" class="icon-indicator" id="education">
+            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/population.png" class="icon-indicator" id="population">
+            <figcaption class="indicator-title">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/works.png" class="icon-indicator" id="work">
+            <figcaption class="indicator-title">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/genders.png" class="icon-indicator" id="gender">
+            <figcaption class="indicator-title">GÉNERO</figcaption>
+          </figure>
+        </div>      
+      </div>
+        <div class="container-text-under-icons-indicator" id="filled">
+          <p class="text-under-icons-indicator">El Grupo Banco Mundial trabaja en todas las principales esferas del desarrollo: proporciona una gran variedad de productos financieros y asistencia técnica, y ayuda a los países a enfrentar los desafíos mediante el intercambio de conocimiento de vanguardia y la aplicación de soluciones innovadoras.
+          </p>
+        </div>
+    </section>
 
 <!-- ==========================================================Categorias===================================================================== -->
 
@@ -183,21 +163,19 @@
           </div>  
       </section>
 
-<!--======-->
   </main>
 
   <footer class="hide" id="footer">
     <div class="footer-style">
     <p class="social-media">SÍGANOS</p>
     <div class="wrapper-social-media">
-      <a href="https://www.facebook.com/bancomundial"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
-      <a href="https://twitter.com/bancomundial"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
-      <a href="https://www.instagram.com/bancomundial/"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
+      <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
+      <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
+      <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
     </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
-    </div>
   </footer>
-
+    
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
