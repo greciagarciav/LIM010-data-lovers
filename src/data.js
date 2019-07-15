@@ -1,13 +1,14 @@
-let education = [];
-let population = [];
-let work = [];
-let gender = [];
+
 
 
 window.worldbank = {
 
-  categorizePerCountry: (countryIndicators)=>{
-  
+  categorizePerCountry: (countryIndicators) => {
+    let education = [];
+    let population = [];
+    let work = [];
+    let gender = [];
+
   for (let i = 0; i < countryIndicators.length ; i++) {
    
     if (countryIndicators[i].indicatorCode.split(".")[0] === "SE"){
