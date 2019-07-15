@@ -8,22 +8,25 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="hide" id="header">
+
+  <!-- ====================================================Cabecer/Navegador=========================================================== -->
+<header class="hide" id="header">
     <nav class="flex-row container-logo">
       <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial"></a>
       <div class="menu-paises">
-        <button type="button" class="menu-pais">Perú</button>
-        <button type="button" class="menu-pais">México</button>
-        <button type="button" class="menu-pais">Brasil</button>
-        <button type="button" class="menu-pais">Chile</button>
+        <button type="button" class="menu-pais go-to-peru" id="go-peru">Perú</button>
+        <button type="button" class="menu-pais go-to-mexico" id="go-mexico">México</button>
+        <button type="button" class="menu-pais go-to-brasil" id="go-brasil">Brasil</button>
+        <button type="button" class="menu-pais go-to-chile" id="go-chile">Chile</button>
       </div>
     </nav>
   </header>
-<!-- ==============================================Login=====================================-->
+
+  <!-- ==========================================================Login=================================================================-->
   <main class="main main-2">
     <section class="hide flex-login" id="login">
       <form class="contain-form-field-login">
-        <img class="logo-login" src="img/logo-banco-mundial.png">
+        <img class="logo-login" src="img/logo-banco-mundial.png" alt="">
         <label class="label-caption" >Usuario</label>
         <input type="text" name="usuario" class="fill-login" id="email">
         <label class="label-caption">Contraseña</label>
@@ -34,13 +37,15 @@
         <label class="new-account">¿No tienes una cuenta?<strong>&nbspRegistrate</strong></label>
       </form>
     </section>
-<!-- ===============================================Frame================================== -->
+
+  <!-- ============================================================Frame================================================================= -->
+
     <section class="hide space-plus" id="frame">
       <div class="frame">
-        <div class="img-pais"><img src="img/peru-div.png" class="frame-img" alt="" id="explore-data-peru" style="max-width: 100%"></div>
-        <div class="img-pais" style="max-width: 100%"><img src="img/mexico-div.png" class="frame-img" alt="" id="explore-data-mexico"></div>
-        <div class="img-pais" style="max-width: 100%"><img src="img/brasil-div.png" class="frame-img" alt="" id="explore-data-brasil"></div>
-        <div class="img-pais" style="max-width: 100%"><img src="img/chile-div.png" class="frame-img" alt="" id="explore-data-chile"></div>
+        <div class="img-pais"><img src="img/peru-div.png" class="frame-img go-to-peru" alt="" id="explore-data-peru" style="max-width: 100%"></div>
+        <div class="img-pais"><img src="img/mexico-div.png" class="frame-img go-to-mexico" alt="" style="max-width: 100%" id="explore-data-mexico"></div>
+        <div class="img-pais"><img src="img/brasil-div.png" class="frame-img go-to-brasil" alt="" style="max-width: 100%" id="explore-data-brasil"></div>
+        <div class="img-pais"><img src="img/chile-div.png" class="frame-img go-to-chile" alt=""  style="max-width: 100%" id="explore-data-chile"></div>
       </div>
     </section>
     <section class="hide" id="text-under-frame">
@@ -51,7 +56,8 @@
       </div>
     </section>
 
-<!-- =======================================Categorias=============================-->
+  <!-- ========================================================Categorias=================================================================-->
+
     <section class="hide" id="indicator">
       <div class="indicator-per-country" id="to-shrink">
         <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
@@ -60,19 +66,19 @@
         <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
         <div class="contain-icons">
           <figure class="icon-style">
-            <img src="img/education.png" class="icon-indicator" id="education">
+            <img src="img/education.png" class="icon-indicator" id="education" alt="">
             <figcaption class="indicator-title">EDUCACIÓN</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/population.png" class="icon-indicator" id="population">
+            <img src="img/population.png" class="icon-indicator" id="population" alt="">
             <figcaption class="indicator-title">POBLACIÓN</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/works.png" class="icon-indicator" id="work">
+            <img src="img/works.png" class="icon-indicator" id="work" alt="">
             <figcaption class="indicator-title">TRABAJO</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/genders.png" class="icon-indicator" id="gender">
+            <img src="img/genders.png" class="icon-indicator" id="gender" alt="">
             <figcaption class="indicator-title">GÉNERO</figcaption>
           </figure>
         </div>      
@@ -82,50 +88,49 @@
           </p>
         </div>
     </section>
-<!-- ===========================Mostrar indicadores======================================= -->
-    <section class="hide" id="indicator-table-education">
-      <div class="flex" id="container-indicators-category">
-        <h1>EDUCACIÓN</h1>
-        <table class="flex-table" id="ind-education"></table>
-      </div>        
-    </section>
-    <section class="hide" id="indicator-table-population">
-      <div class="flex" id="container-indicators-category">
-        <h1>POBLACIÓN</h1>
-        <table class="flex-table" id="ind-population"></table>
-      </div>        
-    </section>
-    <section class="hide" id="indicator-table-work">
-      <div class="flex" id="container-indicators-category">
-        <h1>TRABAJO</h1>
-        <table class="flex-table"id="ind-work"></table>
-      </div>        
-    </section>
-    <section class="hide" id="indicator-table-gender">
-      <div class="flex" id="container-indicators-category">
-        <h1>GÉNERO</h1>
-        <table  class="flex-table" id="ind-gender"></table>
-      </div>        
-    </section>
-<!-- ========================== Mostrar Valores==================================== -->
-    <section class="hide" id="showDataIndicator">
-      <button></button>
-      <div class="flex" id="container-data-indicator">
-        <h1 class=""></h1>
-        <table id="data" class="flex-table"></table>
-      </div>  
-    </section>
+
+  <!-- =====================================================Mostrar indicadores========================================================-->
+
+<section class="hide" id="indicator-table">
+  <div class="flex" id="container-indicators-category">
+      <h1 id="category-title"> </h1>
+    <table class="flex-table" id="category">
+      
+      
+    </table>
+  </div>        
+</section>
+    
+  <!-- =====================================================Mostrar Valores=========================================================== -->
+
+    <section class="hide" id="show-data-indicator">
+      <button type="button" class="data-explorer" id="sort">Ordenar</button>
+        <div class="flex" id="container-data-indicator">
+            <h1 class=""></h1>
+            <table id="data" class="flex-table">
+              
+            </table>
+          </div>  
+      </section>
+
   </main>
-<!--==========================================================================================-->
-  <footer class="hide footer-style" id="footer">
-    <p class="follow-us">SÍGANOS</p>
+
+  <!-- =====================================================Pie de página============================================================ -->
+
+  <footer class="hide" id="footer">
+    <div class="footer-style">
+    <p class="social-media">SÍGANOS</p>
     <div class="wrapper-social-media">
       <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
       <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
       <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
     </div>
+    </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
   </footer>
+
+  <!-- =========================================================Scripts============================================================= -->
+    
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
