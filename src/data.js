@@ -52,46 +52,58 @@ window.worldbank = {
     let divider = dato.length;
     return sum / divider;
   },
+
+  filterYears: (newArrData, year) => {
+    let yearData = [];
+    for (let i = 0; i < newArrData.length; i++) {
+    yearData.push(newArrData[i].data[year]);
+    }
+    return yearData;
+}
+
 };
 
-function OrderYearAsc(a, b) {
-  if (a[0] > b[0]) {
-    return 1;
-  }
-  if (a[0] < b[0]) {
-    return -1;
-  }
-  return 0;
+//Ordena Año de Menor a Mayor
+const OrderYearAsc= (a, b) => {
+if (a[0] > b[0]) {
+ return 1;
 }
-// Ordena Año de Mayor a Menor
-function OrderYearDesc(a, b) {
-  if (a[0] < b[0]) {
-    return 1;
-  }
-  if (a[0] > b[0]) {
-    return -1;
-  }
-  return 0; 
+if (a[0] < b[0]) {
+ return -1;
+}
+return 0; 
+
+}
+//Ordena Año de Mayor a Menor
+const OrderYearDesc = (a, b) => {
+if (a[0] < b[0]) {
+ return 1;
+}
+if (a[0] > b[0]) {
+ return -1;
+}
+return 0; 
 }
 
-// Ordena Porcentaje de Menor a Mayor
-function OrderPercentageAsc(a, b) {
-  if (a[1] > b[1]) {
-    return 1;
-  }
-  if (a[1] < b[1]) {
-    return -1;
-  }
-  return 0;
+//Ordena Porcentaje de Menor a Mayor
+const OrderPercentageAsc = (a, b) => {
+if (a[1] > b[1]) {
+ return 1;
+}
+if (a[1] < b[1]) {
+ return -1;
+}
+return 0; 
+
 }
 
-// Ordena Porcentaje de Mayor a Menor
-function OrderPercentageDesc(a, b) {
-  if (a[1] < b[1]) {
-    return 1;
-  }
-  if (a[1] > b[1]) {
-    return -1;
-  }
-  return 0; 
+//Ordena Porcentaje de Mayor a Menor
+const OrderPercentageDesc = (a, b) => {
+if (a[1] < b[1]) {
+ return 1;
+}
+if (a[1] > b[1]) {
+ return -1;
+}
+return 0; 
 }
