@@ -201,8 +201,10 @@ const createtableIndicatorCategory = (arrCategory) => {
 
   tableIndicatorCategory.innerHTML = table;
 };
-
+let porcentaje = [];
+console.log(porcentaje);
 const createTableData = (objData) =>{
+  
   tableData.innerHTML = '';
 
   let table = `
@@ -213,7 +215,9 @@ const createTableData = (objData) =>{
                   <th class="indicador">Valores</th>
                 </tr>
               </thead>`;
-
+let percent = [];
+porcentaje = percent;
+console.log(percent);
   Object.entries(objData).forEach(([key, value]) => {
     if (value !== '') {
       table = table + `<tr>
@@ -221,8 +225,7 @@ const createTableData = (objData) =>{
                       <td class="indicador">${ value.toFixed(2) } % </td>
                     </tr>`;
       let valor = value;
-      console.log(valor.length);
-
+      percent.push(valor);
     }else{
       //console.log('es vacio');
     }
@@ -233,6 +236,7 @@ const createTableData = (objData) =>{
 
   tableData.innerHTML = table;
 }; 
+console.log(porcentaje);
 const showData = (index) => {
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -242,33 +246,44 @@ const showData = (index) => {
   createTableData(objData);
 };
 
-let pruebita = [];
-globalCategories = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
-const prueba1 = Object.entries(globalCategories);
-for (let i = 0; i < prueba1.length; i++) {
-  const prueba2 = prueba1[i];
-  for (let j = 0; j < prueba2.length; j++) {
-    const prueba3 = prueba2[1];
-    for (let k = 0; k < prueba3.length; k++) {
-      const prueba4 = Object.entries(prueba3[k].data);
-      for (let l = 0; l < prueba4.length; l++) {
-        const prueba5 = prueba4[l];
-        for (let m = 0; m < prueba5.length; m++) {
-          pruebita.push(prueba5[1]);
-          //console.log(prueba5[1]);
-        }
-      }
-      
-    }
+/*let porcentaje = [];
+promediop = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
+const uno = Object.entries(promediop);
+for (let i = 0 ; i<uno.length;i++){
+  const dos = uno[i];
+  console.log(dos);
+  for (let j = 0; j <dos.length; j++) {
+    const tres = dos[1];
   }
-}
+}*/
+
+/*const pintarDatosxSectorxIndicadores = (obj) => {
+    years = obj;
+    let stringDatosSector = " ";
+    porcentaje = Object.values(obj);
+    let i;
+    for (i in years) {
+        if (years[i] !== "") {
+            stringDatosSector +=
+                ` <tr><td> ${i} </td>
+            <td>${ years[i].toFixed(2)}</td></tr>`;
+        }
+    }
+    return stringDatosSector;
+};*/
 
 
-const sumatoria = pruebita.reduce(function(acumulador,siguientevalor){
-return acumulador + siguientevalor;
-},0);
-// console.log(sumatoria);
-
+document.getElementById('promedio').addEventListener('click', (event) => {
+    event.preventDefault();
+    let datoPromedio = [];
+    for (let i = 0; i < porcentaje.length; i++) {
+        if (porcentaje[i] !== '') {
+            datoPromedio.push(Number(porcentaje[i]))
+        }
+    }
+    let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
+    document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
+})
 
 //console.log(globalCategories);
 /*// Pureba

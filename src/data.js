@@ -34,8 +34,12 @@ window.worldbank = {
   
   },
 
-  averageValue: ()=>{
-
+  averageValue: (arrayPorcentaje)=>{
+    let sum = arrayPorcentaje.reduce((a,b)=>{
+      return a+b;
+    });
+    let divider = arrayPorcentaje.length;
+    return sum/divider
   }
 
 };
