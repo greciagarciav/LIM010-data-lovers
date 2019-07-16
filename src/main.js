@@ -1,10 +1,11 @@
-/* eslint-disable id-length */
 const dataWorldbank = WORLDBANK;
 let globalCountry = [];
 let globalCategories = [];
 let globalCategory = [];
+let globalData = [];
 
-/* ----------------------------------------------LOGIN------------------------------------------------- */
+/* =======================================================Login ======================================================== */
+
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const sentLogin = document.getElementById('login-button');
@@ -29,12 +30,12 @@ sentLogin.addEventListener('click', ()=>{
   }
 });
 
-/* ----------------------------------Al hacer click en el boton explorar data-------------------------------------*/
-// --------------------------------------------------------------------------------------
+/* ===========================================Al hacer click en el boton explorar data===================================*/
+
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', () => {
-  document.getElementById('title-per').classList.remove('hide');
-  document.getElementById('filled').classList.remove('hide');
+  document.getElementById('title-per').classList.remove("hide");
+  document.getElementById('filled').classList.remove("hide");
   showCategories('peru'); 
   globalCountry = WORLDBANK.PER.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
@@ -73,6 +74,7 @@ document.getElementById('go-mexico').addEventListener('click', ()=>{
   globalCountry = WORLDBANK.MEX.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
+
 // ---------------------------------------------------------------------------------------
 exploreDataBrasil = document.getElementById('explore-data-brasil');
 exploreDataBrasil.addEventListener('click', () => {
@@ -123,11 +125,13 @@ const showCategories = (countryId) => {
   document.getElementById('to-shrink').classList.add('to-shrink');
 };
 
-/* ======================Al hacer click en el ícono de la categoria ===================================*/ 
-const tableIndicatorCategory = document.getElementById('category'); 
+
+/* ============================================Al hacer click en el ícono de la categoria ===================================*/ 
+
+const tableIndicatorCategory =  document.getElementById('category'); 
 const tableData = document.getElementById('data');
 
-
+// --------------------------Educación-----------------------------
 const education = document.getElementById('education');
 education.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -139,7 +143,7 @@ education.addEventListener('click', ()=>{
   createtableIndicatorCategory(educArr);
 });
 
-// -------------------------------------------------------
+// ---------------------------Población----------------------------
 const population = document.getElementById('population');
 population.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -151,7 +155,7 @@ population.addEventListener('click', ()=>{
   createtableIndicatorCategory(popArr);
 });
 
-// -------------------------------------------------------
+// ------------------------------Trabajo----------------------------
 const work = document.getElementById('work');
 work.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -163,7 +167,7 @@ work.addEventListener('click', ()=>{
   createtableIndicatorCategory(workArr);
 });
 
-// -------------------------------------------------------------------------------------
+// ------------------------------Género------------------------------
 const gender = document.getElementById('gender');
 
 gender.addEventListener('click', () => {
@@ -176,10 +180,12 @@ gender.addEventListener('click', () => {
   createtableIndicatorCategory(genArr);
 });
 
-const createtableIndicatorCategory = (arrCategory) => {
+// -------------Función que crea la tabla de categorías---------------
+ const createtableIndicatorCategory = (arrCategory) => {
+
   globalCategory = arrCategory;
 
-  tableIndicatorCategory.innerHTML = '';
+  tableIndicatorCategory.innerHTML = "";
 
   let table = `<thead>
                 <tr>
@@ -188,8 +194,9 @@ const createtableIndicatorCategory = (arrCategory) => {
                 </tr>
                </thead>`;
 
-  for (let i = 0 ; i < arrCategory.length ; i++) {
-    table = table + `<tr>
+  for ( let i = 0 ; i < arrCategory.length ; i++){
+
+    table = table +   `<tr>
                           <td class="nro">${ i + 1 } </td>
                           <td class="indicador">
                             <a href="javascript:showData(${ i })"> ${ arrCategory[i].indicatorName }</a>
@@ -197,7 +204,7 @@ const createtableIndicatorCategory = (arrCategory) => {
                        </tr>`;
   }
 
-  table = table + '</tbody>';
+  table = table + `</tbody>`
 
   tableIndicatorCategory.innerHTML = table;
 };
@@ -207,7 +214,11 @@ const createTableData = (objData) =>{
   
   tableData.innerHTML = '';
 
-  let table = `
+  globalData = objData;
+
+  tableData.innerHTML = "";
+
+ let table = `
 
               <thead>
                 <tr>
@@ -219,8 +230,8 @@ let percent = [];
 porcentaje = percent;
 console.log(percent);
   Object.entries(objData).forEach(([key, value]) => {
-    if (value !== '') {
-      table = table + `<tr>
+    if(value != ""){
+  table = table +   `<tr>
                       <td class="nro">${ key } </td>
                       <td class="indicador">${ value.toFixed(2) } % </td>
                     </tr>`;
@@ -232,46 +243,20 @@ console.log(percent);
 
   });   
 
-  table = table + '</tbody>';
+  table = table + `</tbody>`
 
   tableData.innerHTML = table;
 }; 
 console.log(porcentaje);
 const showData = (index) => {
+
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
-  document.getElementById('show-data-indicator').classList.remove('hide');
+  document.getElementById('showDataIndicator').classList.remove('hide');
   
   let objData = globalCategory[index].data;
   createTableData(objData);
 };
-
-/*let porcentaje = [];
-promediop = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
-const uno = Object.entries(promediop);
-for (let i = 0 ; i<uno.length;i++){
-  const dos = uno[i];
-  console.log(dos);
-  for (let j = 0; j <dos.length; j++) {
-    const tres = dos[1];
-  }
-}*/
-
-/*const pintarDatosxSectorxIndicadores = (obj) => {
-    years = obj;
-    let stringDatosSector = " ";
-    porcentaje = Object.values(obj);
-    let i;
-    for (i in years) {
-        if (years[i] !== "") {
-            stringDatosSector +=
-                ` <tr><td> ${i} </td>
-            <td>${ years[i].toFixed(2)}</td></tr>`;
-        }
-    }
-    return stringDatosSector;
-};*/
-
 
 document.getElementById('promedio').addEventListener('click', (event) => {
     event.preventDefault();
@@ -305,19 +290,20 @@ var datos = { '1992': 9,
 
 // Crea las funciones de Ordenamiento
 
-// Ordena Año de Menor a Mayor
+//Ordena Año de Menor a Mayor
 function OrderYearAsc(a, b) {
-  if (a[0] > b[0]) {
+   if (a[0] > b[0]) {
     return 1;
   }
   if (a[0] < b[0]) {
     return -1;
   }
-  return 0;
+  return 0; 
+  
 }
-// Ordena Año de Mayor a Menor
+//Ordena Año de Mayor a Menor
 function OrderYearDesc(a, b) {
-  if (a[0] < b[0]) {
+   if (a[0] < b[0]) {
     return 1;
   }
   if (a[0] > b[0]) {
@@ -326,22 +312,24 @@ function OrderYearDesc(a, b) {
   return 0; 
 }
 
-// Ordena Porcentaje de Menor a Mayor
+//Ordena Porcentaje de Menor a Mayor
 function OrderPorcentajeAsc(a, b) {
-  if (a[1] > b[1]) {
+   if (a[1] > b[1]) {
     return 1;
   }
   if (a[1] < b[1]) {
     return -1;
   }
-  return 0;
+  return 0; 
+  
 }
 
-// Ordena Porcentaje de Mayor a Menor
+//Ordena Porcentaje de Mayor a Menor
 function OrderPorcentaDesc(a, b) {
-  if (a[1] < b[1]) {
+   if (a[1] < b[1]) {
     return 1;
   }
+
   if (a[1] > b[1]) {
     return -1;
   }
@@ -349,6 +337,7 @@ function OrderPorcentaDesc(a, b) {
 }
 
 // Convierte a arreglos 
+
 var arrData = Object.entries(datos);
 
 console.log('Muestra arreglo inicial');
