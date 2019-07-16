@@ -156,9 +156,9 @@ gender.addEventListener('click', () => {
  }
 
 // -------------Función que crea la tabla de data------------------
-const createTableData = (objData) =>{
+const createTableData = (arrData) =>{
 
-  globalData = objData;
+  globalData = arrData;
 
   tableData.innerHTML = "";
 
@@ -171,7 +171,7 @@ const createTableData = (objData) =>{
                 </tr>
               </thead>`;
 
-  Object.entries(objData).forEach(([key, value]) => {
+  arrData.forEach(([key, value]) => {
     if(value != ""){
   table = table +   `<tr>
                       <td class="nro">${ key } </td>
@@ -179,7 +179,7 @@ const createTableData = (objData) =>{
                     </tr>`;
 
     }   
-});   
+});
 
   table = table + `</tbody>`
 
@@ -190,103 +190,25 @@ const createTableData = (objData) =>{
 // ------------------Función que muestra la data------------------
 const showData = (index) => {
 
+  // document.getElementById('country-category-title')= ;
+  // document.getElementById('indicator-title-data')= ;
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
-  
-  let objData = globalCategory[index].data;
-  createTableData(objData);
+
+
+  let arrData = Object.entries(globalCategory[index].data);
+  createTableData(arrData);
 
 }
 
-document.getElementById('sort-btn').addEventListener('click', ()=>{
-const indicatorSelected = document.getElementById('data').value;
-const typeSelected = document.getElementById('data-type').value;
-const orderSelected = document.getElementById('order-type').value;
+// ------------------Función que ordena la data------------------
 
-let arrData = Object.entries(globalData);
+document.getElementById('sort-btn').addEventListener('click', () => {
+  let typeSelected = document.getElementById('data-type').value;
+  let orderSelected = document.getElementById('order-type').value;
 
-
+  let arrData = globalData;
+  let arrSort = window.worldbank.sortArrData(arrData,typeSelected, orderSelected);
+  createTableData(arrSort);
 })
-
-
-
-//Prueba para ordenar data con un ejemplo
-
-var datos = { "1992": 9, 
-              "1995": 6, 
-              "1993": 8, 
-              "1991": 10, 
-              "1996": 5, 
-              "1997": 4, 
-              "1994": 7, 
-              "1998": 3, 
-              "1999": 2, 
-              "2000": 1
-             }
-
-
-// Crea las funciones de Ordenamiento
-
-//Ordena Año de Menor a Mayor
-function OrderYearAsc(a, b) {
-   if (a[0] > b[0]) {
-    return 1;
-  }
-  if (a[0] < b[0]) {
-    return -1;
-  }
-  return 0; 
-  
-}
-//Ordena Año de Mayor a Menor
-function OrderYearDesc(a, b) {
-   if (a[0] < b[0]) {
-    return 1;
-  }
-  if (a[0] > b[0]) {
-    return -1;
-  }
-  return 0; 
-}
-
-//Ordena Porcentaje de Menor a Mayor
-function OrderPorcentajeAsc(a, b) {
-   if (a[1] > b[1]) {
-    return 1;
-  }
-  if (a[1] < b[1]) {
-    return -1;
-  }
-  return 0; 
-  
-}
-
-//Ordena Porcentaje de Mayor a Menor
-function OrderPorcentaDesc(a, b) {
-   if (a[1] < b[1]) {
-    return 1;
-  }
-  if (a[1] > b[1]) {
-    return -1;
-  }
-  return 0; 
-}
-
-// Convierte a arreglos 
-var arrD = Object.entries(datos);
-
-console.log("Muestra arreglo inicial");
-console.log(arrD);
-
-console.log("Ordena Año de Mayor a Menor");
-console.log(arrD.sort(OrderYearDesc));
-
-console.log("Ordena Año de Menor a Mayor");
-console.log(arrD.sort(OrderYearAsc));
-
-console.log("Ordena Porcentaje de Mayor a Menor");
-console.log(arr.sort(OrderPorcentaDesc));
-
-console.log("Ordena Porcentaje de Menor a Mayor");
-console.log(arrD.sort(OrderPorcentajeAsc));
