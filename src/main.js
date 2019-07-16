@@ -40,28 +40,81 @@ exploreDataPeru.addEventListener('click', () => {
   globalCountry = WORLDBANK.PER.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
-
+document.getElementById('go-peru').addEventListener('click', ()=>{
+  document.getElementById('title-per').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
+  document.getElementById('indicator-table').classList.add('hide');
+  document.getElementById('show-data-indicator').classList.add('hide');
+  document.getElementById('title-mex').classList.add('hide');
+  document.getElementById('title-bra').classList.add('hide');
+  document.getElementById('title-chl').classList.add('hide');
+  showCategories('peru'); 
+  globalCountry = WORLDBANK.PER.indicators;
+  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+});
+// --------------------------------------------------------------------------------------
 exploreDataMexico = document.getElementById('explore-data-mexico');
 exploreDataMexico.addEventListener('click', () => {
-  document.getElementById('title-mex').classList.remove("hide");
+  document.getElementById('title-mex').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
   showCategories('mexico');
   globalCountry = WORLDBANK.MEX.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
 
+document.getElementById('go-mexico').addEventListener('click', ()=>{
+  document.getElementById('title-mex').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
+  document.getElementById('indicator-table').classList.add('hide');
+  document.getElementById('show-data-indicator').classList.add('hide');
+  document.getElementById('title-per').classList.add('hide');
+  document.getElementById('title-bra').classList.add('hide');
+  document.getElementById('title-chl').classList.add('hide');
+  showCategories('mexico');
+  globalCountry = WORLDBANK.MEX.indicators;
+  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+});
+
+// ---------------------------------------------------------------------------------------
+exploreDataBrasil = document.getElementById('explore-data-brasil');
+exploreDataBrasil.addEventListener('click', () => {
+  document.getElementById('title-bra').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
+  showCategories('brasil');
+  globalCountry = WORLDBANK.BRA.indicators;
+  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+});
+document.getElementById('go-brasil').addEventListener('click', ()=>{
+  document.getElementById('title-bra').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
+  document.getElementById('indicator-table').classList.add('hide');
+  document.getElementById('show-data-indicator').classList.add('hide');
+  document.getElementById('title-per').classList.add('hide');
+  document.getElementById('title-mex').classList.add('hide');
+  document.getElementById('title-chl').classList.add('hide');
+  showCategories('bra');
+  globalCountry = WORLDBANK.BRA.indicators;
+  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+});
+// ---------------------------------------------------------------------------------------
 exploreDataChile = document.getElementById('explore-data-chile');
 exploreDataChile.addEventListener('click', () => {
-  document.getElementById('title-chl').classList.remove("hide")
+  document.getElementById('title-chl').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
   showCategories('chile');
   globalCountry = WORLDBANK.CHL.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
-
-exploreDataBrasil = document.getElementById('explore-data-brasil');
-exploreDataBrasil.addEventListener('click', () => {
-  document.getElementById('title-bra').classList.remove("hide")
-  showCategories('brasil');
-  globalCountry = WORLDBANK.BRA.indicators;
+document.getElementById('go-chile').addEventListener('click', ()=>{
+  document.getElementById('title-chl').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
+  document.getElementById('indicator-table').classList.add('hide');
+  document.getElementById('show-data-indicator').classList.add('hide');
+  document.getElementById('title-per').classList.add('hide');
+  document.getElementById('title-mex').classList.add('hide');
+  document.getElementById('title-bra').classList.add('hide');
+  showCategories('chile');
+  globalCountry = WORLDBANK.CHL.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
 
@@ -70,7 +123,8 @@ const showCategories = (countryId) => {
   document.getElementById('text-under-frame').classList.add('hide');
   document.getElementById('indicator').classList.remove('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
-}
+};
+
 
 /* ============================================Al hacer click en el ícono de la categoria ===================================*/ 
 
@@ -267,6 +321,7 @@ function OrderPorcentaDesc(a, b) {
    if (a[1] < b[1]) {
     return 1;
   }
+
   if (a[1] > b[1]) {
     return -1;
   }
@@ -274,19 +329,20 @@ function OrderPorcentaDesc(a, b) {
 }
 
 // Convierte a arreglos 
-var arrD = Object.entries(datos);
 
-console.log("Muestra arreglo inicial");
-console.log(arrD);
+var arrData = Object.entries(datos);
 
-console.log("Ordena Año de Mayor a Menor");
-console.log(arrD.sort(OrderYearDesc));
+console.log('Muestra arreglo inicial');
+console.log(arrData);
 
-console.log("Ordena Año de Menor a Mayor");
-console.log(arrD.sort(OrderYearAsc));
+console.log('Ordena Año de Mayor a Menor');
+console.log(arrData.sort(OrderYearDesc));
 
-console.log("Ordena Porcentaje de Mayor a Menor");
-console.log(arr.sort(OrderPorcentaDesc));
+console.log('Ordena Año de Menor a Mayor');
+console.log(arrData.sort(OrderYearAsc));
 
-console.log("Ordena Porcentaje de Menor a Mayor");
-console.log(arrD.sort(OrderPorcentajeAsc));
+console.log('Ordena Porcentaje de Mayor a Menor');
+console.log(arrData.sort(OrderPorcentaDesc));
+
+console.log('Ordena Porcentaje de Menor a Mayor');
+console.log(arrData.sort(OrderPorcentajeAsc));
