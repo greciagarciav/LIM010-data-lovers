@@ -34,8 +34,8 @@ sentLogin.addEventListener('click', ()=>{
 
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', () => {
-  document.getElementById('title-per').classList.remove("hide");
-  document.getElementById('filled').classList.remove("hide");
+  document.getElementById('title-per').classList.remove('hide');
+  document.getElementById('filled').classList.remove('hide');
   showCategories('peru'); 
   globalCountry = WORLDBANK.PER.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
@@ -128,7 +128,7 @@ const showCategories = (countryId) => {
 
 /* ============================================Al hacer click en el ícono de la categoria ===================================*/ 
 
-const tableIndicatorCategory =  document.getElementById('category'); 
+const tableIndicatorCategory = document.getElementById('category'); 
 const tableData = document.getElementById('data');
 
 // --------------------------Educación-----------------------------
@@ -181,11 +181,10 @@ gender.addEventListener('click', () => {
 });
 
 // -------------Función que crea la tabla de categorías---------------
- const createtableIndicatorCategory = (arrCategory) => {
-
+const createtableIndicatorCategory = (arrCategory) => {
   globalCategory = arrCategory;
 
-  tableIndicatorCategory.innerHTML = "";
+  tableIndicatorCategory.innerHTML = '';
 
   let table = `<thead>
                 <tr>
@@ -194,9 +193,8 @@ gender.addEventListener('click', () => {
                 </tr>
                </thead>`;
 
-  for ( let i = 0 ; i < arrCategory.length ; i++){
-
-    table = table +   `<tr>
+  for (let i = 0 ; i < arrCategory.length ; i++) {
+    table = table + `<tr>
                           <td class="nro">${ i + 1 } </td>
                           <td class="indicador">
                             <a href="javascript:showData(${ i })"> ${ arrCategory[i].indicatorName }</a>
@@ -204,75 +202,65 @@ gender.addEventListener('click', () => {
                        </tr>`;
   }
 
-  table = table + `</tbody>`
+  table = table + '</tbody>';
 
   tableIndicatorCategory.innerHTML = table;
- }
+};
 
 // -------------Función que crea la tabla de data------------------
+let porcentaje = [];
 const createTableData = (arrData) =>{
-
   globalData = arrData;
 
-  tableData.innerHTML = "";
+  tableData.innerHTML = '';
 
- let table = `
-
+  let table = `
               <thead>
                 <tr>
                   <th class="nro">Años</th>
                   <th class="indicador">Valores</th>
                 </tr>
               </thead>`;
-
+  let percent = [];
+  porcentaje = percent;
+  console.log(percent);
   arrData.forEach(([key, value]) => {
-    if(value != ""){
-  table = table +   `<tr>
+    if (value !== '') {
+      table = table + `<tr>
                       <td class="nro">${ key } </td>
                       <td class="indicador">${ value.toFixed(2) } % </td>
                     </tr>`;
       let valor = value;
       percent.push(valor);
-    }else{
-      //console.log('es vacio');
-    }
-
     }   
-});
+  });
 
-  table = table + `</tbody>`
+  table = table + '</tbody>';
 
   tableData.innerHTML = table;
 }; 
-console.log(porcentaje);
+// ------------------Función que muestra la data------------------
 const showData = (index) => {
-
   // document.getElementById('country-category-title')= ;
   // document.getElementById('indicator-title-data')= ;
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
 
-//console.log(globalCategories);
-/*// Pureba
-
-var datos = { '1992': 9, 
-  '1995': 6, 
-  '1993': 8, 
-  '1991': 10, 
-  '1996': 5, 
-  '1997': 4, 
-  '1994': 7, 
-  '1998': 3, 
-  '1999': 2, 
-  '2000': 1
-};
 
   let arrData = Object.entries(globalCategory[index].data);
   createTableData(arrData);
-
-}
-
+};
+// -----------------------------Se muestra el promedio -------------
+document.getElementById('sortBy-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  let datoPromedio = [];
+  for (let i = 0; i < porcentaje.length; i++) {
+    datoPromedio.push(Number(porcentaje[i]));
+  }
+  let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
+  document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
+});
 // ------------------Función que ordena la data------------------
 
 document.getElementById('sort-btn').addEventListener('click', () => {
@@ -280,6 +268,7 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   let orderSelected = document.getElementById('order-type').value;
 
   let arrData = globalData;
-  let arrSort = window.worldbank.sortArrData(arrData,typeSelected, orderSelected);
+  let arrSort = window.worldbank.sortArrData(arrData, typeSelected, orderSelected);
   createTableData(arrSort);
-})
+});
+
