@@ -1,9 +1,11 @@
 window.worldbank = {
+
   categorizePerCountry: (countryIndicators) => {
     let education = [];
     let population = [];
     let work = [];
     let gender = [];
+
     for (let i = 0; i < countryIndicators.length ; i++) {
       if (countryIndicators[i].indicatorCode.split('.')[0] === 'SE') {
         education.push(countryIndicators[i]);
@@ -21,21 +23,37 @@ window.worldbank = {
       gender: gender};
   },
 
-  sortAscending: ()=>{
 
-
-  },
-
-  sortDescending: ()=>{
-
-  },
-
-  filterData: ()=>{
+sortArrData: (dataBase, dataType, orderType)=>{
   
-  },
+  let sorted = [];
+  if (dataType === 'Valores') {
+    switch (orderType) {
+    case 'Mayor':
+      sorted = dataBase.sort((valorA, valorB) => valorA.value < valorB.value ? 1 : -1);
+      break;
+    case 'Menor':
+      sorted = dataBase.sort((valorA, valorB) => valorA.value > valorB.value ? 1 : -1);
+    }
+  } else
+    switch (orderType) {
+    case 'Mayor':
+      sorted = dataBase.sort((añoA, añoB) => añoA.year < añoB.year ? 1 : -1);
+      break;
+    case 'Menor':
+      sorted = dataBase.sort((añoA, añoB) => añoA.year > añoB.year ? 1 : -1);
+    }
+  return sorted;
+}
+}
 
-  averageValue: ()=>{
+// filterData: ()=>{
+  
+// },
 
-  }
+// averageValue: ()=>{
 
-};
+
+
+// }
+

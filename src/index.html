@@ -103,14 +103,55 @@
     
   <!-- =====================================================Mostrar Valores=========================================================== -->
 
-    <section class="hide" id="show-data-indicator">
-      <button type="button" class="data-explorer" id="sort">Ordenar</button>
-        <div class="flex" id="container-data-indicator">
-            <h1 class=""></h1>
+    <section class="hide" id="showDataIndicator">
+        
+      <div class="flex">
+            <p class="" id="country-category-title"></p>
+            <p class="" id="indicator-title-data"></p>
+            
+            <form class="" id="">
+              <label>Ordenar por:</label>
+              <select id="data-type">
+                <option value="" disabled selected>...</option>
+                <option>Valores</option>
+                <option>Año</option>
+              </select>
+              <label>Orden:</label>
+              <select id="order-type">
+                <option value="" disabled selected>...</option>
+                <option>Mayor</option>
+                <option>Menor</option>
+              </select>
+              <button type="button" class="" id="sort-btn">ORDENAR</button>
+            </form>
+      </div>
+
+      <div class="flex" id="container-data-indicator">
+
             <table id="data" class="flex-table">
               
             </table>
-          </div>  
+      </div> 
+        
+      <div class="flex">
+            <form class="">
+                <label>Desde:</label>
+                <select id="">
+                  <option value="" disabled selected>... </option>
+                  <option>.</option>
+                  <option>.</option>
+                </select>
+                <label>Hasta:</label>
+                <select id="">
+                  <option value="" disabled selected>...</option>
+                  <option>.</option>
+                  <option>.</option>
+                </select>
+                <button type="button" id="sortBy-btn">PROMEDIO</button>
+            </form>
+      </div>
+
+        <div class="flex"></div>
       </section>
 
   </main>
@@ -134,5 +175,6 @@
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
+
 </body>
 </html>
