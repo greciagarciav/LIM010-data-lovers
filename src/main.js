@@ -202,7 +202,6 @@ const createtableIndicatorCategory = (arrCategory) => {
   tableIndicatorCategory.innerHTML = table;
 };
 
-
 const createTableData = (objData) =>{
   tableData.innerHTML = '';
 
@@ -221,14 +220,19 @@ const createTableData = (objData) =>{
                       <td class="nro">${ key } </td>
                       <td class="indicador">${ value.toFixed(2) } % </td>
                     </tr>`;
-    }   
+      let valor = value;
+      console.log(valor.length);
+
+    }else{
+      //console.log('es vacio');
+    }
+
   });   
 
   table = table + '</tbody>';
 
   tableData.innerHTML = table;
 }; 
-
 const showData = (index) => {
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -237,7 +241,37 @@ const showData = (index) => {
   let objData = globalCategory[index].data;
   createTableData(objData);
 };
-// Pureba
+
+let pruebita = [];
+globalCategories = window.worldbank.categorizePerCountry(WORLDBANK.PER.indicators);
+const prueba1 = Object.entries(globalCategories);
+for (let i = 0; i < prueba1.length; i++) {
+  const prueba2 = prueba1[i];
+  for (let j = 0; j < prueba2.length; j++) {
+    const prueba3 = prueba2[1];
+    for (let k = 0; k < prueba3.length; k++) {
+      const prueba4 = Object.entries(prueba3[k].data);
+      for (let l = 0; l < prueba4.length; l++) {
+        const prueba5 = prueba4[l];
+        for (let m = 0; m < prueba5.length; m++) {
+          pruebita.push(prueba5[1]);
+          //console.log(prueba5[1]);
+        }
+      }
+      
+    }
+  }
+}
+
+
+const sumatoria = pruebita.reduce(function(acumulador,siguientevalor){
+return acumulador + siguientevalor;
+},0);
+// console.log(sumatoria);
+
+
+//console.log(globalCategories);
+/*// Pureba
 
 var datos = { '1992': 9, 
   '1995': 6, 
@@ -250,6 +284,8 @@ var datos = { '1992': 9,
   '1999': 2, 
   '2000': 1
 };
+
+
 
 
 // Crea las funciones de Ordenamiento
@@ -313,4 +349,4 @@ console.log('Ordena Porcentaje de Mayor a Menor');
 console.log(arrData.sort(OrderPorcentaDesc));
 
 console.log('Ordena Porcentaje de Menor a Mayor');
-console.log(arrData.sort(OrderPorcentajeAsc));
+console.log(arrData.sort(OrderPorcentajeAsc));*/
