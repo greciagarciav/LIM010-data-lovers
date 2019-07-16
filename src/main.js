@@ -207,14 +207,12 @@ gender.addEventListener('click', () => {
   table = table + `</tbody>`
 
   tableIndicatorCategory.innerHTML = table;
-};
-let porcentaje = [];
-console.log(porcentaje);
-const createTableData = (objData) =>{
-  
-  tableData.innerHTML = '';
+ }
 
-  globalData = objData;
+// -------------Función que crea la tabla de data------------------
+const createTableData = (arrData) =>{
+
+  globalData = arrData;
 
   tableData.innerHTML = "";
 
@@ -226,10 +224,8 @@ const createTableData = (objData) =>{
                   <th class="indicador">Valores</th>
                 </tr>
               </thead>`;
-let percent = [];
-porcentaje = percent;
-console.log(percent);
-  Object.entries(objData).forEach(([key, value]) => {
+
+  arrData.forEach(([key, value]) => {
     if(value != ""){
   table = table +   `<tr>
                       <td class="nro">${ key } </td>
@@ -241,7 +237,8 @@ console.log(percent);
       //console.log('es vacio');
     }
 
-  });   
+    }   
+});
 
   table = table + `</tbody>`
 
@@ -250,25 +247,11 @@ console.log(percent);
 console.log(porcentaje);
 const showData = (index) => {
 
+  // document.getElementById('country-category-title')= ;
+  // document.getElementById('indicator-title-data')= ;
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('showDataIndicator').classList.remove('hide');
-  
-  let objData = globalCategory[index].data;
-  createTableData(objData);
-};
-
-document.getElementById('promedio').addEventListener('click', (event) => {
-    event.preventDefault();
-    let datoPromedio = [];
-    for (let i = 0; i < porcentaje.length; i++) {
-        if (porcentaje[i] !== '') {
-            datoPromedio.push(Number(porcentaje[i]))
-        }
-    }
-    let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
-    document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
-})
 
 //console.log(globalCategories);
 /*// Pureba
@@ -285,72 +268,18 @@ var datos = { '1992': 9,
   '2000': 1
 };
 
+  let arrData = Object.entries(globalCategory[index].data);
+  createTableData(arrData);
 
-
-
-// Crea las funciones de Ordenamiento
-
-//Ordena Año de Menor a Mayor
-function OrderYearAsc(a, b) {
-   if (a[0] > b[0]) {
-    return 1;
-  }
-  if (a[0] < b[0]) {
-    return -1;
-  }
-  return 0; 
-  
-}
-//Ordena Año de Mayor a Menor
-function OrderYearDesc(a, b) {
-   if (a[0] < b[0]) {
-    return 1;
-  }
-  if (a[0] > b[0]) {
-    return -1;
-  }
-  return 0; 
 }
 
-//Ordena Porcentaje de Menor a Mayor
-function OrderPorcentajeAsc(a, b) {
-   if (a[1] > b[1]) {
-    return 1;
-  }
-  if (a[1] < b[1]) {
-    return -1;
-  }
-  return 0; 
-  
-}
+// ------------------Función que ordena la data------------------
 
-//Ordena Porcentaje de Mayor a Menor
-function OrderPorcentaDesc(a, b) {
-   if (a[1] < b[1]) {
-    return 1;
-  }
+document.getElementById('sort-btn').addEventListener('click', () => {
+  let typeSelected = document.getElementById('data-type').value;
+  let orderSelected = document.getElementById('order-type').value;
 
-  if (a[1] > b[1]) {
-    return -1;
-  }
-  return 0; 
-}
-
-// Convierte a arreglos 
-
-var arrData = Object.entries(datos);
-
-console.log('Muestra arreglo inicial');
-console.log(arrData);
-
-console.log('Ordena Año de Mayor a Menor');
-console.log(arrData.sort(OrderYearDesc));
-
-console.log('Ordena Año de Menor a Mayor');
-console.log(arrData.sort(OrderYearAsc));
-
-console.log('Ordena Porcentaje de Mayor a Menor');
-console.log(arrData.sort(OrderPorcentaDesc));
-
-console.log('Ordena Porcentaje de Menor a Mayor');
-console.log(arrData.sort(OrderPorcentajeAsc));*/
+  let arrData = globalData;
+  let arrSort = window.worldbank.sortArrData(arrData,typeSelected, orderSelected);
+  createTableData(arrSort);
+})
