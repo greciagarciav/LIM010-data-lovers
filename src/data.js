@@ -1,6 +1,3 @@
-
-
-
 window.worldbank = {
 
   categorizePerCountry: (countryIndicators) => {

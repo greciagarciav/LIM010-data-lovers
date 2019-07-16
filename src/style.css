@@ -106,9 +106,11 @@ a{
 	display: flex;
 	flex-direction: column;
 	align-self: center;
-	font-size: 12px;
+	font-size: 10px;
 	background-color: transparent;
-	color: white;
+	color: #ffffff;
+	height: max-content;
+	width: max-content;
 }
 /*---------------------------------------- LOGIN - MOBILE ---------------------------------------*/
 .flex-login{
@@ -441,6 +443,12 @@ a{
 		border-radius: 100%;
 		border: 2px solid;
 	}
+	.icon-indicator:hover{
+		width: 155px;
+		height: 155px;
+		border-radius: 100%;
+		border: 3px solid white;
+	}
 	.indicator-title{
 		font-size: 15px;
 		width: 147px;
@@ -453,6 +461,7 @@ a{
 	}
 	.container-text-under-icons-indicator{
 		background-color: #002F54;
+		margin-bottom: 10px;
 	}
 	.text-under-icons-indicator{
 		height: max-content;

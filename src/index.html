@@ -14,10 +14,10 @@
     <nav class="flex-row container-logo">
       <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="img/logo-banco-mundial.png" alt="logo del banco mundial"></a>
       <div class="menu-paises">
-        <button type="button" class="menu-pais">Perú</button>
-        <button type="button" class="menu-pais">México</button>
-        <button type="button" class="menu-pais">Brasil</button>
-        <button type="button" class="menu-pais">Chile</button>
+        <button type="button" class="menu-pais go-to-peru" id="go-peru">Perú</button>
+        <button type="button" class="menu-pais go-to-mexico" id="go-mexico">México</button>
+        <button type="button" class="menu-pais go-to-brasil" id="go-brasil">Brasil</button>
+        <button type="button" class="menu-pais go-to-chile" id="go-chile">Chile</button>
       </div>
     </nav>
   </header>
@@ -26,7 +26,7 @@
   <main class="main main-2">
     <section class="hide flex-login" id="login">
       <form class="contain-form-field-login">
-        <img class="logo-login" src="img/logo-banco-mundial.png">
+        <img class="logo-login" src="img/logo-banco-mundial.png" alt="">
         <label class="label-caption" >Usuario</label>
         <input type="text" name="usuario" class="fill-login" id="email">
         <label class="label-caption">Contraseña</label>
@@ -42,10 +42,10 @@
 
     <section class="hide space-plus" id="frame">
       <div class="frame">
-        <div class="img-pais"><img src="img/peru-div.png" class="frame-img" alt="" id="explore-data-peru" style="max-width: 100%"></div>
-        <div class="img-pais"><img src="img/mexico-div.png" class="frame-img" alt="" id="explore-data-mexico"></div>
-        <div class="img-pais"><img src="img/brasil-div.png" class="frame-img" alt="" id="explore-data-brasil"></div>
-        <div class="img-pais"><img src="img/chile-div.png" class="frame-img" alt="" id="explore-data-chile"></div>
+        <div class="img-pais"><img src="img/peru-div.png" class="frame-img go-to-peru" alt="" id="explore-data-peru" style="max-width: 100%"></div>
+        <div class="img-pais"><img src="img/mexico-div.png" class="frame-img go-to-mexico" alt="" style="max-width: 100%" id="explore-data-mexico"></div>
+        <div class="img-pais"><img src="img/brasil-div.png" class="frame-img go-to-brasil" alt="" style="max-width: 100%" id="explore-data-brasil"></div>
+        <div class="img-pais"><img src="img/chile-div.png" class="frame-img go-to-chile" alt=""  style="max-width: 100%" id="explore-data-chile"></div>
       </div>
     </section>
     <section class="hide" id="text-under-frame">
@@ -66,19 +66,19 @@
         <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
         <div class="contain-icons">
           <figure class="icon-style">
-            <img src="img/education.png" class="icon-indicator" id="education">
+            <img src="img/education.png" class="icon-indicator" id="education" alt="">
             <figcaption class="indicator-title">EDUCACIÓN</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/population.png" class="icon-indicator" id="population">
+            <img src="img/population.png" class="icon-indicator" id="population" alt="">
             <figcaption class="indicator-title">POBLACIÓN</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/works.png" class="icon-indicator" id="work">
+            <img src="img/works.png" class="icon-indicator" id="work" alt="">
             <figcaption class="indicator-title">TRABAJO</figcaption>
           </figure>
           <figure class="icon-style">
-            <img src="img/genders.png" class="icon-indicator" id="gender">
+            <img src="img/genders.png" class="icon-indicator" id="gender" alt="">
             <figcaption class="indicator-title">GÉNERO</figcaption>
           </figure>
         </div>      
@@ -127,6 +127,7 @@
       </div>
 
       <div class="flex" id="container-data-indicator">
+
             <table id="data" class="flex-table">
               
             </table>
@@ -164,6 +165,7 @@
       <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
       <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
       <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
+    </div>
     </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
   </footer>
