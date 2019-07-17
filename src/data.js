@@ -52,6 +52,18 @@ window.worldbank = {
     let divider = dato.length;
     return sum / divider;
   },
+  /*range: (from,to,years) =>{
+    let range =[];
+    const arrYears = years;
+    const arrValue = porcentaje;
+    for (let i = 0 ; i < arrYears.length ; i++){
+      if (arrYears[i] >= from && arrYears[i] <= to) {
+        range.push([arrYears[i],arrValue[i]]);
+      }
+    }
+    return range;
+  }*/
+
 };
 
 function OrderYearAsc(a, b) {
