@@ -252,8 +252,8 @@ const showData = (index) => {
   let arrData = Object.entries(globalCategory[index].data);
   createTableData(arrData);
 };
-// -----------------------------Se muestra el promedio -------------
-document.getElementById('sortBy-btn').addEventListener('click', (event) => {
+// --------------------Función que muestra el promedio -------------
+document.getElementById('average-btn').addEventListener('click', (event) => {
   event.preventDefault();
   let datoPromedio = [];
   for (let i = 0; i < porcentaje.length; i++) {
@@ -262,8 +262,7 @@ document.getElementById('sortBy-btn').addEventListener('click', (event) => {
   let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
   document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
 });
-// ------------------Función que ordena la data------------------
-
+// ---------------------Función que ordena la data------------------
 document.getElementById('sort-btn').addEventListener('click', () => {
   let typeSelected = document.getElementById('data-type').value;
   let orderSelected = document.getElementById('order-type').value;
@@ -271,6 +270,10 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   let arrData = globalData;
   let arrSort = window.worldbank.sortArrData(arrData, typeSelected, orderSelected);
   createTableData(arrSort);
+});
+// ---------------------Función que filtra la data------------------
+document.getElementById('sortBy-btn').addEventListener('click',() =>{
+
 });
 
 for (let i = 0 ; i <years.length ; i++){
