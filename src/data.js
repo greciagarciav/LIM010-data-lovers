@@ -56,7 +56,7 @@ window.worldbank = {
 
 };
 
-filterRangeYears: (firstYear, lastYear, arrYears) => {
+/*filterRangeYears: (firstYear, lastYear, arrYears) => {
   let range = [];
   const arrKeys= arrYears.keys();
   const arrValues= arrYears.values();
@@ -68,7 +68,7 @@ filterRangeYears: (firstYear, lastYear, arrYears) => {
   return range;
  }
 
-};
+};*/
 
 //Ordena Año de Menor a Mayor
 const OrderYearAsc= (a, b) => {
