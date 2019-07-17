@@ -53,6 +53,9 @@ window.worldbank = {
     return sum / divider;
   },
 
+
+};
+
 filterRangeYears: (firstYear, lastYear, arrYears) => {
   let range = [];
   const arrKeys= arrYears.keys();

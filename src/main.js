@@ -117,7 +117,7 @@ document.getElementById('go-chile').addEventListener('click', ()=>{
   globalCountry = WORLDBANK.CHL.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
-
+// -------------------------------------------------------
 const showCategories = (countryId) => {
   document.getElementById('frame').classList.add('hide');
   document.getElementById('text-under-frame').classList.add('hide');
@@ -209,6 +209,7 @@ const createtableIndicatorCategory = (arrCategory) => {
 
 // -------------Función que crea la tabla de data------------------
 let porcentaje = [];
+let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
 
@@ -221,9 +222,6 @@ const createTableData = (arrData) =>{
                   <th class="indicador">Valores</th>
                 </tr>
               </thead>`;
-  let percent = [];
-  porcentaje = percent;
-  console.log(percent);
   arrData.forEach(([key, value]) => {
     if (value !== '') {
       table = table + `<tr>
@@ -231,7 +229,10 @@ const createTableData = (arrData) =>{
                       <td class="indicador">${ value.toFixed(2) } % </td>
                     </tr>`;
       let valor = value;
-      percent.push(valor);
+      let year = key;
+      porcentaje.push(valor);
+      years.push(year);
+
     }   
   });
 
@@ -245,7 +246,7 @@ const showData = (index) => {
   // document.getElementById('indicator-title-data')= ;
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
-  document.getElementById('showDataIndicator').classList.remove('hide');
+  document.getElementById('show-data-indicator').classList.remove('hide');
 
 
   let arrData = Object.entries(globalCategory[index].data);
@@ -275,3 +276,16 @@ document.getElementById('sortBy-btn').addEventListener('click',() =>{
 
 });
 
+for (let i = 0 ; i <years.length ; i++){
+  let froms =`<option class="">${years[i]} </option>`;
+  console.log(froms);
+}
+/*const grafico=()=>{
+    let arrayGrafico= new Array(Object.entries(years));
+    console.log(arrayGrafico);
+    let rango = arrayGrafico[0];
+    console.log(rango);
+    rango.forEach((elemento,indice)=>{
+      elemento[0]=(rango[indice][0]);
+      elemento[1]=parseFloat(rango[indice][1]);  
+});*/
