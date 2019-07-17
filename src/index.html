@@ -112,13 +112,13 @@
             <form class="" id="">
               <label>Ordenar por:</label>
               <select id="data-type">
-                <option value="" disabled selected>...</option>
+                <option value="" disabled selected></option>
                 <option>Valores</option>
                 <option>Año</option>
               </select>
               <label>Orden:</label>
               <select id="order-type">
-                <option value="" disabled selected>...</option>
+                <option value="" disabled selected></option>
                 <option>Mayor</option>
                 <option>Menor</option>
               </select>
@@ -129,17 +129,9 @@
         <div class="flex">
           <form class="">
           <label>Desde:</label>
-            <select id="">
-              <option value="" disabled selected>... </option>
-              <option>.</option>
-              <option>.</option>
-            </select>
+              <input type="number" id="date-one" max="2017" min="2010" maxlength="4" value="2010">
           <label>Hasta:</label>
-            <select id="">
-              <option value="" disabled selected>...</option>
-              <option>.</option>
-              <option>.</option>
-            </select>
+              <input type="number" id="date-two" max="2017" min="2010" maxlength="4" value="2017">
           <button type="button" id="sortBy-btn">FILTRAR</button>
         </form>
       </div>
