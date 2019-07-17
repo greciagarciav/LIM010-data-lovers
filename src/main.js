@@ -232,7 +232,6 @@ const createTableData = (arrData) =>{
       let year = key;
       porcentaje.push(valor);
       years.push(year);
-
     }   
   });
 
@@ -270,6 +269,6 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   createTableData(arrSort);
 });
 // ---------------------Función que filtra la data------------------
-document.getElementById('sortBy-btn').addEventListener('click',() =>{
+document.getElementById('sortby-btn').addEventListener('click', () =>{
 });
 
