@@ -53,64 +53,59 @@ window.worldbank = {
     return sum / divider;
   },
 
-
+  filterRangeYears: (firstYear, lastYear, arrYears) => {
+    let range = [];
+    const arrKeys= arrYears.keys();
+    const arrValues= arrYears.values();
+    for (let i = 0; i <= arrKeys.length; i++) {
+        if(arrKeys[i] >= firstYear && arrKeys[i] <= lastYear){
+            range.push([arrKeys[i],arrValues[i]]);
+        }
+    }
+    return range;
+  }
 };
 
-/*filterRangeYears: (firstYear, lastYear, arrYears) => {
-  let range = [];
-  const arrKeys= arrYears.keys();
-  const arrValues= arrYears.values();
-  for (let i = 0; i <= arrKeys.length; i++) {
-      if(arrKeys[i] >= firstYear && arrKeys[i] <= lastYear){
-          range.push([arrKeys[i],arrValues[i]]);
-      }
+
+// Ordena Año de Menor a Mayor
+const OrderYearAsc = (a, b) => {
+  if (a[0] > b[0]) {
+    return 1;
   }
-  return range;
- }
-
-};*/
-
-//Ordena Año de Menor a Mayor
-const OrderYearAsc= (a, b) => {
-if (a[0] > b[0]) {
- return 1;
-}
-if (a[0] < b[0]) {
- return -1;
-}
-return 0; 
-
-}
-//Ordena Año de Mayor a Menor
+  if (a[0] < b[0]) {
+    return -1;
+  }
+  return 0; 
+};
+// Ordena Año de Mayor a Menor
 const OrderYearDesc = (a, b) => {
-if (a[0] < b[0]) {
- return 1;
-}
-if (a[0] > b[0]) {
- return -1;
-}
-return 0; 
-}
+  if (a[0] < b[0]) {
+    return 1;
+  }
+  if (a[0] > b[0]) {
+    return -1;
+  }
+  return 0; 
+};
 
-//Ordena Porcentaje de Menor a Mayor
+// Ordena Porcentaje de Menor a Mayor
 const OrderPercentageAsc = (a, b) => {
-if (a[1] > b[1]) {
- return 1;
-}
-if (a[1] < b[1]) {
- return -1;
-}
-return 0; 
+  if (a[1] > b[1]) {
+    return 1;
+  }
+  if (a[1] < b[1]) {
+    return -1;
+  }
+  return 0; 
+};
 
-}
-
-//Ordena Porcentaje de Mayor a Menor
+// Ordena Porcentaje de Mayor a Menor
 const OrderPercentageDesc = (a, b) => {
-if (a[1] < b[1]) {
- return 1;
-}
-if (a[1] > b[1]) {
- return -1;
-}
-return 0; 
-}
+  if (a[1] < b[1]) {
+    return 1;
+  }
+  if (a[1] > b[1]) {
+    return -1;
+  }
+  return 0; 
+};

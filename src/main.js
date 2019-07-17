@@ -232,7 +232,6 @@ const createTableData = (arrData) =>{
       let year = key;
       porcentaje.push(valor);
       years.push(year);
-
     }   
   });
 
@@ -270,6 +269,12 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   createTableData(arrSort);
 });
 // ---------------------Función que filtra la data------------------
-document.getElementById('sortBy-btn').addEventListener('click',() =>{
+document.getElementById('filter-btn').addEventListener('click', () =>{
+  let initialYear = document.getElementById('initial-year').value;
+  let finalYear = document.getElementById('final-year').value;
+
+  let arrData = globalData;
+  let arrFilt = window.worldbank.filterRangeYears(initialYear, finalYear, arrData);
+  createTableData(arrFilt);
 });
 
