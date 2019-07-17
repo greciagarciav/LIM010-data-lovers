@@ -247,8 +247,6 @@ const showData = (index) => {
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('show-data-indicator').classList.remove('hide');
-
-
   let arrData = Object.entries(globalCategory[index].data);
   createTableData(arrData);
 };
@@ -273,19 +271,5 @@ document.getElementById('sort-btn').addEventListener('click', () => {
 });
 // ---------------------Función que filtra la data------------------
 document.getElementById('sortBy-btn').addEventListener('click',() =>{
-
 });
 
-for (let i = 0 ; i <years.length ; i++){
-  let froms =`<option class="">${years[i]} </option>`;
-  console.log(froms);
-}
-/*const grafico=()=>{
-    let arrayGrafico= new Array(Object.entries(years));
-    console.log(arrayGrafico);
-    let rango = arrayGrafico[0];
-    console.log(rango);
-    rango.forEach((elemento,indice)=>{
-      elemento[0]=(rango[indice][0]);
-      elemento[1]=parseFloat(rango[indice][1]);  
-});*/
