@@ -53,15 +53,15 @@ window.worldbank = {
     return sum / divider;
   },
 
-  filterRangeYears: (firstYear, lastYear, arrYears) => {
-    let range = [];
-   arrYears.forEach(([key, value]) => {
-        if(key == firstYear && key == lastYear){
-            range.push(arrYears[i][key,value]);
-        }
-    })
-    return range;
-    }
+  // filterRangeYears: (firstYear, lastYear, arrYears) => {
+  //   let range = [];
+  //  arrYears.forEach(([key, value]) => {
+  //       if(key == firstYear && key == lastYear){
+  //           range.push(arrYears[i][key,value]);
+  //       }
+  //   })
+  //   return range;
+  //   }
 };
 
 

@@ -11,9 +11,13 @@ const password = document.getElementById('password');
 const sentLogin = document.getElementById('login-button');
 const login = document.getElementById('login');
 
-email.addEventListener('keypress', (event) =>{
+password.addEventListener('keypress', (event) =>{
   document.getElementById('wrong-password').classList.add('hide');  
+  if (event.keyCode === 13) {
+    sentLogin.click(password.value);
+  }   
 });
+
 login.classList.remove('hide');
 sentLogin.addEventListener('click', ()=>{
   if (password.value === '' && email.value === '') {
@@ -212,7 +216,7 @@ let porcentaje = [];
 let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
-
+ 
   tableData.innerHTML = '';
 
   let table = `
@@ -241,8 +245,10 @@ const createTableData = (arrData) =>{
 }; 
 // ------------------Función que muestra la data------------------
 const showData = (index) => {
-  // document.getElementById('country-category-title')= ;
-  // document.getElementById('indicator-title-data')= ;
+  // document.getElementById('country-category-title')= globalCategories[index].countryName;
+  // document.getElementById('indicator-title-data')= globalCategories[index].countryName;
+  document.getElementById('average-btn').classList.remove('hide');
+  document.getElementById('average-result').classList.remove('hide');
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('show-data-indicator').classList.remove('hide');
@@ -257,7 +263,7 @@ document.getElementById('average-btn').addEventListener('click', (event) => {
     datoPromedio.push(Number(porcentaje[i]));
   }
   let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
-  document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
+  document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
 });
 // ---------------------Función que ordena la data------------------
 document.getElementById('sort-btn').addEventListener('click', () => {
@@ -270,6 +276,8 @@ document.getElementById('sort-btn').addEventListener('click', () => {
 });
 // ---------------------Función que filtra la data------------------
 document.getElementById('filter-btn').addEventListener('click', () =>{
+  document.getElementById('average-btn').classList.add('hide');
+  document.getElementById('average-result').classList.add('hide');
   let initialYear = document.getElementById('initial-year').value;
   let finalYear = document.getElementById('final-year').value;
 
