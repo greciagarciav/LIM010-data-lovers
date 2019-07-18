@@ -55,15 +55,13 @@ window.worldbank = {
 
   filterRangeYears: (firstYear, lastYear, arrYears) => {
     let range = [];
-    const arrKeys= arrYears.keys();
-    const arrValues= arrYears.values();
-    for (let i = 0; i <= arrKeys.length; i++) {
-        if(arrKeys[i] >= firstYear && arrKeys[i] <= lastYear){
-            range.push([arrKeys[i],arrValues[i]]);
+   arrYears.forEach(([key, value]) => {
+        if(key == firstYear && key == lastYear){
+            range.push(arrYears[i][key,value]);
         }
-    }
+    })
     return range;
-  }
+    }
 };
 
 
