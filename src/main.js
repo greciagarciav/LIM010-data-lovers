@@ -8,9 +8,14 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const sentLogin = document.getElementById('login-button');
 const login = document.getElementById('login');
-email.addEventListener('keypress', (event) =>{
+
+password.addEventListener('keypress', (event) =>{
   document.getElementById('wrong-password').classList.add('hide');  
+  if (event.keyCode === 13) {
+    sentLogin.click(password.value);
+  }   
 });
+
 login.classList.remove('hide');
 sentLogin.addEventListener('click', ()=>{
   if (password.value === '' && email.value === '') {
@@ -186,6 +191,7 @@ let porcentaje = [];
 let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
+ 
   tableData.innerHTML = '';
   let table = `
               <thead>
@@ -215,8 +221,8 @@ const createTableData = (arrData) =>{
 }; 
 // ------------------Función que muestra la data------------------
 const showData = (index) => {
-  // document.getElementById('country-category-title')= ;
-  // document.getElementById('indicator-title-data')= ;
+  document.getElementById('average-btn').classList.remove('hide');
+  document.getElementById('average-result').classList.remove('hide');
   document.getElementById('indicator').classList.add('hide');
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('show-data-indicator').classList.remove('hide');
@@ -232,7 +238,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
     datoPromedio.push(Number(porcentaje[i]));
   }
   let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
-  document.getElementById('hola').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
+  document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
 });
 // ---------------------Función que ordena la data------------------
 document.getElementById('sort-btn').addEventListener('click', () => {
@@ -243,3 +249,14 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   createTableData(arrSort);
 });
 // ---------------------Función que filtra la data------------------
+document.getElementById('filter-btn').addEventListener('click', () =>{
+  document.getElementById('average-btn').classList.add('hide');
+  document.getElementById('average-result').classList.add('hide');
+  let initialYear = document.getElementById('initial-year').value;
+  let finalYear = document.getElementById('final-year').value;
+
+  let arrData = globalData;
+  let arrFilt = window.worldbank.filter(arrData, initialYear, finalYear);
+  createTableData(arrFilt);
+});
+
