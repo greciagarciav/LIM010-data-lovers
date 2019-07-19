@@ -64,7 +64,7 @@ const WORLDBANK = {
         },
         "countryName": "Perú",
         "countryCode": "PER",
-        "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)PER",
+        "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
         "indicatorCode": "SL.TLF.PART.FE.ZS"
       },
       {
@@ -9244,7 +9244,7 @@ const WORLDBANK = {
         },
         "countryName": "México",
         "countryCode": "MEX",
-        "indicatorName": "Prevalencia de anemia entre mujeres no embarazadas (% de mujeres entre 15-49 años)MEX",
+        "indicatorName": "Prevalencia de anemia entre mujeres no embarazadas (% de mujeres entre 15-49 años)",
         "indicatorCode": "SH.ANM.NPRG.ZS"
       },
       {
@@ -18424,7 +18424,7 @@ const WORLDBANK = {
         },
         "countryName": "Brasil",
         "countryCode": "BRA",
-        "indicatorName": "La ley exige igualdad de remuneración para hombres y mujeres por trabajo de igual valor (1=sí; 0=no)BRA",
+        "indicatorName": "La ley exige igualdad de remuneración para hombres y mujeres por trabajo de igual valor (1=sí; 0=no)",
         "indicatorCode": "SG.LAW.EQRM.WK"
       },
       {
@@ -27604,7 +27604,7 @@ const WORLDBANK = {
         },
         "countryName": "Chile",
         "countryCode": "CHL",
-        "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)CHL",
+        "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
         "indicatorCode": "SL.TLF.PART.FE.ZS"
       },
       {
