@@ -10,7 +10,7 @@ body{
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	background-color: grey;
+	background-color: #dcdcdc;
 }
 a{
 	display: flex;
@@ -122,7 +122,7 @@ a{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: grey;	
+	background-color:#dcdcdc;	
 }
 .logo-login{
 	width:199px;
@@ -325,7 +325,7 @@ a{
 
 /*-------------------------------------LOGIN - DESKTOP -----------------------------------------*/
 	.contain-form-field-login{
-		background-color: grey;
+		background-color:#dcdcdc;
 		padding: 0 62.5px 30px 62.5px;
 	}
 	.label-caption-reset{
@@ -481,6 +481,13 @@ a{
 		padding: 20px;
 	}
 /*------------------------------------------------------------------------------------------------*/
+	.title-show-data{
+		text-align: center;
+		margin: 30px 150px;
+		font-size: 20px;
+		color: #002F54;
+		border: solid 2px;
+	}
 	.select-style{
 		display: flex;
 		flex-direction: row;
@@ -494,6 +501,7 @@ a{
 		flex-direction: row;
 		justify-content: space-between;
 		width: 500px;
+		margin-bottom: 15px;
 	}
 	.filter-input,select{
 		width: 70px;
@@ -510,12 +518,16 @@ a{
 		border: none;
 		cursor: pointer;
 	}
+	.average-btn{
+		margin-bottom: 15px;
+	}
 	.sort-btn:hover,.filter-btn:hover,.average-btn:hover{
 		background-color: #1d6cc6;
 
 	}
 	.show-average{
 		color: #4D97F0;
+		margin-bottom: 15px;
 	}
 	.category-title{
 		color: #002F54;
@@ -534,12 +546,12 @@ a{
 	}
 	.nro3,.indicador3{
 		color: #002F54;
-		width: 100px;
+		width: 300px;
 		border: 1px solid #4D97F0;
 		text-align: center;
 	}
 	.nro4,.indicador4{
-		width: 100px;
+		width: 300px;
 		/*border: 1px solid #4D97F0;*/
 		text-align: center;
 	}

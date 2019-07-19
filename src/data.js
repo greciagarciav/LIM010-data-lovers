@@ -42,8 +42,6 @@ window.worldbank = {
     }
     return sorted;
   },
-
-  
   averageValue: (dato)=>{
     let sum = dato.reduce((a, b)=>{
       return a + b;
@@ -53,7 +51,6 @@ window.worldbank = {
   },
   filter: (arrYears, firstYear, lastYear) => {
     let rango = arrYears.filter(filteredArr => filteredArr[0] >= firstYear && filteredArr[0] <= lastYear);
-
     return rango;
   }
 };

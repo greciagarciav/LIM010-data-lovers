@@ -1,5 +1,4 @@
 global.window = global;
-global.assert = require('chai').assert;
 require('../src/data');
 require('./data.spec.js');
 
@@ -68,75 +67,8 @@ const worldata = {
           '2017': 23.7600002288818
         },
         'countryName': 'Perú',
-        'countryCode': 'PER',
         'indicatorName': 'Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)PER',
         'indicatorCode': 'SL.TLF.PART.FE.ZS'
-      },
-      {
-        'data': {
-          '1960': '',
-          '1961': '',
-          '1962': '',
-          '1963': '',
-          '1964': '',
-          '1965': '',
-          '1966': '',
-          '1967': '',
-          '1968': '',
-          '1969': '',
-          '1970': '',
-          '1971': '',
-          '1972': '',
-          '1973': '',
-          '1974': '',
-          '1975': '',
-          '1976': '',
-          '1977': '',
-          '1978': '',
-          '1979': '',
-          '1980': '',
-          '1981': '',
-          '1982': '',
-          '1983': '',
-          '1984': '',
-          '1985': '',
-          '1986': '',
-          '1987': '',
-          '1988': '',
-          '1989': '',
-          '1990': '',
-          '1991': '',
-          '1992': '',
-          '1993': '',
-          '1994': '',
-          '1995': '',
-          '1996': '',
-          '1997': '',
-          '1998': '',
-          '1999': '',
-          '2000': '',
-          '2001': '',
-          '2002': 57.3788986206055,
-          '2003': 59.2597007751465,
-          '2004': 60.5155982971191,
-          '2005': 58.567699432373,
-          '2006': 59.5596008300781,
-          '2007': 62.5275993347168,
-          '2008': 61.5718002319336,
-          '2009': 63.0060997009277,
-          '2010': 64.4614028930664,
-          '2011': 64.3878021240234,
-          '2012': 63.0351982116699,
-          '2013': 62.2015991210938,
-          '2014': 61.209400177002,
-          '2015': 62.2141990661621,
-          '2016': 61.5542984008789,
-          '2017': 61.4822998046875
-        },
-        'countryName': 'Perú',
-        'countryCode': 'PER',
-        'indicatorName': 'Fuerza laboral con educación intermedia (% del total)',
-        'indicatorCode': 'SL.TLF.INTM.ZS'
       }
     ],
     'dataSource': 'Indicadores del desarrollo mundial',
@@ -206,75 +138,8 @@ const worldata = {
           '2017': ''
         },
         'countryName': 'México',
-        'countryCode': 'MEX',
         'indicatorName': 'Prevalencia de anemia entre mujeres no embarazadas (% de mujeres entre 15-49 años)MEX',
         'indicatorCode': 'SH.ANM.NPRG.ZS'
-      },
-      {
-        'data': {
-          '1960': '',
-          '1961': '',
-          '1962': '',
-          '1963': '',
-          '1964': '',
-          '1965': '',
-          '1966': '',
-          '1967': '',
-          '1968': '',
-          '1969': '',
-          '1970': '',
-          '1971': '',
-          '1972': '',
-          '1973': '',
-          '1974': '',
-          '1975': '',
-          '1976': '',
-          '1977': '',
-          '1978': '',
-          '1979': '',
-          '1980': '',
-          '1981': '',
-          '1982': '',
-          '1983': '',
-          '1984': '',
-          '1985': '',
-          '1986': '',
-          '1987': '',
-          '1988': '',
-          '1989': '',
-          '1990': 33.3,
-          '1991': 32,
-          '1992': 30.8,
-          '1993': 29.7,
-          '1994': 28.7,
-          '1995': 27.8,
-          '1996': 27,
-          '1997': 26.2,
-          '1998': 25.4,
-          '1999': 24.6,
-          '2000': 23.9,
-          '2001': 23.2,
-          '2002': 22.5,
-          '2003': 21.8,
-          '2004': 21.1,
-          '2005': 20.3,
-          '2006': 19.4,
-          '2007': 18.5,
-          '2008': 17.6,
-          '2009': 16.6,
-          '2010': 15.8,
-          '2011': 15.2,
-          '2012': 14.7,
-          '2013': 14.4,
-          '2014': 14.3,
-          '2015': 14.4,
-          '2016': 14.6,
-          '2017': ''
-        },
-        'countryName': 'México',
-        'countryCode': 'MEX',
-        'indicatorName': 'Prevalencia de anemia entre mujeres en edad fértil (% de mujeres de entre 15 y 49 años)',
-        'indicatorCode': 'SH.ANM.ALLW.ZS'
       }
     ],
     'dataSource': 'Indicadores del desarrollo mundial',
@@ -565,7 +430,7 @@ describe('El objeto WORLDBANK', () => {
   });
 });
 
-describe('La funcion categorizar', ()=>{
+describe('La funcion CATEGORIZAR', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.categorizePerCountry).toEqual('function');
   });
@@ -574,32 +439,49 @@ describe('La funcion categorizar', ()=>{
   });*/
 });
 
-describe('La función de ordenar', ()=>{
+describe('La función de ORDENAR', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.sortArrData).toEqual('function');
   });
-  it('debería de ordenar de MAYOR a MENOR por VALOR', () => {
-    expect(worldbank.sortArrData(worldata, 'Valores', 'Mayor')).toEqual([]);
-  });
-  it('debería de ordenar de MENOR a MAYOR por VALOR', () => {
-    expect(worldbank.sortArrData(worldata, 'Valores', 'Menor')).toEqual([]);
-  });
-  it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
-    expect(worldbank.sortArrData(worldata, 'Año', 'Mayor')).toEqual([]);
-  });
-  it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
-    expect(worldbank.sortArrData(worldata, 'Año', 'Menor')).toEqual([]);
-  });
+  // it('debería ser una función', () => {
+  //   expect(typeof OrderYearAsc).toEqual('function');
+  // });
+  // it('debería de ordenar de MAYOR a MENOR por VALOR', () => {
+  //   expect(worldbank.sortArrData(worldata, 'Valores', 'Mayor')).toEqual([]);
+  // });
+  // it('debería de ordenar de MENOR a MAYOR por VALOR', () => {
+  //   expect(worldbank.sortArrData(worldata, 'Valores', 'Menor')).toEqual([]);
+  // });
+  // it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
+  //   expect(worldbank.sortArrData(worldata, 'Año', 'Mayor')).toEqual([]);
+  // });
+  // it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
+  //   expect(worldbank.sortArrData(worldata, 'Año', 'Menor')).toEqual([]);
+  // });
 });
 
-describe('La funcion de promedio', ()=>{
+describe('La funcion de PROMEDIO', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.averageValue).toEqual('function');
   });
-  it('debería retornar el promedio', () => {
-    expect(worldbank.averageValue(worldata)).toEqual('');
+  it('debería retornar un array', () => {
+    expect(Array.isArray(worldbank.averageValue(worldata))).toEqual(true);
+  });
+
+  // it('debería retornar el promedio', () => {
+  //   expect(worldbank.averageValue(worldata)).toEqual('');
+  // });
+});
+
+describe('La funcion de RANGO DE AÑOS', ()=>{
+  it('debería ser una función', () => {
+    expect(typeof worldbank.filter).toEqual('function');
   });
 });
+
+
+
+
 
 
 /* it('debería retornar "example"', () => {

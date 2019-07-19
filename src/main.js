@@ -187,7 +187,7 @@ const createTableIndicatorCategory = (arrCategory) => {
   tableIndicatorCategory.innerHTML = table;
 };
 // -------------Función que crea la tabla de data------------------
-let percent = [];
+let valuePerIndicator = [];
 let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
@@ -202,7 +202,7 @@ const createTableData = (arrData) =>{
               </thead>`;
   let percent = [];
   let year = [];
-  porcentaje = percent;
+  valuePerIndicator = percent;
   years = year;
   arrData.forEach(([key, value]) => {
     if (value !== '') {
@@ -231,14 +231,9 @@ const showData = (index) => {
   createTableData(arrData);
 };
 // --------------------Función que muestra el promedio -------------
-document.getElementById('average-btn').addEventListener('click', () => {
-  // event.preventDefault();
-  let datoPromedio = [];
-  console.log(datoPromedio);
-  for (let i = 0; i < porcentaje.length; i++) {
-    datoPromedio.push(Number(porcentaje[i]));
-  }
-  let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
+document.getElementById('average-btn').addEventListener('click', (event) => {
+  event.preventDefault();
+  let resultadoPromedio = window.worldbank.averageValue(valuePerIndicator);
   document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES : ' + resultadoPromedio.toFixed(2) + ' %';
 });
 // ---------------------Función que ordena la data------------------
