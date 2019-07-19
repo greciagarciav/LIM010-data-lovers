@@ -42,6 +42,8 @@ window.worldbank = {
     }
     return sorted;
   },
+
+  
   averageValue: (dato)=>{
     let sum = dato.reduce((a, b)=>{
       return a + b;

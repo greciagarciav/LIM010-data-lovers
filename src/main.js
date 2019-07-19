@@ -115,7 +115,7 @@ document.getElementById('go-chile').addEventListener('click', ()=>{
   globalCountry = WORLDBANK.CHL.indicators;
   globalCategories = window.worldbank.categorizePerCountry(globalCountry);
 });
-// -------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 const showCategories = (countryId) => {
   document.getElementById('frame').classList.add('hide');
   document.getElementById('text-under-frame').classList.add('hide');
@@ -133,7 +133,7 @@ education.addEventListener('click', ()=>{
   document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'EDUCACIÓN'; 
   const educArr = globalCategories.education;
-  createtableIndicatorCategory(educArr);
+  createTableIndicatorCategory(educArr);
 });
 // ---------------------------Población----------------------------
 const population = document.getElementById('population');
@@ -143,7 +143,7 @@ population.addEventListener('click', ()=>{
   document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'POBLACIÓN'; 
   const popArr = globalCategories.population;
-  createtableIndicatorCategory(popArr);
+  createTableIndicatorCategory(popArr);
 });
 // ------------------------------Trabajo----------------------------
 const work = document.getElementById('work');
@@ -153,7 +153,7 @@ work.addEventListener('click', ()=>{
   document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'TRABAJO'; 
   const workArr = globalCategories.work;
-  createtableIndicatorCategory(workArr);
+  createTableIndicatorCategory(workArr);
 });
 // ------------------------------Género------------------------------
 const gender = document.getElementById('gender');
@@ -163,10 +163,10 @@ gender.addEventListener('click', () => {
   document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'GÉNERO'; 
   const genArr = globalCategories.gender;
-  createtableIndicatorCategory(genArr);
+  createTableIndicatorCategory(genArr);
 });
 // -------------Función que crea la tabla de categorías---------------
-const createtableIndicatorCategory = (arrCategory) => {
+const createTableIndicatorCategory = (arrCategory) => {
   globalCategory = arrCategory;
   tableIndicatorCategory.innerHTML = '';
   let table = `<thead>
@@ -187,11 +187,11 @@ const createtableIndicatorCategory = (arrCategory) => {
   tableIndicatorCategory.innerHTML = table;
 };
 // -------------Función que crea la tabla de data------------------
-let porcentaje = [];
+let percent = [];
 let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
- 
+
   tableData.innerHTML = '';
   let table = `
               <thead>
@@ -227,6 +227,7 @@ const showData = (index) => {
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('show-data-indicator').classList.remove('hide');
   let arrData = Object.entries(globalCategory[index].data);
+  document.getElementById('indicator-title-data').innerHTML = globalCategory[index].countryName.toUpperCase() + ': ' + globalCategory[index].indicatorName;
   createTableData(arrData);
 };
 // --------------------Función que muestra el promedio -------------
