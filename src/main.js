@@ -245,8 +245,6 @@ const createTableData = (arrData) =>{
 }; 
 // ------------------Función que muestra la data------------------
 const showData = (index) => {
-  // document.getElementById('country-category-title')= globalCategories[index].countryName;
-  // document.getElementById('indicator-title-data')= globalCategories[index].countryName;
   document.getElementById('average-btn').classList.remove('hide');
   document.getElementById('average-result').classList.remove('hide');
   document.getElementById('indicator').classList.add('hide');
@@ -282,7 +280,7 @@ document.getElementById('filter-btn').addEventListener('click', () =>{
   let finalYear = document.getElementById('final-year').value;
 
   let arrData = globalData;
-  let arrFilt = window.worldbank.filterRangeYears(initialYear, finalYear, arrData);
+  let arrFilt = window.worldbank.filter(arrData, initialYear, finalYear);
   createTableData(arrFilt);
 });
 
