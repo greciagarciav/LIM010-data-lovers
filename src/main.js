@@ -222,7 +222,6 @@ const createTableData = (arrData) =>{
   let table = `
               <thead>
                 <tr>
-                  <th class="nro">N°</th>
                   <th class="nro">Años</th>
                   <th class="indicador">Valores</th>
                 </tr>
@@ -252,7 +251,7 @@ const showData = (index) => {
   document.getElementById('indicator-table').classList.add('hide');
   document.getElementById('show-data-indicator').classList.remove('hide');
   let arrData = Object.entries(globalCategory[index].data);
-  document.getElementById('indicator-title-data').innerHTML = globalCategory[index].countryName.toUpperCase() + ': ' +globalCategory[index].indicatorName;
+  document.getElementById('indicator-title-data').innerHTML = globalCategory[index].countryName.toUpperCase() + ': ' + globalCategory[index].indicatorName;
   createTableData(arrData);
 };
 // --------------------Función que muestra el promedio -------------

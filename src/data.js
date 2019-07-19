@@ -56,9 +56,9 @@ window.worldbank = {
   },
 
   filter: (arrYears, firstYear, lastYear) => {
-    let rango = arrYears.filter(filteredArr => filteredArr[0] >= firstYear && filteredArr[0]<= lastYear);
+    let rango = arrYears.filter(filteredArr => filteredArr[0] >= firstYear && filteredArr[0] <= lastYear);
     return rango;
-    }
+  }
 };
 
 
