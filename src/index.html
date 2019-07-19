@@ -93,10 +93,8 @@
 
 <section class="hide" id="indicator-table">
   <div class="flex" id="container-indicators-category">
-      <h1 id="category-title"> </h1>
+      <h1 class="category-title" id="category-title"> </h1>
     <table class="flex-table" id="category">
-      
-      
     </table>
   </div>        
 </section>
@@ -104,67 +102,53 @@
   <!-- =====================================================Mostrar Valores=========================================================== -->
 
     <section class="hide" id="show-data-indicator">
-        
       <div class="flex">
             <p id="country-category-title"></p>
             <p id="indicator-title-data"></p>
-            
-            <form>
-              <label>Ordenar por:</label>
+            <form class="select-style-form">
+              <label class="select-style">Ordenar por:
               <select id="data-type">
-                <option value="" disabled selected></option>
+                <option value=""  disabled selected></option>
                 <option>Valores</option>
                 <option>Año</option>
-              </select>
-              <label>Orden:</label>
+              </select></label>
+              <label class="select-style">Orden:
               <select id="order-type">
                 <option value="" disabled selected></option>
                 <option>Mayor</option>
                 <option>Menor</option>
-              </select>
-              <button type="button" class="" id="sort-btn">ORDENAR</button>
+              </select></label>
+              <button type="button" class="sort-btn" id="sort-btn">ORDENAR</button>
             </form>
       </div>
-
         <div class="flex">
-          <form class="">
-          <label>Desde:</label>
-              <input type="number" id="initial-year" maxlength="4" value="">
-          <label>Hasta:</label>
-              <input type="number" id="final-year" maxlength="4" value="">
-          <button type="button" id="filter-btn">FILTRAR</button>
+          <form class="select-style-form">
+          <label class="select-style">Desde:
+              <input type="number" id="initial-year" maxlength="4" value="" class="filter-input" placeholder="  Años"></label>
+          <label class="select-style">Hasta:
+              <input type="number" id="final-year" maxlength="4" value="" class="filter-input" placeholder="  Años"></label>
+          <button type="button" class="filter-btn" id="filter-btn">FILTRAR</button>
         </form>
       </div>
-
       <div class="flex" id="container-data-indicator">
-
-            <table id="data" class="flex-table">
-              
+            <table id="data" class="flex-table"> 
             </table>
       </div> 
-        
       <div class="flex">
-        
-                <button class="hide" type="button" id="average-btn">PROMEDIO</button>
-                <p class="hide" id="average-result"></p>
-          
+        <button class="hide average-btn" type="button" id="average-btn">PROMEDIO</button>
+        <p class="hide show-average" id="average-result"></p>
       </div>
-
-        <div class="flex"></div>
       </section>
-
   </main>
 
   <!-- =====================================================Pie de página============================================================ -->
 
-  <footer class="hide" id="footer">
-    <div class="footer-style">
-    <p class="social-media">SÍGANOS</p>
+  <footer class="hide footer-style" id="footer">
+    <p class="follow-us">SÍGANOS</p>
     <div class="wrapper-social-media">
       <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png" alt="icono de facebook" class="img-social-media"></a>
       <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png" alt="icono de twitter" class="img-social-media"></a>
       <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png" alt="icono de instagra" class="img-social-media"></a>
-    </div>
     </div>
     <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
   </footer>

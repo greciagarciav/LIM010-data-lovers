@@ -171,14 +171,14 @@ const createtableIndicatorCategory = (arrCategory) => {
   tableIndicatorCategory.innerHTML = '';
   let table = `<thead>
                 <tr>
-                  <th class="nro">N°</th>
-                  <th class="indicador">Indicadores</th>
+                  <th class="nro1">N°</th>
+                  <th class="indicador1">Indicadores</th>
                 </tr>
                </thead>`;
   for (let i = 0 ; i < arrCategory.length ; i++) {
     table = table + `<tr>
-                          <td class="nro">${ i + 1 } </td>
-                          <td class="indicador">
+                          <td class="nro2">${ i + 1 } </td>
+                          <td class="indicador2">
                             <a href="javascript:showData(${ i })"> ${ arrCategory[i].indicatorName }</a>
                           </td>
                        </tr>`;
@@ -196,8 +196,8 @@ const createTableData = (arrData) =>{
   let table = `
               <thead>
                 <tr>
-                  <th class="nro">Años</th>
-                  <th class="indicador">Valores</th>
+                  <th class="nro3">Años</th>
+                  <th class="indicador3">Valores</th>
                 </tr>
               </thead>`;
   let percent = [];
@@ -206,9 +206,9 @@ const createTableData = (arrData) =>{
   years = year;
   arrData.forEach(([key, value]) => {
     if (value !== '') {
-      table = table + `<tr>
-                      <td class="nro">${ key } </td>
-                      <td class="indicador">${ value.toFixed(2) } % </td>
+      table = table + `<tbody class="bordes"> <tr>
+                      <td class="nro4">${ key } </td>
+                      <td class="indicador4">${ value.toFixed(2) } % </td>
                     </tr>`;
       let valor = value;
       let valores = key;
@@ -216,7 +216,7 @@ const createTableData = (arrData) =>{
       year.push(valores);
     }   
   });
-  table = table + '</tbody>';
+  table = table + '</tbody >';
   tableData.innerHTML = table;
 }; 
 // ------------------Función que muestra la data------------------
@@ -238,7 +238,7 @@ document.getElementById('average-btn').addEventListener('click', () => {
     datoPromedio.push(Number(porcentaje[i]));
   }
   let resultadoPromedio = window.worldbank.averageValue(datoPromedio);
-  document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES: ' + resultadoPromedio.toFixed(2);
+  document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES : ' + resultadoPromedio.toFixed(2) + ' %';
 });
 // ---------------------Función que ordena la data------------------
 document.getElementById('sort-btn').addEventListener('click', () => {
@@ -259,4 +259,3 @@ document.getElementById('filter-btn').addEventListener('click', () =>{
   let arrFilt = window.worldbank.filter(arrData, initialYear, finalYear);
   createTableData(arrFilt);
 });
-

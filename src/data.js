@@ -49,11 +49,11 @@ window.worldbank = {
     let divider = dato.length;
     return sum / divider;
   },
-    filter: (arrYears, firstYear, lastYear) => {
-      let rango = arrYears.filter(filteredArr => filteredArr[0] >= firstYear && filteredArr[0]<= lastYear);
+  filter: (arrYears, firstYear, lastYear) => {
+    let rango = arrYears.filter(filteredArr => filteredArr[0] >= firstYear && filteredArr[0] <= lastYear);
 
-      return rango;
-    }
+    return rango;
+  }
 };
 
 
