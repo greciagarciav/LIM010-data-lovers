@@ -1,12 +1,10 @@
 /* eslint-disable id-length */
 window.worldbank = {
-
   categorizePerCountry: (countryIndicators) => {
     let education = [];
     let population = [];
     let work = [];
     let gender = [];
-
     for (let i = 0; i < countryIndicators.length ; i++) {
       if (countryIndicators[i].indicatorCode.split('.')[0] === 'SE') {
         education.push(countryIndicators[i]);
@@ -23,8 +21,6 @@ window.worldbank = {
       work: work,
       gender: gender};
   },
-
-
   sortArrData: (newArrData, dataType, orderType) => {
     let sorted = [];
     if (dataType === 'Valores') {
@@ -35,7 +31,7 @@ window.worldbank = {
       case 'Menor':
         sorted = newArrData.sort(OrderPercentageAsc);
       }
-    } else
+    } else if (dataType === 'Año') {
       switch (orderType) {
       case 'Mayor':
         sorted = newArrData.sort(OrderYearDesc);
@@ -43,6 +39,7 @@ window.worldbank = {
       case 'Menor':
         sorted = newArrData.sort(OrderYearAsc);
       }
+    }
     return sorted;
   },
   averageValue: (dato)=>{
@@ -52,23 +49,11 @@ window.worldbank = {
     let divider = dato.length;
     return sum / divider;
   },
-
-
-};
-
-/* filterRangeYears: (firstYear, lastYear, arrYears) => {
-  let range = [];
-  const arrKeys= arrYears.keys();
-  const arrValues= arrYears.values();
-  for (let i = 0; i <= arrKeys.length; i++) {
-      if(arrKeys[i] >= firstYear && arrKeys[i] <= lastYear){
-          range.push([arrKeys[i],arrValues[i]]);
-      }
+  filterRangeYears: (firstYear, lastYear, arrYears) => {
+    let range = [];
+    return range;
   }
-  return range;
- }
-
-};*/
+};
 
 // Ordena Año de Menor a Mayor
 const OrderYearAsc = (a, b) => {
