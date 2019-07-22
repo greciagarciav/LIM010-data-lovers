@@ -1,27 +1,48 @@
 /* eslint-disable id-length */
 window.worldbank = {
-  categorizePerCountry: (countryIndicators) => {
-    let education = [];
-    let population = [];
-    let work = [];
-    let gender = [];
-    for (let i = 0; i < countryIndicators.length ; i++) {
-      if (countryIndicators[i].indicatorCode.split('.')[0] === 'SE') {
-        education.push(countryIndicators[i]);
-      } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SP' || countryIndicators[i].indicatorCode.split('.')[0] === 'IC' || countryIndicators[i].indicatorCode.split('.')[0] === 'SH') {
-        population.push(countryIndicators[i]);
-      } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SL' || countryIndicators[i].indicatorCode.split('_')[0] === 'per' || countryIndicators[i].indicatorCode.split('.')[0] === 'HD' || countryIndicators[i].indicatorCode.split('.')[0] === 'MS' || countryIndicators[i].indicatorCode.split('.')[0] === 'DT') {
-        work.push(countryIndicators[i]);
-      } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SG') {
-        gender.push(countryIndicators[i]);
-      }
-    }
-    return {education: education,
-      population: population,
-      work: work,
-      gender: gender};
-  },
   sortArrData: (newArrData, dataType, orderType) => {
+    // Ordena Año de Menor a Mayor
+    const OrderYearAsc = (a, b) => {
+      if (a[0] > b[0]) {
+        return 1;
+      }
+      if (a[0] < b[0]) {
+        return -1;
+      }
+      return 0; 
+    };
+    // Ordena Año de Mayor a Menor
+    const OrderYearDesc = (a, b) => {
+      if (a[0] < b[0]) {
+        return 1;
+      }
+      if (a[0] > b[0]) {
+        return -1;
+      }
+      return 0; 
+    };
+
+    // Ordena Porcentaje de Menor a Mayor
+    const OrderPercentageAsc = (a, b) => {
+      if (a[1] > b[1]) {
+        return 1;
+      }
+      if (a[1] < b[1]) {
+        return -1;
+      }
+      return 0; 
+    };
+
+    // Ordena Porcentaje de Mayor a Menor
+    const OrderPercentageDesc = (a, b) => {
+      if (a[1] < b[1]) {
+        return 1;
+      }
+      if (a[1] > b[1]) {
+        return -1;
+      }
+      return 0; 
+    };
     let sorted = [];
     if (dataType === 'Valores') {
       switch (orderType) {
@@ -55,7 +76,7 @@ window.worldbank = {
   }
 };
 
-
+/*
 // Ordena Año de Menor a Mayor
 const OrderYearAsc = (a, b) => {
   if (a[0] > b[0]) {
@@ -97,4 +118,4 @@ const OrderPercentageDesc = (a, b) => {
     return -1;
   }
   return 0; 
-};
+};*/

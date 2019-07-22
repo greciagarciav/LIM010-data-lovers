@@ -1,21 +1,19 @@
-const dataWorldbank = WORLDBANK;
 let globalCountry = [];
 let globalCategories = [];
 let globalCategory = [];
 let globalData = [];
-/* =======================================================Login ======================================================== */
+
+/* ====================================================== LOGIN ======================================================== */
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const sentLogin = document.getElementById('login-button');
 const login = document.getElementById('login');
-
 password.addEventListener('keypress', (event) =>{
   document.getElementById('wrong-password').classList.add('hide');  
   if (event.keyCode === 13) {
     sentLogin.click(password.value);
   }   
 });
-
 login.classList.remove('hide');
 sentLogin.addEventListener('click', ()=>{
   if (password.value === '' && email.value === '') {
@@ -31,14 +29,16 @@ sentLogin.addEventListener('click', ()=>{
     document.getElementById('password').value = '';
   }
 });
-/* ===========================================Al hacer click en el boton explorar data===================================*/
+
+/* ========================================== AL HACER CLICK EN LA IMAGEN DE CADA PAÍS ================================= */
+// ------------------------- Perú ------------------------------------
 exploreDataPeru = document.getElementById('explore-data-peru');
 exploreDataPeru.addEventListener('click', () => {
   document.getElementById('title-per').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   showCategories('peru'); 
   globalCountry = WORLDBANK.PER.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-peru').addEventListener('click', ()=>{
   document.getElementById('title-per').classList.remove('hide');
@@ -50,16 +50,16 @@ document.getElementById('go-peru').addEventListener('click', ()=>{
   document.getElementById('title-chl').classList.add('hide');
   showCategories('peru'); 
   globalCountry = WORLDBANK.PER.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
-// --------------------------------------------------------------------------------------
+// ------------------------- México ---------------------------------
 exploreDataMexico = document.getElementById('explore-data-mexico');
 exploreDataMexico.addEventListener('click', () => {
   document.getElementById('title-mex').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   showCategories('mexico');
   globalCountry = WORLDBANK.MEX.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-mexico').addEventListener('click', ()=>{
   document.getElementById('title-mex').classList.remove('hide');
@@ -71,16 +71,16 @@ document.getElementById('go-mexico').addEventListener('click', ()=>{
   document.getElementById('title-chl').classList.add('hide');
   showCategories('mexico');
   globalCountry = WORLDBANK.MEX.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
-// ---------------------------------------------------------------------------------------
+// ------------------------- Brasil ----------------------------------
 exploreDataBrasil = document.getElementById('explore-data-brasil');
 exploreDataBrasil.addEventListener('click', () => {
   document.getElementById('title-bra').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   showCategories('brasil');
   globalCountry = WORLDBANK.BRA.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-brasil').addEventListener('click', ()=>{
   document.getElementById('title-bra').classList.remove('hide');
@@ -92,16 +92,16 @@ document.getElementById('go-brasil').addEventListener('click', ()=>{
   document.getElementById('title-chl').classList.add('hide');
   showCategories('bra');
   globalCountry = WORLDBANK.BRA.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
-// ---------------------------------------------------------------------------------------
+//  ------------------------ Chile -----------------------------------
 exploreDataChile = document.getElementById('explore-data-chile');
 exploreDataChile.addEventListener('click', () => {
   document.getElementById('title-chl').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   showCategories('chile');
   globalCountry = WORLDBANK.CHL.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-chile').addEventListener('click', ()=>{
   document.getElementById('title-chl').classList.remove('hide');
@@ -113,19 +113,44 @@ document.getElementById('go-chile').addEventListener('click', ()=>{
   document.getElementById('title-bra').classList.add('hide');
   showCategories('chile');
   globalCountry = WORLDBANK.CHL.indicators;
-  globalCategories = window.worldbank.categorizePerCountry(globalCountry);
+  globalCategories = categorizePerCountry(globalCountry);
 });
-// ---------------------------------------------------------------------------------------
+
+/* ============================================== FUNCIÓN DE CATEGORIZACIÓN =========================================== */
+const categorizePerCountry = (countryIndicators) => {
+  let education = [];
+  let population = [];
+  let work = [];
+  let gender = [];
+  for (let i = 0; i < countryIndicators.length ; i++) {
+    if (countryIndicators[i].indicatorCode.split('.')[0] === 'SE') {
+      education.push(countryIndicators[i]);
+    } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SP' || countryIndicators[i].indicatorCode.split('.')[0] === 'IC' || countryIndicators[i].indicatorCode.split('.')[0] === 'SH') {
+      population.push(countryIndicators[i]);
+    } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SL' || countryIndicators[i].indicatorCode.split('_')[0] === 'per' || countryIndicators[i].indicatorCode.split('.')[0] === 'HD' || countryIndicators[i].indicatorCode.split('.')[0] === 'MS' || countryIndicators[i].indicatorCode.split('.')[0] === 'DT') {
+      work.push(countryIndicators[i]);
+    } else if (countryIndicators[i].indicatorCode.split('.')[0] === 'SG') {
+      gender.push(countryIndicators[i]);
+    }
+  }
+  return {education: education,
+    population: population,
+    work: work,
+    gender: gender};
+};
+
+/* ===================================== FUNCIÓN QUE MUESTRA LAS CATEGORIAS =========================================== */
 const showCategories = (countryId) => {
   document.getElementById('frame').classList.add('hide');
   document.getElementById('text-under-frame').classList.add('hide');
   document.getElementById('indicator').classList.remove('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
 };
-/* ============================================Al hacer click en el ícono de la categoria ===================================*/ 
+
+/* ====================================== AL HACER CLICK EN EL ICONO DE LA CATEGORIA ================================== */ 
 const tableIndicatorCategory = document.getElementById('category'); 
 const tableData = document.getElementById('data');
-// --------------------------Educación-----------------------------
+// --------------------------Educación-------------------------------
 const education = document.getElementById('education');
 education.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -135,7 +160,7 @@ education.addEventListener('click', ()=>{
   const educArr = globalCategories.education;
   createTableIndicatorCategory(educArr);
 });
-// ---------------------------Población----------------------------
+// ---------------------------Población------------------------------
 const population = document.getElementById('population');
 population.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -145,7 +170,7 @@ population.addEventListener('click', ()=>{
   const popArr = globalCategories.population;
   createTableIndicatorCategory(popArr);
 });
-// ------------------------------Trabajo----------------------------
+// ------------------------------Trabajo-----------------------------
 const work = document.getElementById('work');
 work.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
@@ -165,7 +190,8 @@ gender.addEventListener('click', () => {
   const genArr = globalCategories.gender;
   createTableIndicatorCategory(genArr);
 });
-// -------------Función que crea la tabla de categorías---------------
+
+/* ================================= FUNCIÓN QUE CREA LA TABLA DE CATEGORIAS ===========================================*/
 const createTableIndicatorCategory = (arrCategory) => {
   globalCategory = arrCategory;
   tableIndicatorCategory.innerHTML = '';
@@ -186,12 +212,12 @@ const createTableIndicatorCategory = (arrCategory) => {
   table = table + '</tbody>';
   tableIndicatorCategory.innerHTML = table;
 };
-// -------------Función que crea la tabla de data------------------
+
+/* =====================================  FUNCIÓN QUE CREA LA TABLA DE DATA =========================================== */
 let valuePerIndicator = [];
 let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
-
   tableData.innerHTML = '';
   let table = `
               <thead>
@@ -219,7 +245,8 @@ const createTableData = (arrData) =>{
   table = table + '</tbody >';
   tableData.innerHTML = table;
 }; 
-// ------------------Función que muestra la data------------------
+
+/* =====================================  FUNCIÓN QUE MUESTRA LA TABLA DE DATA ========================================= */
 const showData = (index) => {
   document.getElementById('average-btn').classList.remove('hide');
   document.getElementById('average-result').classList.remove('hide');
@@ -230,13 +257,15 @@ const showData = (index) => {
   document.getElementById('indicator-title-data').innerHTML = globalCategory[index].countryName.toUpperCase() + ': ' + globalCategory[index].indicatorName;
   createTableData(arrData);
 };
-// --------------------Función que muestra el promedio -------------
+
+/* ======================================= FUNCIÓN QUE MUESTRA EL PROMEDIO ============================================= */
 document.getElementById('average-btn').addEventListener('click', (event) => {
   event.preventDefault();
   let resultadoPromedio = window.worldbank.averageValue(valuePerIndicator);
   document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES : ' + resultadoPromedio.toFixed(2) + ' %';
 });
-// ---------------------Función que ordena la data------------------
+
+/* =========================================  FUNCIÓN QUE ORDENA LA DATA =============================================== */
 document.getElementById('sort-btn').addEventListener('click', () => {
   let typeSelected = document.getElementById('data-type').value;
   let orderSelected = document.getElementById('order-type').value;
@@ -244,13 +273,13 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   let arrSort = window.worldbank.sortArrData(arrData, typeSelected, orderSelected);
   createTableData(arrSort);
 });
-// ---------------------Función que filtra la data------------------
+
+/* =====================================  FUNCIÓN QUE FILTRA LA DATA POR RANGO DE AÑOS ================================= */
 document.getElementById('filter-btn').addEventListener('click', () =>{
   document.getElementById('average-btn').classList.add('hide');
   document.getElementById('average-result').classList.add('hide');
   let initialYear = document.getElementById('initial-year').value;
   let finalYear = document.getElementById('final-year').value;
-
   let arrData = globalData;
   let arrFilt = window.worldbank.filter(arrData, initialYear, finalYear);
   createTableData(arrFilt);
