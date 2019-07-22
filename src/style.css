@@ -196,23 +196,56 @@ a{
     color: #000000;
 }
 /*----------------------------------------Frame - MOBILE----------------------------------------*/
-.frame{
+.container {
 	display: flex;
-	flex-direction: column;
+	height: 30vh;
+}
+.section {
+	flex: 1;
+	display: flex;
 	justify-content: center;
+	align-items: center;
+	height: 100%;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	color: #fff;
+	transition: flex .4s ease;
+	position: relative;
+	cursor: pointer;
 }
-.img-pais{
-	display: flex;
-	flex-direction: column;
+.section .overlay {
+	background-color: rgba(0, 0, 0, 0.2);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: background-color .8s ease;
 }
-.frame-img{
-	/*height: 100%;*/
-	max-width: 100%;
+.section .content {
+	z-index: 2;
+	font-size: 12px;
 }
-
+.section {
+	flex: 2;
+}
+.section .overlay {
+	background-color: rgba(0, 0, 0, 0);
+}
+#explore-data-peru {
+	background-image: url(https://image.freepik.com/foto-gratis/bandera-peru-arrugado-sobre-fondo-oscuro-3d-render_1379-614.jpg);
+}
+#explore-data-mexico {
+	background-image: url(https://image.freepik.com/foto-gratis/bandera-mexico-arrugado-sobre-fondo-oscuro-3d-render_1379-709.jpg);
+}   
+#explore-data-chile {
+	background-image: url(https://image.freepik.com/foto-gratis/bandera-chile-arrugado-sobre-fondo-oscuro-3d-render_1379-828.jpg);
+}  
+#explore-data-brasil {
+	background-image: url(https://image.freepik.com/foto-gratis/bandera-brasil-arrugado-sobre-fondo-oscuro-3d-render_1379-810.jpg);
+}  
 .text-media{
 	height: 15em;
-	background-color:#fff; 
+	background-color:#fff;
 }
 .text-format{
 	text-align: center;
@@ -228,9 +261,10 @@ a{
 	align-self: center;
 	background-color: #002F54;
 	height: 380px;
+	font-size: 15px;
 }
 .indicator-title-1{
-	font-size: 13px;
+	font-size: 15px;
 	width: max-content;
 	height: max-content;
 	color: #ffffff;
@@ -260,7 +294,7 @@ a{
 	cursor: pointer;
 }
 .indicator-title{
-	font-size: 13px;
+	font-size: 15px;
 	width: 50px;
 	color: white;
 	font-weight:400;
@@ -279,6 +313,7 @@ a{
 	margin: 0 25px;
 	padding-bottom: 25px;
 	font-weight: 100;
+	font-size: 15px;
 }
 /*-------------------------------------PANTALLA 3 - MOBILE -------------------------------------*/
 .flex{
@@ -467,24 +502,53 @@ a{
 		margin: 0 15px 5px;
 	}
 /*------------------------------------FRAME -DESKTOP---------------------------------------------*/
-	.frame{
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-	}
-	.img-pais{
-		width: 25%;
-		/*height: 500px;*/
-	}
-	.frame-img{
-		/*height: 100%;*/
-		max-width: 100%;
+	.container {
+    	display: flex;
+    	height: 60vh;
+  	}
+	.section {
+    	flex: 1;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	height: 100%;
+    	overflow: hidden;
+    	background-size: cover;
+    	background-position: center;
+    	color: #fff;
+    	transition: flex .4s ease;
+		position: relative;
 		cursor: pointer;
+  	}
+  	.section .overlay {
+    	background-color: rgba(0, 0, 0, 0.3);
+    	width: 100%;
+    	height: 100%;
+    	position: absolute;
+    	transition: background-color .8s ease;
+  	}
+	.section .content {
+		font-size: 20px;
+    	z-index: 2;
+  	}
+	.section:hover {
+    	flex: 2;
+  	}
+  	.section:hover .overlay {
+    	background-color: rgba(0, 0, 0, 0);
 	}
-	.frame-img:hover{
-		border-color: red solid 2px;
-		cursor: pointer;
-	}
+  	#explore-data-peru {
+        background-image: url(https://image.freepik.com/foto-gratis/bandera-peru-arrugado-sobre-fondo-oscuro-3d-render_1379-614.jpg);
+  	}
+	#explore-data-mexico {
+        background-image: url(https://image.freepik.com/foto-gratis/bandera-mexico-arrugado-sobre-fondo-oscuro-3d-render_1379-709.jpg);
+  	}   
+  	#explore-data-chile {
+        background-image: url(https://image.freepik.com/foto-gratis/bandera-chile-arrugado-sobre-fondo-oscuro-3d-render_1379-828.jpg);
+  	}  
+  	#explore-data-brasil {
+		background-image: url(https://image.freepik.com/foto-gratis/bandera-brasil-arrugado-sobre-fondo-oscuro-3d-render_1379-810.jpg);
+  	}  
 	.text-media{
 		height: max-content;
 		display: flex;
@@ -493,7 +557,12 @@ a{
 	.text-format{
 		text-align: center;
 		padding: 1em;
+		background-color: #002F54;
+		color: #ffffff;
 	}
+	.bold-text{
+		font-size:20px;
+	}	
 /* ---------------------------------PANTALLA 2 : CATEGORIAS - DESKTOP ----------------------------*/
 	.indicator-per-country{
 		display: flex;
@@ -543,7 +612,7 @@ a{
 		border: 3px solid white;
 	}
 	.indicator-title{
-		font-size: 15px;
+		font-size: 20px;
 		width: 147px;
 		color: white;
 		font-weight:400;
@@ -560,7 +629,6 @@ a{
 		height: max-content;
 		text-align:center;
 		color: #ffffff;
-		margin: 0 25px;
 	}
 /*-------------------------------- PANTALLA 3 - DESKTOP -----------------------------------------*/
 	.flex{
