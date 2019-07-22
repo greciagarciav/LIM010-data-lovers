@@ -421,81 +421,78 @@ const worldata = {
     'dataSource': 'Indicadores del desarrollo mundial',
     'lastUpdated': '2018-11-14'
   }
-}
-;;
+};
 
-describe('El objeto WORLDBANK', () => {
-  it('debería ser un objeto', () => {
-    expect(typeof worldbank).toEqual('object');
-  });
-});
+const input = [['2002', 31.4799995422363], ['2003', 29.6299991607666], ['2004', 27.6299991607666], ['2005', 27.2099990844727], ['2006', 26.9699993133545],
+  ['2007', 27.6700000762939], ['2008', 26.9599990844727], ['2009', 27.3600006103516], ['2010', 25.3400001525879], ['2011', 24.7999992370605],
+  ['2012', 25.0400009155273], ['2013', 24.0900001525879], ['2014', 24.2099990844727], ['2015', 21.6800003051758], ['2016', 23.7399997711182], ['2017', 23.7600002288818]];
 
-describe('La funcion CATEGORIZAR', ()=>{
-  it('debería ser una función', () => {
-    expect(typeof worldbank.categorizePerCountry).toEqual('function');
-  });
-  /* it('debería ser ', () => {
-    expect(worldbank.categorizePerCountry(worldata.PER.indicators.education[0])).toEqual({});
-  });*/
-});
+const outputValMay = [['2002', 31.4799995422363], ['2003', 29.6299991607666], ['2007', 27.6700000762939], ['2004', 27.6299991607666], ['2009', 27.3600006103516],
+  ['2005', 27.2099990844727], ['2006', 26.9699993133545], ['2008', 26.9599990844727], ['2010', 25.3400001525879], ['2012', 25.0400009155273], ['2011', 24.7999992370605],
+  ['2014', 24.2099990844727], ['2013', 24.0900001525879], ['2017', 23.7600002288818], ['2016', 23.7399997711182], ['2015', 21.6800003051758]];
+  
+const outputValMen = [['2015', 21.6800003051758], ['2016', 23.7399997711182], ['2017', 23.7600002288818], ['2013', 24.0900001525879], ['2014', 24.2099990844727],
+  ['2011', 24.7999992370605], ['2012', 25.0400009155273], ['2010', 25.3400001525879], ['2008', 26.9599990844727], ['2006', 26.9699993133545], ['2005', 27.2099990844727],
+  ['2009', 27.3600006103516], ['2004', 27.6299991607666], ['2007', 27.6700000762939], ['2003', 29.6299991607666], ['2002', 31.4799995422363], ];
+  
+const outputAñMay = [['2017', 23.7600002288818], ['2016', 23.7399997711182], ['2015', 21.6800003051758], ['2014', 24.2099990844727], ['2013', 24.0900001525879], 
+  ['2012', 25.0400009155273], ['2011', 24.7999992370605], ['2010', 25.3400001525879], ['2009', 27.3600006103516], ['2008', 26.9599990844727], ['2007', 27.6700000762939],
+  ['2006', 26.9699993133545], ['2005', 27.2099990844727], ['2004', 27.6299991607666], ['2003', 29.6299991607666], ['2002', 31.4799995422363]];
 
-describe('La función de ORDENAR', ()=>{
+const inputValue = [31.4799995422363, 29.6299991607666, 27.6299991607666, 27.2099990844727, 26.9699993133545, 27.6700000762939,
+  26.9599990844727, 27.3600006103516, 25.3400001525879, 24.7999992370605, 25.0400009155273, 24.0900001525879, 24.2099990844727,
+  21.6800003051758, 23.7399997711182, 23.7600002288818];
+
+const outputAverage = 26.098124742507935;
+
+const outputFilter = [['2002', 31.4799995422363], ['2003', 29.6299991607666], ['2004', 27.6299991607666], ['2005', 27.2099990844727], ['2006', 26.9699993133545],
+  ['2007', 27.6700000762939], ['2008', 26.9599990844727], ['2009', 27.3600006103516], ['2010', 25.3400001525879], ['2011', 24.7999992370605],
+  ['2012', 25.0400009155273], ['2013', 24.0900001525879], ['2014', 24.2099990844727], ['2015', 21.6800003051758]];
+
+// describe('El objeto WORLDBANK', () => {
+//   it('debería ser un objeto', () => {
+//     expect(typeof worldbank).toEqual('object');
+//   });
+// });
+
+describe('La función ORDENAR', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.sortArrData).toEqual('function');
   });
-  // it('debería ser una función', () => {
-  //   expect(typeof OrderYearAsc).toEqual('function');
-  // });
-  // it('debería de ordenar de MAYOR a MENOR por VALOR', () => {
-  //   expect(worldbank.sortArrData(worldata, 'Valores', 'Mayor')).toEqual([]);
-  // });
-  // it('debería de ordenar de MENOR a MAYOR por VALOR', () => {
-  //   expect(worldbank.sortArrData(worldata, 'Valores', 'Menor')).toEqual([]);
-  // });
-  // it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
-  //   expect(worldbank.sortArrData(worldata, 'Año', 'Mayor')).toEqual([]);
-  // });
-  // it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
-  //   expect(worldbank.sortArrData(worldata, 'Año', 'Menor')).toEqual([]);
-  // });
+  it('debería retornar un array', () => {
+    expect(Array.isArray(worldbank.sortArrData())).toEqual(true);
+  });
+  it('debería de ordenar de MAYOR a MENOR por VALOR', () => {
+    expect(worldbank.sortArrData(input, 'Valores', 'Mayor')).toEqual(outputValMay);
+  });
+  it('debería de ordenar de MENOR a MAYOR por VALOR', () => {
+    expect(worldbank.sortArrData(input, 'Valores', 'Menor')).toEqual(outputValMen);
+  });
+  it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
+    expect(worldbank.sortArrData(input, 'Año', 'Mayor')).toEqual(outputAñMay);
+  });
+  it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
+    expect(worldbank.sortArrData(input, 'Año', 'Menor')).toEqual(input);
+  });
 });
 
-describe('La funcion de PROMEDIO', ()=>{
+describe('La función PROMEDIO', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.averageValue).toEqual('function');
   });
-  it('debería retornar un array', () => {
-    expect(Array.isArray(worldbank.averageValue(worldata))).toEqual(true);
+  it('debería ser de tipo Number', () => {
+    expect(typeof worldbank.averageValue(inputValue)).toEqual('number');
   });
-
-  // it('debería retornar el promedio', () => {
-  //   expect(worldbank.averageValue(worldata)).toEqual('');
-  // });
+  it('debería retornar el promedio', () => {
+    expect(worldbank.averageValue(inputValue)).toEqual(outputAverage);
+  });
 });
 
-describe('La funcion de RANGO DE AÑOS', ()=>{
+describe('La funcion RANGO DE AÑOS', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.filter).toEqual('function');
   });
-});
-
-
-
-
-
-
-/* it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
-  });
-});
-
-describe('example', () => {
   it('debería ser una función', () => {
-    assert.equal(typeof example, 'function');
-  });
-
-  it('debería retornar "example"', () => {
-    assert.equal(example(), 'example');
+    expect(worldbank.filter(input, 2000, 2015)).toEqual(outputFilter);
   });
 });
-*/
