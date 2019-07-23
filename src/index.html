@@ -74,7 +74,7 @@
 <section class="hide" id="text-under-frame">
     <div class="text-media">
       <p class="bold-text text-format">INDICADORES DE DESARROLLO MUNDIAL</p>
-      <p class="text-format">Los Indicadores de desarrollo mundial es una recopilación de datos relevantes de alta calidad
+      <p class="text-format">Los Indicadores de desarrollo mundial, es una recopilación de datos relevantes de alta calidad
         y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.
       </p>
     </div>
@@ -142,12 +142,12 @@
     <div class="flex">
       <form class="select-style-form">
         <label class="select-style">Desde:
-          <input type="number" id="initial-year"  value="" class="filter-input" placeholder="  Años"></label>
+          <input type="number" id="initial-year"  value="" class="filter-input" placeholder="  Años" title="Ingresa un año de la tabla"></label>
         <label class="select-style">Hasta:
-          <input type="number" id="final-year"  value="" class="filter-input" placeholder="  Años"></label>
+          <input type="number" id="final-year"  value="" class="filter-input" placeholder="  Años" title="Ingresa un año de la tabla"></label>
         <button type="button" class="filter-btn" id="filter-btn">FILTRAR</button>
       </form>
-      <p class= "hide message" id="enter-a-year">Debes ingresar los años si deseas filtrar</p>
+      <p class= "hide message" id="enter-a-year">Para filtrar debes ingresar solo años disponibles en la tabla</p>
     </div>
     <div class="flex" id="container-data-indicator">
       <table id="data" class="flex-table">
@@ -156,9 +156,6 @@
     <div class="flex">
       <button class="hide average-btn" type="button" id="average-btn">PROMEDIO</button>
       <p class="hide show-average" id="average-result"></p>
-    </div>
-    <div>
-      <button class="hide average-btn" type="button" id="return-btn">REGRESAR</button>
     </div>
   </section>
 </main>

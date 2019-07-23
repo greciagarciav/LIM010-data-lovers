@@ -12,7 +12,7 @@ body{
 	flex-direction: column;
 	background-color: #dcdcdc;
 }
-a{
+.social{
 	display: flex;
 	font-size: 12px;
 	flex-direction: column;
@@ -20,6 +20,15 @@ a{
 	cursor: pointer;
 	text-decoration: none;
 	color: #4D97F0;
+}
+.indicator-style{
+	display: flex;
+	flex-direction: column;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #4D97F0;
+	font-size: 12px;
 }
 .nro2{
 	font-size: 12px;
@@ -35,6 +44,7 @@ a{
 
 .bold-text{
 	font-weight: bold;
+	padding-bottom: 0px;
 }
 /*--------------------------------------------HEADER---------------------------------------------------*/
 .container-logo{
@@ -102,6 +112,13 @@ a{
 }
 .a-social-media-icon{
 	padding: 15px;
+	display: flex;
+	font-size: 12px;
+	flex-direction: column;
+	padding: 5px 10px 5px 10px;
+	cursor: pointer;
+	text-decoration: none;
+	color: #4D97F0;
 }
 .img-social-media{
 	height: 2em;
@@ -245,11 +262,13 @@ a{
 }  
 .text-media{
 	height: 15em;
-	background-color:#fff;
+	background-color:#002F54;
 }
 .text-format{
 	text-align: center;
 	padding: 1em;
+	background-color: #002F54;
+	color: #ffffff;
 }
 /* ---------------------------------PANTALLA 2 : CATEGORIAS - MOBILE ----------------------------*/
 .main-2{
@@ -350,7 +369,7 @@ a{
 	justify-content: space-between;
 	color: #002F54;
 	width: 100px;
-	font-size: 11px;
+	font-size: 8px;
 	text-align: center;
 }
 .filter-input,select{
@@ -358,7 +377,7 @@ a{
 	height: 25px;
 	border:1px solid #4D97F0;
 	margin: 0 0 0 5px;
-	font-size: 11px;
+	font-size: 7px;
 	background-color: #ffffff;
 }
 .sort-btn,.filter-btn,.average-btn{
@@ -494,6 +513,13 @@ a{
 	}
 	.a-social-media-icon{
 		padding: 1px 15px;
+		display: flex;
+		font-size: 12px;
+		flex-direction: column;
+		padding: 5px 10px 5px 10px;
+		cursor: pointer;
+		text-decoration: none;
+		color: #4D97F0;
 	}
 	.img-social-media{
 		height: 2em;
@@ -558,6 +584,7 @@ a{
 	.text-media{
 		height: max-content;
 		display: flex;
+		background-color:#002F54;
 		flex-direction: column;
 	}
 	.text-format{
@@ -565,9 +592,11 @@ a{
 		padding: 1em;
 		background-color: #002F54;
 		color: #ffffff;
+		font-size: 20px;
 	}
 	.bold-text{
 		font-size:20px;
+		padding-bottom: 0px;
 	}	
 /* ---------------------------------PANTALLA 2 : CATEGORIAS - DESKTOP ----------------------------*/
 	.indicator-per-country{
@@ -682,6 +711,7 @@ a{
 		height: 25px;
 		border:1px solid #4D97F0;
 		margin: 0;
+		font-size: 11px;
 	}
 	.sort-btn,.filter-btn,.average-btn{
 		color: #ffffff;
@@ -743,7 +773,7 @@ a{
 	body{
 		background-color: transparent;
 	}
-	a{
+	.indicator-style{
 	display: flex;
 	font-size: 15px;
 	flex-direction: column;
@@ -751,16 +781,13 @@ a{
 	cursor: pointer;
 	text-decoration: none;
 	color: #4D97F0;
+	width: 1131px;
 	}
 }
 
 table {
    width: 100%;
 }
-/*th,td{
-	padding: 5px;
-   border: 1px solid #4D97F0;
-}*/
 tr{
 	border: 1px solid #4D97F0;
 }
