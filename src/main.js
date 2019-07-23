@@ -205,7 +205,7 @@ const createTableIndicatorCategory = (arrCategory) => {
     table = table + `<tr>
                           <td class="nro2">${ i + 1 } </td>
                           <td class="indicador2">
-                            <a href="javascript:showData(${ i })"> ${ arrCategory[i].indicatorName }</a>
+                            <a class="prueba" href="javascript:showData(${ i })"> ${ arrCategory[i].indicatorName }</a>
                           </td>
                        </tr>`;
   }
@@ -259,8 +259,7 @@ const showData = (index) => {
 };
 
 /* ======================================= FUNCIÓN QUE MUESTRA EL PROMEDIO ============================================= */
-document.getElementById('average-btn').addEventListener('click', (event) => {
-  event.preventDefault();
+document.getElementById('average-btn').addEventListener('click', () => {
   let resultadoPromedio = window.worldbank.averageValue(valuePerIndicator);
   document.getElementById('average-result').innerHTML = 'EL PROMEDIO ES : ' + resultadoPromedio.toFixed(2) + ' %';
 });
