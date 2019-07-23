@@ -449,12 +449,6 @@ const outputFilter = [['2002', 31.4799995422363], ['2003', 29.6299991607666], ['
   ['2007', 27.6700000762939], ['2008', 26.9599990844727], ['2009', 27.3600006103516], ['2010', 25.3400001525879], ['2011', 24.7999992370605],
   ['2012', 25.0400009155273], ['2013', 24.0900001525879], ['2014', 24.2099990844727], ['2015', 21.6800003051758]];
 
-// describe('El objeto WORLDBANK', () => {
-//   it('debería ser un objeto', () => {
-//     expect(typeof worldbank).toEqual('object');
-//   });
-// });
-
 describe('La función ORDENAR', ()=>{
   it('debería ser una función', () => {
     expect(typeof worldbank.sortArrData).toEqual('function');
@@ -469,10 +463,10 @@ describe('La función ORDENAR', ()=>{
     expect(worldbank.sortArrData(input, 'Valores', 'Menor')).toEqual(outputValMen);
   });
   it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
-    expect(worldbank.sortArrData(input, 'Año', 'Mayor')).toEqual(outputAñMay);
+    expect(worldbank.sortArrData(input, 'Años', 'Mayor')).toEqual(outputAñMay);
   });
   it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
-    expect(worldbank.sortArrData(input, 'Año', 'Menor')).toEqual(input);
+    expect(worldbank.sortArrData(input, 'Años', 'Menor')).toEqual(input);
   });
 });
 

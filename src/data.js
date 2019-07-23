@@ -52,7 +52,7 @@ window.worldbank = {
       case 'Menor':
         sorted = newArrData.sort(OrderPercentageAsc);
       }
-    } else if (dataType === 'Año') {
+    } else if (dataType === 'Años') {
       switch (orderType) {
       case 'Mayor':
         sorted = newArrData.sort(OrderYearDesc);
