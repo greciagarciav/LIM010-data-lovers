@@ -41,6 +41,7 @@ exploreDataPeru.addEventListener('click', () => {
   globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-peru').addEventListener('click', ()=>{
+  document.getElementById('average-result').innerHTML='';
   document.getElementById('title-per').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -62,6 +63,7 @@ exploreDataMexico.addEventListener('click', () => {
   globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-mexico').addEventListener('click', ()=>{
+  document.getElementById('average-result').innerHTML='';
   document.getElementById('title-mex').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -83,6 +85,7 @@ exploreDataBrasil.addEventListener('click', () => {
   globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-brasil').addEventListener('click', ()=>{
+  document.getElementById('average-result').innerHTML='';
   document.getElementById('title-bra').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -104,6 +107,7 @@ exploreDataChile.addEventListener('click', () => {
   globalCategories = categorizePerCountry(globalCountry);
 });
 document.getElementById('go-chile').addEventListener('click', ()=>{
+  document.getElementById('average-result').innerHTML='';
   document.getElementById('title-chl').classList.remove('hide');
   document.getElementById('filled').classList.remove('hide');
   document.getElementById('indicator-table').classList.add('hide');
@@ -146,6 +150,14 @@ const showCategories = (countryId) => {
   document.getElementById('indicator').classList.remove('hide');
   document.getElementById('to-shrink').classList.add('to-shrink');
 };
+
+// const returnBtn = document.getElementById('return-btn');
+//   returnBtn.addEventListener('click', () =>{
+//     document.getElementById('frame').classList.add('hide');
+//     document.getElementById('text-under-frame').classList.add('hide');
+//     document.getElementById('indicator').classList.remove('hide');
+//     document.getElementById('to-shrink').classList.add('to-shrink');
+// });
 
 /* ====================================== AL HACER CLICK EN EL ICONO DE LA CATEGORIA ================================== */ 
 const tableIndicatorCategory = document.getElementById('category'); 
@@ -234,7 +246,7 @@ const createTableData = (arrData) =>{
     if (value !== '') {
       table = table + `<tbody class="bordes"> <tr>
                       <td class="nro4">${ key } </td>
-                      <td class="indicador4">${ value.toFixed(2) } % </td>
+                      <td class="indicador4">${ value.toFixed(2) } </td>
                     </tr>`;
       let valor = value;
       let valores = key;
@@ -248,6 +260,7 @@ const createTableData = (arrData) =>{
 
 /* =====================================  FUNCIÓN QUE MUESTRA LA TABLA DE DATA ========================================= */
 const showData = (index) => {
+  document.getElementById('return-btn').classList.remove('hide');
   document.getElementById('average-btn').classList.remove('hide');
   document.getElementById('average-result').classList.remove('hide');
   document.getElementById('indicator').classList.add('hide');
@@ -275,12 +288,23 @@ document.getElementById('sort-btn').addEventListener('click', () => {
 });
 
 /* =====================================  FUNCIÓN QUE FILTRA LA DATA POR RANGO DE AÑOS ================================= */
+
+document.getElementById('initial-year').addEventListener('keypress', () =>{
+  document.getElementById('enter-a-year').classList.add("hide");
+});
+
 document.getElementById('filter-btn').addEventListener('click', () =>{
-  document.getElementById('average-btn').classList.add('hide');
-  document.getElementById('average-result').classList.add('hide');
   let initialYear = document.getElementById('initial-year').value;
   let finalYear = document.getElementById('final-year').value;
+  
+  if(initialYear !=='' && finalYear !==''){
+  document.getElementById('average-btn').classList.add('hide');
+  document.getElementById('average-result').classList.add('hide');
   let arrData = globalData;
   let arrFilt = window.worldbank.filter(arrData, initialYear, finalYear);
   createTableData(arrFilt);
+  }
+else{
+  document.getElementById('enter-a-year').classList.remove("hide");
+}  
 });

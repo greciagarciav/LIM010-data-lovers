@@ -128,13 +128,11 @@
       <form class="select-style-form">
         <label class="select-style">Ordenar por:
           <select id="data-type">
-            <option value="" disabled selected>...</option>
             <option>Valores</option>
-            <option>Año</option>
+            <option>Años</option>
           </select></label>
         <label class="select-style">Orden:
           <select id="order-type">
-            <option value="" disabled selected>...</option>
             <option>Mayor</option>
             <option>Menor</option>
           </select></label>
@@ -149,6 +147,7 @@
           <input type="number" id="final-year"  value="" class="filter-input" placeholder="  Años"></label>
         <button type="button" class="filter-btn" id="filter-btn">FILTRAR</button>
       </form>
+      <p class= "hide message" id="enter-a-year">Debes ingresar los años si deseas filtrar</p>
     </div>
     <div class="flex" id="container-data-indicator">
       <table id="data" class="flex-table">
@@ -157,6 +156,9 @@
     <div class="flex">
       <button class="hide average-btn" type="button" id="average-btn">PROMEDIO</button>
       <p class="hide show-average" id="average-result"></p>
+    </div>
+    <div>
+      <button class="hide average-btn" type="button" id="return-btn">REGRESAR</button>
     </div>
   </section>
 </main>
