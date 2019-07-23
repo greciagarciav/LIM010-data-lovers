@@ -469,10 +469,10 @@ describe('La función ORDENAR', ()=>{
     expect(worldbank.sortArrData(input, 'Valores', 'Menor')).toEqual(outputValMen);
   });
   it('debería de ordenar de MAYOR a MENOR por AÑO', () => {
-    expect(worldbank.sortArrData(input, 'Año', 'Mayor')).toEqual(outputAñMay);
+    expect(worldbank.sortArrData(input, 'Años', 'Mayor')).toEqual(outputAñMay);
   });
   it('debería de ordenar de MENOR a MAYOR por AÑO', () => {
-    expect(worldbank.sortArrData(input, 'Año', 'Menor')).toEqual(input);
+    expect(worldbank.sortArrData(input, 'Años', 'Menor')).toEqual(input);
   });
 });
 
