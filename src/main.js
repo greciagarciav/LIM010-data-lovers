@@ -93,7 +93,7 @@ document.getElementById('go-brasil').addEventListener('click', ()=>{
   document.getElementById('title-per').classList.add('hide');
   document.getElementById('title-mex').classList.add('hide');
   document.getElementById('title-chl').classList.add('hide');
-  showCategories('bra');
+  showCategories('brasil');
   globalCountry = WORLDBANK.BRA.indicators;
   globalCategories = categorizePerCountry(globalCountry);
 });
@@ -159,7 +159,6 @@ const education = document.getElementById('education');
 education.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
   document.getElementById('filled').classList.add('hide');
-  document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'EDUCACIÓN'; 
   const educArr = globalCategories.education;
   createTableIndicatorCategory(educArr);
@@ -169,7 +168,6 @@ const population = document.getElementById('population');
 population.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
   document.getElementById('filled').classList.add('hide');
-  document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'POBLACIÓN'; 
   const popArr = globalCategories.population;
   createTableIndicatorCategory(popArr);
@@ -179,7 +177,6 @@ const work = document.getElementById('work');
 work.addEventListener('click', ()=>{
   document.getElementById('indicator-table').classList.remove('hide');
   document.getElementById('filled').classList.add('hide');
-  document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'TRABAJO'; 
   const workArr = globalCategories.work;
   createTableIndicatorCategory(workArr);
@@ -189,7 +186,6 @@ const gender = document.getElementById('gender');
 gender.addEventListener('click', () => {
   document.getElementById('indicator-table').classList.remove('hide');
   document.getElementById('filled').classList.add('hide');
-  document.getElementById('to-shrink').classList.add('to-shrink');
   document.getElementById('category-title').innerHTML = 'GÉNERO'; 
   const genArr = globalCategories.gender;
   createTableIndicatorCategory(genArr);
@@ -198,7 +194,7 @@ gender.addEventListener('click', () => {
 /* ================================= FUNCIÓN QUE CREA LA TABLA DE CATEGORIAS ===========================================*/
 const createTableIndicatorCategory = (arrCategory) => {
   globalCategory = arrCategory;
-  tableIndicatorCategory.innerHTML = '';
+  // tableIndicatorCategory.innerHTML = '';
   let table = `<thead>
                 <tr>
                   <th class="nro1">N°</th>
