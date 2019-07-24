@@ -62,12 +62,12 @@ PANTALLA 4:
 
 ## Prototipo Final
 
-![Captura 1](https://user-images.githubusercontent.com/51206642/60403072-2d415c00-9b5e-11e9-8cd3-8baaac72d95c.JPG)
+![Captura 1](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/login.png)
 
-![Captura 2](https://user-images.githubusercontent.com/51206642/60403074-2dd9f280-9b5e-11e9-9314-7dd6d6095d11.JPG)
+![Captura 2](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/1.png)
 
-![Captura 3](https://user-images.githubusercontent.com/51206642/60737771-8411b180-9f21-11e9-8f82-08312a4f70aa.jpeg)
+![Captura 3](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/2.png)
 
-![Captura 4](https://user-images.githubusercontent.com/51206642/60737850-c76c2000-9f21-11e9-84b1-785f02ade8bf.jpg)
+![Captura 4](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/3.png)
 
-![Captura 5](https://user-images.githubusercontent.com/51206642/60737917-04d0ad80-9f22-11e9-9713-b9203f845200.jpg)
+![Captura 5](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/4.png)
