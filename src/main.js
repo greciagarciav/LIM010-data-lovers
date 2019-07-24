@@ -194,7 +194,7 @@ gender.addEventListener('click', () => {
 /* ================================= FUNCIÓN QUE CREA LA TABLA DE CATEGORIAS ===========================================*/
 const createTableIndicatorCategory = (arrCategory) => {
   globalCategory = arrCategory;
-  // tableIndicatorCategory.innerHTML = '';
+  tableIndicatorCategory.innerHTML = '';
   let table = `<thead>
                 <tr>
                   <th class="nro1">N°</th>
@@ -271,7 +271,6 @@ document.getElementById('sort-btn').addEventListener('click', () => {
   let arrData = globalData;
   let arrSort = window.worldbank.sortArrData(arrData, typeSelected, orderSelected);
   createTableData(arrSort);
-  console.log(arrSort);
 });
 
 /* =====================================  FUNCIÓN QUE FILTRA LA DATA POR RANGO DE AÑOS ================================= */
