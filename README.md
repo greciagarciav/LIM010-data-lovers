@@ -28,8 +28,8 @@ Se creará un sitio web que permita a los usuarios acceder a los datos de los in
 
 ## Usuarios
 
-Los usuarios de este sitio web son todas las personas que deseen consultar los datos de los indicadores de desarrollo del Banco Mundial para analizar el comportamiento demográfico/económico de países latinoamericanos.
-
+Los usuarios de este sitio web son todos los tomadores de decisiones que deseen consultar los datos de los indicadores de desarrollo del Banco Mundial para analizar el comportamiento demográfico/económico de países latinoamericanos.
+Y así puedan desarrollar en base a esos indicadores un plan de trabajo.
 
 ## Objetivos
 
