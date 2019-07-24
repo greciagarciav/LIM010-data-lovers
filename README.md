@@ -20,8 +20,11 @@ Se creará un sitio web que permita a los usuarios acceder a los datos de los in
 
 ## Imagen final del proyecto
 
-##
-
+![F1](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/login-final.png)
+![F2](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/1-final.png)
+![F3](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/2-final.png)
+![F4](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/3-final.png)
+![F5](https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/4-final.png)
 
 ## Usuarios
 
@@ -51,13 +54,16 @@ El sitio web muestra grandes cantidades de datos con una interfaz amigable y que
 
 LOGIN: En el Login como equipo pensamos que sería bueno mostrar el header y footer desde el inicio, pero según el feedback el logo se repetía. Por lo que decidimos retirarlo para que quede más limpio y no este sobrecargado. Lo mismo pasó con el footer, lo sacamos para que no se vea sobrecargado. 
 
-PANTALLA 1: Según el feedback recibido, la pantalla que sale luego del Login no mostraba claramente lo que la página hace. Ya que solo se veía una imagen central cualquiera, pero parecía no llevar a nada. Para esto se decidió, que la pantalla llevara un slide de cuatro hojas y que la imágen de cada hoja del slide lleve un botón que diga "Explorar data", que al mismo tiempo contenga una imagen de cada país con una frase que resuma el desarrollado cada país de forma genral.Por otro lado, aunque tuviera el botón explorar data no se sabría qué tipo de data. Para esto se decidió colocar en la cabecera al costado del logo la palabra "Indicadores". Del mismo modo, se quitó el ícono de inicio de la cabecera ya que sería redundante tener 2 formas de regresar al inicio, ya que el logo tendría la misma función. 
+PANTALLA 1: Según el feedback recibido, la pantalla que sale luego del Login no mostraba claramente lo que la página hace. Ya que solo se veía una imagen central cualquiera, pero parecía no llevar a nada. Para esto se decidió, que la pantalla llevara un slide de cuatro hojas y que la imágen de cada hoja del slide lleve un botón que diga "Explorar data",que al mismo tiempo contenga una imagen de cada país con una frase que resuma el desarrollado cada país de forma general.Del mismo modo, se quitó el ícono de inicio de la cabecera ya que sería redundante tener 2 formas de regresar al inicio, ya que el logo tendría la misma función.
+Luego del Code Review, la coach nos sugirió que quitaramos los slides porque no eran de nuestra autoria ,así que lo remplazamos por una serie de cuadros animados con css.
+También nos sugirieron que cambiaramos el menú hamburguesa por botones con nombre de los países.  
 
-PANTALLA 2: 
+PANTALLA 2: En esta pantalla nos sugirieron el categorizar y poner imágenes porque los 139 indicadores eran demasiado pesados para leerlos,asi que los clasificamos en Educación, Población, Trabajo y Género.
+Y para acceder a la data creamos iconos que representaban a cada categoria.  
 
-PANTALLA 3:
+PANTALLA 3: En esta pantalla nos sugirieron que al dar click en el icono desaparezca el texto de abajo ya que así se podria visualizar mejor los indicadores.
 
-PANTALLA 4:
+PANTALLA 4: En esta pantalla nos sugirieron que la tabla debia tener más ancho y que quitaramos el número de orden porque se veia recargado,tambien que el promedio saliera debajo del botón PROMEDIO y que al no ingresar ninguna fecha en la sección de filtrar salga un mensaje de advertencia.
 
 
 ## Prototipo Final
