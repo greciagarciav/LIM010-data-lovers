@@ -8,173 +8,174 @@
   <link href="https://fonts.googleapis.com/css?family=Poppins:300,400&display=swap" rel="stylesheet">
 </head>
 <body>
-<!-- ====================================================Cabecer/Navegador=========================================================== -->
-<header class="hide" id="header">
-  <nav class="flex-row container-logo">
-    <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial" src="https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/logo-banco-mundial.PNG" alt="logo del banco mundial"></a>
-    <div class="menu-paises">
-      <button type="button" class="menu-pais go-to-peru" id="go-peru">Perú</button>
-      <button type="button" class="menu-pais go-to-mexico" id="go-mexico">México</button>
-      <button type="button" class="menu-pais go-to-brasil" id="go-brasil">Brasil</button>
-      <button type="button" class="menu-pais go-to-chile" id="go-chile">Chile</button>
-    </div>
-  </nav>
-</header>
-<!-- ==========================================================Login=================================================================-->
-<main class="main main-2">
-  <section class="hide flex-login" id="login">
-    <form class="contain-form-field-login">
-      <img class="logo-login"
-        src="https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/logo-banco-mundial.PNG"
-        alt="logo del banco mundial">
-      <label class="label-caption">Usuario</label>
-      <input type="text" name="usuario" class="fill-login" id="email">
-      <label class="label-caption">Contraseña</label>
-      <input type="password" name="contraseña" class="fill-login" id="password">
-      <label class="label-caption-reset">¿Olvidaste tu contraseña?</label>
-      <label class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</label>
-      <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
-      <label class="new-account">¿No tienes una cuenta?<strong>&nbsp;Registrate</strong></label>
-    </form>
-  </section>
-<!-- ============================================================Frame================================================================= -->
-<section class="hide" id="frame">
-  <div class="container">
-          
-          <div id="explore-data-peru" class="section">
-            <div class="content">
-              <h1>PERÚ</h1>
-            </div>
-            <div class="overlay"></div>
-          </div>
-
-          <div id="explore-data-mexico" class="section">
-            <div class="content">
-              <h1>MÉXICO</h1>
-            </div>
-            <div class="overlay"></div>
-          </div>
-
-          <div id="explore-data-chile" class="section">
-            <div class="content">
-              <h1>CHILE</h1>
-            </div>
-            <div class="overlay"></div>
-          </div>
-
-          <div id="explore-data-brasil" class="section">
-                  <div class="content">
-                    <h1>BRASIL</h1>
-                  </div>
-                  <div class="overlay"></div>
-          </div>
-  </div>
-</section> 
-
-<section class="hide" id="text-under-frame">
-    <div class="text-media">
-      <p class="bold-text text-format">INDICADORES DE DESARROLLO MUNDIAL</p>
-      <p class="text-format">Los Indicadores de desarrollo mundial, es una recopilación de datos relevantes de alta calidad
-        y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.
-      </p>
-    </div>
-</section>
-<!-- ========================================================Categorias=================================================================-->
-  <section class="hide" id="indicator">
-    <div class="indicator-per-country" id="to-shrink">
-      <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
-      <p class="indicator-title-1 hide" id="title-mex">MÉXICO: INDICADORES DE DESARROLLO</p>
-      <p class="indicator-title-1 hide" id="title-chl">CHILE: INDICADORES DE DESARROLLO</p>
-      <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
-      <div class="contain-icons">
-        <figure class="icon-style">
-          <img src="img/education.png" class="icon-indicator" id="education" alt="icono de educación">
-          <figcaption class="indicator-title">EDUCACIÓN</figcaption>
-        </figure>
-        <figure class="icon-style">
-          <img src="img/population.png" class="icon-indicator" id="population" alt="icono de población">
-          <figcaption class="indicator-title">POBLACIÓN</figcaption>
-        </figure>
-        <figure class="icon-style">
-          <img src="img/works.png" class="icon-indicator" id="work" alt="icono de trabajo">
-          <figcaption class="indicator-title">TRABAJO</figcaption>
-        </figure>
-        <figure class="icon-style">
-          <img src="img/genders.png" class="icon-indicator" id="gender" alt="icono de género">
-          <figcaption class="indicator-title">GÉNERO</figcaption>
-        </figure>
+  <!-- ====================================================Cabecer/Navegador=========================================================== -->
+  <header class="hide" id="header">
+    <nav class="flex-row container-logo">
+      <a class="a-logo-banco-mundial" href=""><img class="logo-banco-mundial"
+          src="https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/logo-banco-mundial.PNG"
+          alt="logo del banco mundial"></a>
+      <div class="menu-paises">
+        <button type="button" class="menu-pais go-to-peru" id="go-peru">Perú</button>
+        <button type="button" class="menu-pais go-to-mexico" id="go-mexico">México</button>
+        <button type="button" class="menu-pais go-to-brasil" id="go-brasil">Brasil</button>
+        <button type="button" class="menu-pais go-to-chile" id="go-chile">Chile</button>
       </div>
-    </div>
-    <div class="container-text-under-icons-indicator" id="filled">
-      <p class="text-under-icons-indicator">El Grupo Banco Mundial trabaja en todas las principales esferas del
-        desarrollo: proporciona una gran variedad de productos financieros y asistencia técnica, y ayuda a los países a
-        enfrentar los desafíos mediante el intercambio de conocimiento de vanguardia y la aplicación de soluciones
-        innovadoras.
-      </p>
-    </div>
-  </section>
-<!-- =====================================================Mostrar indicadores========================================================-->
-  <section class="hide" id="indicator-table">
-    <div class="flex" id="container-indicators-category">
-      <p class="category-title" id="category-title"> </p>
-      <table class="flex-table" id="category">
-      </table>
-    </div>
-  </section>
-<!-- =====================================================Mostrar Valores=========================================================== -->
-  <section class="hide" id="show-data-indicator">
-    <p class="title-show-data" id="indicator-title-data"></p>
-    <div class="flex">
-      <form class="select-style-form">
-        <label class="select-style">Ordenar por:
-          <select id="data-type">
-            <option>Valores</option>
-            <option>Años</option>
-          </select></label>
-        <label class="select-style">Orden:
-          <select id="order-type">
-            <option>Mayor</option>
-            <option>Menor</option>
-          </select></label>
-        <button type="button" class="sort-btn" id="sort-btn">ORDENAR</button>
+    </nav>
+  </header>
+  <!-- ==========================================================Login=================================================================-->
+  <main class="main main-2">
+    <section class="hide flex-login" id="login">
+      <form class="contain-form-field-login">
+        <img class="logo-login"
+          src="https://raw.githubusercontent.com/SarAbigail/LIM010-data-lovers/master/src/img/logo-banco-mundial.PNG"
+          alt="logo del banco mundial">
+        <label class="label-caption">Usuario</label>
+        <input type="text" name="usuario" class="fill-login" id="email">
+        <label class="label-caption">Contraseña</label>
+        <input type="password" name="contraseña" class="fill-login" id="password">
+        <label class="label-caption-reset">¿Olvidaste tu contraseña?</label>
+        <label class="hide incorrect" id="wrong-password">Usuario y/o contraseña incorrectos</label>
+        <button type="button" class="btn-ingresar" id="login-button">INGRESA</button>
+        <label class="new-account">¿No tienes una cuenta?<strong>&nbsp;Registrate</strong></label>
       </form>
+    </section>
+    <!-- ============================================================Frame================================================================= -->
+    <section class="hide" id="frame">
+      <div class="container">
+        <div id="explore-data-peru" class="section">
+          <div class="content">
+            <h1>PERÚ</h1>
+          </div>
+          <div class="overlay"></div>
+        </div>
+        <div id="explore-data-mexico" class="section">
+          <div class="content">
+            <h1>MÉXICO</h1>
+          </div>
+          <div class="overlay"></div>
+        </div>
+        <div id="explore-data-chile" class="section">
+          <div class="content">
+            <h1>CHILE</h1>
+          </div>
+          <div class="overlay"></div>
+        </div>
+        <div id="explore-data-brasil" class="section">
+          <div class="content">
+            <h1>BRASIL</h1>
+          </div>
+          <div class="overlay"></div>
+        </div>
+      </div>
+    </section>
+    <section class="hide" id="text-under-frame">
+      <div class="text-media">
+        <p class="bold-text text-format">INDICADORES DE DESARROLLO MUNDIAL</p>
+        <p class="text-format">Los Indicadores de desarrollo mundial, es una recopilación de datos relevantes de alta
+          calidad
+          y comparables internacionalmente sobre el desarrollo global y la lucha contra la pobreza.
+        </p>
+      </div>
+    </section>
+    <!-- ========================================================Categorias=================================================================-->
+    <section class="hide" id="indicator">
+      <div class="indicator-per-country" id="to-shrink">
+        <p class="indicator-title-1 hide" id="title-per">PERÚ: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-mex">MÉXICO: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-chl">CHILE: INDICADORES DE DESARROLLO</p>
+        <p class="indicator-title-1 hide" id="title-bra">BRASIL: INDICADORES DE DESARROLLO</p>
+        <div class="contain-icons">
+          <figure class="icon-style">
+            <img src="img/education.png" class="icon-indicator" id="education" alt="icono de educación">
+            <figcaption class="indicator-title">EDUCACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/population.png" class="icon-indicator" id="population" alt="icono de población">
+            <figcaption class="indicator-title">POBLACIÓN</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/works.png" class="icon-indicator" id="work" alt="icono de trabajo">
+            <figcaption class="indicator-title">TRABAJO</figcaption>
+          </figure>
+          <figure class="icon-style">
+            <img src="img/genders.png" class="icon-indicator" id="gender" alt="icono de género">
+            <figcaption class="indicator-title">GÉNERO</figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="container-text-under-icons-indicator" id="filled">
+        <p class="text-under-icons-indicator">El Grupo Banco Mundial trabaja en todas las principales esferas del
+          desarrollo: proporciona una gran variedad de productos financieros y asistencia técnica, y ayuda a los países
+          a
+          enfrentar los desafíos mediante el intercambio de conocimiento de vanguardia y la aplicación de soluciones
+          innovadoras.
+        </p>
+      </div>
+    </section>
+    <!-- =====================================================Mostrar indicadores========================================================-->
+    <section class="hide" id="indicator-table">
+      <div class="flex" id="container-indicators-category">
+        <p class="category-title" id="category-title"> </p>
+        <table class="flex-table" id="category">
+        </table>
+      </div>
+    </section>
+    <!-- =====================================================Mostrar Valores=========================================================== -->
+    <section class="hide" id="show-data-indicator">
+      <p class="title-show-data" id="indicator-title-data"></p>
+      <div class="flex">
+        <form class="select-style-form">
+          <label class="select-style">Ordenar por:
+            <select id="data-type">
+              <option>Valores</option>
+              <option>Años</option>
+            </select></label>
+          <label class="select-style">Orden:
+            <select id="order-type">
+              <option>Mayor</option>
+              <option>Menor</option>
+            </select></label>
+          <button type="button" class="sort-btn" id="sort-btn">ORDENAR</button>
+        </form>
+      </div>
+      <div class="flex">
+        <form class="select-style-form">
+          <label class="select-style">Desde:
+            <input type="number" id="initial-year" value="" class="filter-input" placeholder="  Años"
+              title="Ingresa un año de la tabla"></label>
+          <label class="select-style">Hasta:
+            <input type="number" id="final-year" value="" class="filter-input" placeholder="  Años"
+              title="Ingresa un año de la tabla"></label>
+          <button type="button" class="filter-btn" id="filter-btn">FILTRAR</button>
+        </form>
+        <p class="hide message" id="enter-a-year">Para filtrar debes ingresar solo años disponibles en la tabla</p>
+      </div>
+      <div class="flex" id="container-data-indicator">
+        <table id="data" class="flex-table">
+        </table>
+      </div>
+      <div class="flex">
+        <button class="hide average-btn" type="button" id="average-btn">PROMEDIO</button>
+        <p class="hide show-average" id="average-result"></p>
+      </div>
+    </section>
+  </main>
+  <!-- =====================================================Pie de página============================================================ -->
+  <footer class="hide footer-style" id="footer">
+    <p class="follow-us">SÍGANOS</p>
+    <div class="wrapper-social-media">
+      <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png"
+          alt="icono de facebook" class="img-social-media"></a>
+      <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png"
+          alt="icono de twitter" class="img-social-media"></a>
+      <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png"
+          alt="icono de instagra" class="img-social-media"></a>
     </div>
-    <div class="flex">
-      <form class="select-style-form">
-        <label class="select-style">Desde:
-          <input type="number" id="initial-year"  value="" class="filter-input" placeholder="  Años" title="Ingresa un año de la tabla"></label>
-        <label class="select-style">Hasta:
-          <input type="number" id="final-year"  value="" class="filter-input" placeholder="  Años" title="Ingresa un año de la tabla"></label>
-        <button type="button" class="filter-btn" id="filter-btn">FILTRAR</button>
-      </form>
-      <p class= "hide message" id="enter-a-year">Para filtrar debes ingresar solo años disponibles en la tabla</p>
-    </div>
-    <div class="flex" id="container-data-indicator">
-      <table id="data" class="flex-table">
-      </table>
-    </div>
-    <div class="flex">
-      <button class="hide average-btn" type="button" id="average-btn">PROMEDIO</button>
-      <p class="hide show-average" id="average-result"></p>
-    </div>
-  </section>
-</main>
-<!-- =====================================================Pie de página============================================================ -->
-<footer class="hide footer-style" id="footer">
-  <p class="follow-us">SÍGANOS</p>
-  <div class="wrapper-social-media">
-    <a href="https://www.facebook.com/bancomundial" class="a-social-media-icon"><img src="img/facebook-icon.png"
-        alt="icono de facebook" class="img-social-media"></a>
-    <a href="https://twitter.com/bancomundial" class="a-social-media-icon"><img src="img/twitter-icon.png"
-        alt="icono de twitter" class="img-social-media"></a>
-    <a href="https://www.instagram.com/bancomundial/" class="a-social-media-icon"><img src="img/instagram-icon.png"
-        alt="icono de instagra" class="img-social-media"></a>
-  </div>
-  <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
-</footer>
-<!-- =========================================================Scripts============================================================= -->    
-<script src="./data/worldbank/worldbank.js"></script>
-<script src="data.js"></script>
-<script src="main.js"></script>
+    <p class="copyright">© 2019 Grupo Banco Mundial. Reservados todos los derechos.</p>
+  </footer>
+  <!-- =========================================================Scripts============================================================= -->
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>
