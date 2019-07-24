@@ -215,7 +215,6 @@ const createTableIndicatorCategory = (arrCategory) => {
 
 /* =====================================  FUNCIÓN QUE CREA LA TABLA DE DATA =========================================== */
 let valuePerIndicator = [];
-let years = [];
 const createTableData = (arrData) =>{
   globalData = arrData;
   tableData.innerHTML = '';
@@ -227,9 +226,7 @@ const createTableData = (arrData) =>{
                 </tr>
               </thead>`;
   let percent = [];
-  let year = [];
   valuePerIndicator = percent;
-  years = year;
   arrData.forEach(([key, value]) => {
     if (value !== '') {
       table = table + `<tbody class="bordes"> <tr>
@@ -237,9 +234,7 @@ const createTableData = (arrData) =>{
                       <td class="indicador4">${ value.toFixed(2) } </td>
                     </tr>`;
       let valor = value;
-      let valores = key;
       percent.push(valor);
-      year.push(valores);
     }   
   });
   table = table + '</tbody >';
