@@ -5,43 +5,35 @@ window.worldbank = {
     const OrderYearAsc = (a, b) => {
       if (a[0] > b[0]) {
         return 1;
-      }
-      if (a[0] < b[0]) {
+      } else {
         return -1;
-      }
-      return 0; 
+      } 
     };
     // Ordena Año de Mayor a Menor
     const OrderYearDesc = (a, b) => {
       if (a[0] < b[0]) {
         return 1;
-      }
-      if (a[0] > b[0]) {
+      } else {
         return -1;
       }
-      return 0; 
     };
 
     // Ordena Porcentaje de Menor a Mayor
     const OrderPercentageAsc = (a, b) => {
       if (a[1] > b[1]) {
         return 1;
-      }
-      if (a[1] < b[1]) {
+      } else {
         return -1;
-      }
-      return 0; 
+      } 
     };
 
     // Ordena Porcentaje de Mayor a Menor
     const OrderPercentageDesc = (a, b) => {
       if (a[1] < b[1]) {
         return 1;
-      }
-      if (a[1] > b[1]) {
+      } else {
         return -1;
-      }
-      return 0; 
+      } 
     };
     let sorted = [];
     if (dataType === 'Valores') {
