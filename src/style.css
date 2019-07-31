@@ -232,12 +232,12 @@ body{
 }
 #explore-data-mexico {
 	background-image: url(https://image.freepik.com/foto-gratis/bandera-mexico-arrugado-sobre-fondo-oscuro-3d-render_1379-709.jpg);
-}   
-#explore-data-chile {
-	background-image: url(https://image.freepik.com/foto-gratis/bandera-chile-arrugado-sobre-fondo-oscuro-3d-render_1379-828.jpg);
-}  
+}
 #explore-data-brasil {
 	background-image: url(https://image.freepik.com/foto-gratis/bandera-brasil-arrugado-sobre-fondo-oscuro-3d-render_1379-810.jpg);
+}    
+#explore-data-chile {
+	background-image: url(https://image.freepik.com/foto-gratis/bandera-chile-arrugado-sobre-fondo-oscuro-3d-render_1379-828.jpg);
 }  
 .text-media{
 	height: 15em;
@@ -560,14 +560,14 @@ body{
   	#explore-data-peru {
         background-image: url(https://image.freepik.com/foto-gratis/bandera-peru-arrugado-sobre-fondo-oscuro-3d-render_1379-614.jpg);
   	}
-	#explore-data-mexico {
+		#explore-data-mexico {
         background-image: url(https://image.freepik.com/foto-gratis/bandera-mexico-arrugado-sobre-fondo-oscuro-3d-render_1379-709.jpg);
-  	}   
+		}
+		#explore-data-brasil {
+			background-image: url(https://image.freepik.com/foto-gratis/bandera-brasil-arrugado-sobre-fondo-oscuro-3d-render_1379-810.jpg);
+		}     
   	#explore-data-chile {
         background-image: url(https://image.freepik.com/foto-gratis/bandera-chile-arrugado-sobre-fondo-oscuro-3d-render_1379-828.jpg);
-  	}  
-  	#explore-data-brasil {
-		background-image: url(https://image.freepik.com/foto-gratis/bandera-brasil-arrugado-sobre-fondo-oscuro-3d-render_1379-810.jpg);
   	}  
 	.text-media{
 		height: max-content;
